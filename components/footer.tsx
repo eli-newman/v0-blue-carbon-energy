@@ -16,18 +16,23 @@ export function Footer() {
             <p className="text-sm text-muted-foreground leading-relaxed">{t("footer.description")}</p>
           </div>
 
-          {/* Quick Links */}
+          {/* Products */}
           <div>
             <h4 className="text-sm font-semibold mb-4 text-foreground">{t("footer.navigation")}</h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/about" className="text-sm text-muted-foreground hover:text-[#0066CC] transition-colors">
-                  {t("nav.about")}
+                <Link href="/materials" className="text-sm text-muted-foreground hover:text-[#0066CC] transition-colors">
+                  {t("nav.materials")}
                 </Link>
               </li>
               <li>
-                <Link href="/solution" className="text-sm text-muted-foreground hover:text-[#0066CC] transition-colors">
-                  {t("nav.solution")}
+                <Link href="/agriculture" className="text-sm text-muted-foreground hover:text-[#0066CC] transition-colors">
+                  {t("nav.agriculture")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/technology" className="text-sm text-muted-foreground hover:text-[#0066CC] transition-colors">
+                  {t("nav.technology")}
                 </Link>
               </li>
               <li>
@@ -38,13 +43,13 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Resources */}
+          {/* Company */}
           <div>
             <h4 className="text-sm font-semibold mb-4 text-foreground">{t("footer.connect")}</h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/partners" className="text-sm text-muted-foreground hover:text-[#0066CC] transition-colors">
-                  {t("nav.partners")}
+                <Link href="/about" className="text-sm text-muted-foreground hover:text-[#0066CC] transition-colors">
+                  {t("nav.about")}
                 </Link>
               </li>
               <li>
@@ -73,7 +78,7 @@ export function Footer() {
 
         {/* Copyright */}
         <div className="pt-8 border-t border-[#E5DFD3] text-center text-sm text-muted-foreground">
-          <p>&copy; 2025 BlueCarbon Energy. {t("footer.rights")}</p>
+          <p>&copy; 2026 BlueCarbon Energy. {t("footer.rights")}</p>
         </div>
       </div>
     </footer>

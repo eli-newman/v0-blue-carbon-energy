@@ -125,8 +125,8 @@ export default function Home() {
               quality={90}
             />
           </div>
-          
-          {/* Subtle overlay for text readability - no gradient */}
+
+          {/* Subtle overlay for text readability */}
           <div className="absolute inset-0 bg-black/20" />
 
           <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 sm:pb-32">
@@ -147,7 +147,7 @@ export default function Home() {
                   {t("home.hero.subheadline")}
                 </p>
                 <Link
-                  href="/solution"
+                  href="/materials"
                   className="inline-block px-8 py-4 bg-white text-[#0066CC] font-semibold rounded-lg hover:bg-[#0066CC] hover:text-white transition-all text-lg border-2 border-white shadow-lg hover:shadow-xl"
                 >
                   {t("home.hero.cta")}
@@ -272,7 +272,7 @@ export default function Home() {
             <p className="text-xl text-white/90 mb-10 text-balance">{t("home.cta.subtitle")}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/solution"
+                href="/materials"
                 className="px-8 py-4 bg-white text-[#0066CC] font-semibold rounded-lg hover:bg-[#0052A3] hover:text-white transition-colors text-lg"
               >
                 {t("home.cta.learn")}

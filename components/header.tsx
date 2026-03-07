@@ -19,12 +19,11 @@ export function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Consider scrolled if we've scrolled more than 100px
       setIsScrolled(window.scrollY > 100)
     }
 
     window.addEventListener("scroll", handleScroll, { passive: true })
-    handleScroll() // Check initial scroll position
+    handleScroll()
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
@@ -35,6 +34,16 @@ export function Header() {
   const isHomePage = pathname === "/"
   const isTransparent = isHomePage && !isScrolled
 
+  const navLinks = [
+    { href: "/", label: t("nav.home") },
+    { href: "/materials", label: t("nav.materials") },
+    { href: "/agriculture", label: t("nav.agriculture") },
+    { href: "/technology", label: t("nav.technology") },
+    { href: "/impact", label: t("nav.impact") },
+    { href: "/about", label: t("nav.about") },
+    { href: "/contact", label: t("nav.contact") },
+  ]
+
   return (
     <header className={`fixed top-0 z-50 w-full transition-all duration-300 ${
       isTransparent
@@ -42,7 +51,7 @@ export function Header() {
         : "bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 border-b border-[#E5DFD3]"
     }`}>
       <nav className="flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        {/* Logo - White when transparent, colored when solid */}
+        {/* Logo */}
         <Link href="/" className="flex items-center gap-1 hover:opacity-80 transition-opacity" onClick={handleNavClick}>
           <span className={`text-xl font-bold transition-colors ${isTransparent ? "text-white" : "text-[#0066CC]"}`}>Blue</span>
           <span className={`text-xl font-bold transition-colors ${isTransparent ? "text-white" : "text-[#2d8a6e]"}`}>Carbon</span>
@@ -50,72 +59,20 @@ export function Header() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
-          <Link
-            href="/"
-            className={`text-sm font-medium transition-colors ${
-              isTransparent
-                ? "text-white hover:text-white/80"
-                : "text-foreground hover:text-[#0066CC]"
-            }`}
-            onClick={handleNavClick}
-          >
-            {t("nav.home")}
-          </Link>
-          <Link
-            href="/about"
-            className={`text-sm font-medium transition-colors ${
-              isTransparent
-                ? "text-white hover:text-white/80"
-                : "text-foreground hover:text-[#0066CC]"
-            }`}
-            onClick={handleNavClick}
-          >
-            {t("nav.about")}
-          </Link>
-          <Link
-            href="/solution"
-            className={`text-sm font-medium transition-colors ${
-              isTransparent
-                ? "text-white hover:text-white/80"
-                : "text-foreground hover:text-[#0066CC]"
-            }`}
-            onClick={handleNavClick}
-          >
-            {t("nav.solution")}
-          </Link>
-          <Link
-            href="/impact"
-            className={`text-sm font-medium transition-colors ${
-              isTransparent
-                ? "text-white hover:text-white/80"
-                : "text-foreground hover:text-[#0066CC]"
-            }`}
-            onClick={handleNavClick}
-          >
-            {t("nav.impact")}
-          </Link>
-          <Link
-            href="/partners"
-            className={`text-sm font-medium transition-colors ${
-              isTransparent
-                ? "text-white hover:text-white/80"
-                : "text-foreground hover:text-[#0066CC]"
-            }`}
-            onClick={handleNavClick}
-          >
-            {t("nav.partners")}
-          </Link>
-          <Link
-            href="/contact"
-            className={`text-sm font-medium transition-colors ${
-              isTransparent
-                ? "text-white hover:text-white/80"
-                : "text-foreground hover:text-[#0066CC]"
-            }`}
-            onClick={handleNavClick}
-          >
-            {t("nav.contact")}
-          </Link>
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`text-sm font-medium transition-colors ${
+                isTransparent
+                  ? "text-white hover:text-white/80"
+                  : "text-foreground hover:text-[#0066CC]"
+              }`}
+              onClick={handleNavClick}
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
 
         {/* Language Toggle & CTA */}
@@ -185,48 +142,16 @@ export function Header() {
             : "bg-white border-t border-[#E5DFD3]"
         }`}>
           <div className="flex flex-col gap-4">
-            <Link
-              href="/"
-              className={`text-sm font-medium py-2 transition-colors ${isTransparent ? "text-white" : "text-foreground"}`}
-              onClick={handleNavClick}
-            >
-              {t("nav.home")}
-            </Link>
-            <Link
-              href="/about"
-              className={`text-sm font-medium py-2 transition-colors ${isTransparent ? "text-white" : "text-foreground"}`}
-              onClick={handleNavClick}
-            >
-              {t("nav.about")}
-            </Link>
-            <Link
-              href="/solution"
-              className={`text-sm font-medium py-2 transition-colors ${isTransparent ? "text-white" : "text-foreground"}`}
-              onClick={handleNavClick}
-            >
-              {t("nav.solution")}
-            </Link>
-            <Link
-              href="/impact"
-              className={`text-sm font-medium py-2 transition-colors ${isTransparent ? "text-white" : "text-foreground"}`}
-              onClick={handleNavClick}
-            >
-              {t("nav.impact")}
-            </Link>
-            <Link
-              href="/partners"
-              className={`text-sm font-medium py-2 transition-colors ${isTransparent ? "text-white" : "text-foreground"}`}
-              onClick={handleNavClick}
-            >
-              {t("nav.partners")}
-            </Link>
-            <Link
-              href="/contact"
-              className={`text-sm font-medium py-2 transition-colors ${isTransparent ? "text-white" : "text-foreground"}`}
-              onClick={handleNavClick}
-            >
-              {t("nav.contact")}
-            </Link>
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`text-sm font-medium py-2 transition-colors ${isTransparent ? "text-white" : "text-foreground"}`}
+                onClick={handleNavClick}
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
         </div>
       )}

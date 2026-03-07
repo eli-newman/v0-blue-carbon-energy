@@ -16,41 +16,42 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 const translations: Record<string, { en: string; es: string }> = {
   // Navigation & UI
   "nav.home": { en: "Home", es: "Inicio" },
-  "nav.about": { en: "About Us", es: "Nosotros" },
-  "nav.solution": { en: "Our Solution", es: "Nuestra Solución" },
+  "nav.materials": { en: "Materials", es: "Materiales" },
+  "nav.agriculture": { en: "Agriculture", es: "Agricultura" },
+  "nav.technology": { en: "Technology", es: "Tecnología" },
   "nav.impact": { en: "Impact", es: "Impacto" },
-  "nav.partners": { en: "Partners", es: "Socios" },
+  "nav.about": { en: "About Us", es: "Nosotros" },
   "nav.contact": { en: "Contact", es: "Contacto" },
   "nav.cta": { en: "Get Involved", es: "Participa" },
 
-  // Home Page
+  // Home Page - Hero
   "home.hero.headline": {
-    en: "Turning Coastal Waste into Clean Energy & Climate-Smart Soil Solutions",
-    es: "Convirtiendo Residuos Costeros en Energía Limpia y Soluciones Inteligentes para el Suelo",
+    en: "Turning Ocean Waste Into High-Performance Building Materials",
+    es: "Convirtiendo Residuos Oceánicos en Materiales de Construcción de Alto Rendimiento",
   },
   "home.hero.subheadline": {
-    en: "BCE converts sargassum into renewable power and carbon-negative agricultural inputs for your community.",
-    es: "BCE convierte el sargazo en energía renovable e insumos agrícolas carbono-negativos para tu comunidad.",
+    en: "We convert sargassum seaweed and recycled plastics into composite building materials, agricultural inputs, and clean energy — all through carbon-negative manufacturing.",
+    es: "Convertimos sargazo y plásticos reciclados en materiales de construcción compuestos, insumos agrícolas y energía limpia — todo mediante manufactura carbono-negativa.",
   },
   "home.hero.tagline": {
-    en: "Saving the world is HARD. Let's go!",
-    es: "Salvar el mundo es DIFÍCIL. ¡Vamos!",
+    en: "Building the Caribbean from ocean waste.",
+    es: "Construyendo el Caribe con residuos oceánicos.",
   },
-  "home.hero.cta": { en: "See How It Works", es: "Ver Cómo Funciona" },
+  "home.hero.cta": { en: "Explore Our Materials", es: "Explorar Nuestros Materiales" },
 
   // Why It Matters Section
-  "home.why.title": { en: "Why It Matters for Your Community", es: "Por Qué Importa para Tu Comunidad" },
+  "home.why.title": { en: "Three Problems. One Integrated Solution.", es: "Tres Problemas. Una Solución Integrada." },
   "home.why.bullet1": {
-    en: "Clean your beaches while generating renewable energy that powers local economies.",
-    es: "Limpia tus playas mientras generas energía renovable que impulsa las economías locales.",
+    en: "Sargassum is overwhelming Caribbean coastlines — we turn it into rot-resistant, marine-durable composite boards and tiles.",
+    es: "El sargazo está abrumando las costas del Caribe — lo convertimos en tableros y tejas compuestas resistentes a la putrefacción y al ambiente marino.",
   },
   "home.why.bullet2": {
-    en: "Create jobs and economic opportunity in coastal communities most affected by sargassum blooms.",
-    es: "Crea empleos y oportunidades económicas en comunidades costeras más afectadas por el sargazo.",
+    en: "Plastic waste clogs landfills and oceans — we compound it with sargassum fiber into high-performance building products.",
+    es: "Los residuos plásticos saturan vertederos y océanos — los combinamos con fibra de sargazo en productos de construcción de alto rendimiento.",
   },
   "home.why.bullet3": {
-    en: "Produce carbon-negative soil amendments that boost food security and agricultural yields.",
-    es: "Produce enmiendas del suelo carbono-negativas que mejoran la seguridad alimentaria y rendimientos agrícolas.",
+    en: "Importing construction materials is expensive and carbon-heavy — we manufacture locally from local waste streams.",
+    es: "Importar materiales de construcción es caro y genera mucho carbono — fabricamos localmente con flujos de residuos locales.",
   },
 
   // Sargassum Challenge Section
@@ -60,34 +61,38 @@ const translations: Record<string, { en: string; es: string }> = {
     es: "Enormes floraciones de sargazo están abrumando las costas del Caribe y el Atlántico, dañando el turismo, amenazando la vida marina y costando a las comunidades millones en esfuerzos de limpieza.",
   },
   "home.challenge.p2": {
-    en: "These blooms are accelerating due to climate change and nutrient runoff. Your beaches need a sustainable solution—and we have one.",
-    es: "Estas floraciones se aceleran debido al cambio climático y la escorrentía de nutrientes. Tus playas necesitan una solución sostenible—y nosotros la tenemos.",
+    en: "These blooms are accelerating due to climate change and nutrient runoff. Instead of disposal, we see a raw material — feedstock for composites, biochar, and energy.",
+    es: "Estas floraciones se aceleran debido al cambio climático y la escorrentía de nutrientes. En lugar de desecharlo, vemos una materia prima — insumo para compuestos, biocarbón y energía.",
   },
+
+  // Process Section
   "home.process.title": { en: "How It Works", es: "Cómo Funciona" },
   "home.process.subtitle": {
-    en: "From your beaches to clean energy and healthier soil",
-    es: "De tus playas a energía limpia y suelo más saludable",
+    en: "From beach cleanup to building materials, agricultural products, and clean energy",
+    es: "De la limpieza de playas a materiales de construcción, productos agrícolas y energía limpia",
   },
   "home.process.step1.title": { en: "Harvest", es: "Cosecha" },
   "home.process.step1.desc": {
-    en: "We harvest from shorelines, beaches, and marinas. Seaweed is cleaned and dried on-site.",
-    es: "Cosechamos de costas, playas y marinas. El alga se limpia y seca en el lugar.",
+    en: "Sargassum is collected from beaches using environmentally conscious methods. Recycled plastics are sorted and shredded.",
+    es: "El sargazo se recolecta de las playas usando métodos ambientalmente conscientes. Los plásticos reciclados se clasifican y trituran.",
   },
   "home.process.step2.title": { en: "Convert", es: "Conversión" },
   "home.process.step2.desc": {
-    en: "Thermochemical processing transforms dried sargassum into renewable syngas for energy generation.",
-    es: "El procesamiento termoquímico transforma el sargazo seco en gas de síntesis renovable para generar energía.",
+    en: "Advanced pyrolysis converts dried sargassum into biochar, bio-oil, and syngas that powers the entire facility.",
+    es: "La pirólisis avanzada convierte el sargazo seco en biocarbón, bio-aceite y gas de síntesis que alimenta toda la instalación.",
   },
-  "home.process.step3.title": { en: "Generate Power", es: "Generar Energía" },
+  "home.process.step3.title": { en: "Manufacture", es: "Manufactura" },
   "home.process.step3.desc": {
-    en: "Clean, renewable electricity powers local communities while capturing carbon in biochar.",
-    es: "Electricidad limpia y renovable alimenta comunidades locales mientras captura carbono en biocarbón.",
+    en: "Sargassum fiber and recycled plastic are compounded into composite boards, tiles, and structural profiles.",
+    es: "La fibra de sargazo y plástico reciclado se combinan en tableros, tejas y perfiles estructurales compuestos.",
   },
-  "home.process.step4.title": { en: "Create Value", es: "Crear Valor" },
+  "home.process.step4.title": { en: "Grow", es: "Cultivar" },
   "home.process.step4.desc": {
-    en: "Carbon-negative biochar and biostimulants improve crop yields and soil health for local farmers.",
-    es: "Biocarbón carbono-negativo y bioestimulantes mejoran rendimientos y salud del suelo para agricultores locales.",
+    en: "Biochar and biostimulants improve crop yields and soil health — carbon-negative agriculture from the same process.",
+    es: "Biocarbón y bioestimulantes mejoran rendimientos y salud del suelo — agricultura carbono-negativa del mismo proceso.",
   },
+
+  // Impact Section
   "home.impact.title": { en: "Our Progress", es: "Nuestro Progreso" },
   "home.impact.subtitle": {
     en: "Real results from pilot operations and field trials",
@@ -98,21 +103,21 @@ const translations: Record<string, { en: string; es: string }> = {
   "home.impact.metric3": { en: "Coastal Jobs Created (Target)", es: "Empleos Costeros Creados (Meta)" },
 
   // CTA Section
-  "home.cta.title": { en: "Partner with Us to Clean Your Beaches", es: "Asóciate con Nosotros para Limpiar Tus Playas" },
+  "home.cta.title": { en: "Build With Us", es: "Construye Con Nosotros" },
   "home.cta.subtitle": {
-    en: "Join municipalities and communities turning sargassum from a crisis into clean energy and economic opportunity.",
-    es: "Únete a municipios y comunidades que convierten el sargazo de una crisis en energía limpia y oportunidad económica.",
+    en: "Whether you need sustainable building materials, agricultural inputs, or want to invest in carbon-negative manufacturing — let's talk.",
+    es: "Ya sea que necesites materiales de construcción sostenibles, insumos agrícolas o quieras invertir en manufactura carbono-negativa — hablemos.",
   },
-  "home.cta.learn": { en: "Explore the Solution", es: "Explorar la Solución" },
-  "home.cta.contact": { en: "Start a Conversation", es: "Iniciar una Conversación" },
+  "home.cta.learn": { en: "View Our Materials", es: "Ver Nuestros Materiales" },
+  "home.cta.contact": { en: "Contact & Investors", es: "Contacto e Inversores" },
 
   // Footer
   "footer.description": {
-    en: "Transforming coastal waste into sustainable energy and agricultural products.",
-    es: "Transformando residuos costeros en energía sostenible y productos agrícolas.",
+    en: "Converting sargassum and recycled plastics into composite building materials, agricultural inputs, and clean energy.",
+    es: "Convirtiendo sargazo y plásticos reciclados en materiales de construcción compuestos, insumos agrícolas y energía limpia.",
   },
-  "footer.navigation": { en: "Navigation", es: "Navegación" },
-  "footer.connect": { en: "Connect", es: "Conectar" },
+  "footer.navigation": { en: "Products", es: "Productos" },
+  "footer.connect": { en: "Company", es: "Empresa" },
   "footer.rights": { en: "All rights reserved.", es: "Todos los derechos reservados." },
 }
 
