@@ -5,9 +5,49 @@ import { Footer } from "@/components/footer"
 import { useLanguage } from "@/lib/language-context"
 import Image from "next/image"
 import Link from "next/link"
+import React, { useState } from "react"
+import { Button } from "@/components/ui/button"
 
 export default function Partners() {
   const { language } = useLanguage()
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    company: "",
+    projectType: "",
+    message: "",
+  })
+  const [submitted, setSubmitted] = useState(false)
+  const [errors, setErrors] = useState<Record<string, string>>({})
+
+  const validateForm = () => {
+    const newErrors: Record<string, string> = {}
+    if (!formData.name.trim()) newErrors.name = language === "en" ? "Name is required" : "El nombre es requerido"
+    if (!formData.email.trim()) newErrors.email = language === "en" ? "Email is required" : "El correo es requerido"
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))
+      newErrors.email = language === "en" ? "Invalid email address" : "Correo electrónico inválido"
+    if (!formData.message.trim())
+      newErrors.message = language === "en" ? "Message is required" : "El mensaje es requerido"
+    return newErrors
+  }
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
+    if (errors[name]) setErrors((prev) => ({ ...prev, [name]: "" }))
+  }
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    const newErrors = validateForm()
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors)
+      return
+    }
+    setSubmitted(true)
+    setFormData({ name: "", email: "", company: "", projectType: "", message: "" })
+    setTimeout(() => setSubmitted(false), 5000)
+  }
 
   const content = {
     en: {
@@ -57,6 +97,25 @@ export default function Partners() {
           { name: "Global Biochar Initiative", focus: "Product certification, standards development" },
         ],
       },
+      buildTitle: "Build With Us",
+      buildSubtitle: "Interested in using our materials or working with us on a project? Tell us what you're building.",
+      buildNameLabel: "Full Name",
+      buildEmailLabel: "Email Address",
+      buildCompanyLabel: "Company / Organization",
+      buildProjectLabel: "What are you looking to build?",
+      buildProjectOptions: [
+        "Select a project type",
+        "Residential Construction",
+        "Commercial Construction",
+        "Agricultural Application",
+        "Research & Development",
+        "Investment Partnership",
+        "Other",
+      ],
+      buildMessageLabel: "Tell us more about your project",
+      buildSubmit: "Send Application",
+      buildSuccess: "Thanks! We'll be in touch shortly.",
+      buildSuccessText: "Our team will review your application and reach out within 2 business days.",
       ctaTitle: "Interested in Partnering?",
       ctaText:
         "We're actively seeking partners—municipalities, research institutions, and agricultural networks—ready to scale sustainable sargassum solutions.",
@@ -121,6 +180,25 @@ export default function Partners() {
           { name: "Iniciativa Global de Biocarbón", focus: "Certificación de productos, desarrollo de estándares" },
         ],
       },
+      buildTitle: "Construye Con Nosotros",
+      buildSubtitle: "¿Interesado en usar nuestros materiales o trabajar con nosotros en un proyecto? Cuéntanos qué estás construyendo.",
+      buildNameLabel: "Nombre Completo",
+      buildEmailLabel: "Correo Electrónico",
+      buildCompanyLabel: "Empresa / Organización",
+      buildProjectLabel: "¿Qué quieres construir?",
+      buildProjectOptions: [
+        "Selecciona un tipo de proyecto",
+        "Construcción Residencial",
+        "Construcción Comercial",
+        "Aplicación Agrícola",
+        "Investigación y Desarrollo",
+        "Asociación de Inversión",
+        "Otro",
+      ],
+      buildMessageLabel: "Cuéntanos más sobre tu proyecto",
+      buildSubmit: "Enviar Solicitud",
+      buildSuccess: "¡Gracias! Nos pondremos en contacto pronto.",
+      buildSuccessText: "Nuestro equipo revisará tu solicitud y se comunicará contigo en 2 días hábiles.",
       ctaTitle: "¿Interesado en Asociarte?",
       ctaText:
         "Estamos buscando activamente socios—municipalidades, instituciones de investigación y redes agrícolas—listos para escalar soluciones sostenibles de sargazo.",
@@ -218,6 +296,110 @@ export default function Partners() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* Build With Us */}
+        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#FAF8F5]">
+          <div className="max-w-2xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4">{c.buildTitle}</h2>
+              <p className="text-muted-foreground text-lg">{c.buildSubtitle}</p>
+            </div>
+
+            {submitted && (
+              <div className="mb-6 p-4 rounded-xl bg-[#2d8a6e]/10 border border-[#2d8a6e] text-[#2d8a6e]" role="alert">
+                <p className="font-semibold">{c.buildSuccess}</p>
+                <p className="text-sm">{c.buildSuccessText}</p>
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-6 bg-white p-8 rounded-2xl border border-[#E5DFD3]" noValidate>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="build-name" className="block text-sm font-semibold mb-2">
+                    {c.buildNameLabel} <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="build-name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className={`w-full px-4 py-3 rounded-xl border ${errors.name ? "border-red-500" : "border-[#E5DFD3]"} bg-white focus:outline-none focus:ring-2 focus:ring-[#0066CC]/50 transition-all`}
+                  />
+                  {errors.name && <p className="text-sm text-red-500 mt-1">{errors.name}</p>}
+                </div>
+                <div>
+                  <label htmlFor="build-email" className="block text-sm font-semibold mb-2">
+                    {c.buildEmailLabel} <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="build-email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className={`w-full px-4 py-3 rounded-xl border ${errors.email ? "border-red-500" : "border-[#E5DFD3]"} bg-white focus:outline-none focus:ring-2 focus:ring-[#0066CC]/50 transition-all`}
+                  />
+                  {errors.email && <p className="text-sm text-red-500 mt-1">{errors.email}</p>}
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="build-company" className="block text-sm font-semibold mb-2">
+                    {c.buildCompanyLabel}
+                  </label>
+                  <input
+                    type="text"
+                    id="build-company"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-xl border border-[#E5DFD3] bg-white focus:outline-none focus:ring-2 focus:ring-[#0066CC]/50 transition-all"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="build-project" className="block text-sm font-semibold mb-2">
+                    {c.buildProjectLabel}
+                  </label>
+                  <select
+                    id="build-project"
+                    name="projectType"
+                    value={formData.projectType}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-xl border border-[#E5DFD3] bg-white focus:outline-none focus:ring-2 focus:ring-[#0066CC]/50 transition-all"
+                  >
+                    {c.buildProjectOptions.map((opt, i) => (
+                      <option key={i} value={i === 0 ? "" : opt}>{opt}</option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="build-message" className="block text-sm font-semibold mb-2">
+                  {c.buildMessageLabel} <span className="text-red-500">*</span>
+                </label>
+                <textarea
+                  id="build-message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={5}
+                  className={`w-full px-4 py-3 rounded-xl border ${errors.message ? "border-red-500" : "border-[#E5DFD3]"} bg-white focus:outline-none focus:ring-2 focus:ring-[#0066CC]/50 transition-all resize-vertical`}
+                />
+                {errors.message && <p className="text-sm text-red-500 mt-1">{errors.message}</p>}
+              </div>
+
+              <Button type="submit" className="w-full bg-[#0066CC] hover:bg-[#004A99] text-white py-6 rounded-xl text-lg">
+                {c.buildSubmit}
+              </Button>
+            </form>
           </div>
         </section>
 

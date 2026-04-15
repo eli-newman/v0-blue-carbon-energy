@@ -26,7 +26,8 @@ export default function Contact() {
       subtitle:
         "Questions about our solution, partnership opportunities, or just want to chat? We'd love to hear from you.",
       email: "Email",
-      emailValue: "hello@bluecarbon.energy",
+      emailMark: "Mark.Mathis@bluecarbonmaterials.com",
+      emailLuke: "luke.mathis@bluecarbonmaterials.com",
       emailNote: "Response within 24 hours",
       phone: "Phone",
       phoneValue: "+1 (809) 555-1234",
@@ -74,7 +75,8 @@ export default function Contact() {
       subtitle:
         "¿Preguntas sobre nuestra solución, oportunidades de asociación, o simplemente quieres conversar? Nos encantaría saber de ti.",
       email: "Correo Electrónico",
-      emailValue: "hello@bluecarbon.energy",
+      emailMark: "Mark.Mathis@bluecarbonmaterials.com",
+      emailLuke: "luke.mathis@bluecarbonmaterials.com",
       emailNote: "Respuesta en 24 horas",
       phone: "Teléfono",
       phoneValue: "+1 (809) 555-1234",
@@ -166,8 +168,11 @@ export default function Contact() {
               <div className="p-8 rounded-2xl bg-[#FAF8F5] border border-[#E5DFD3] text-center">
                 <div className="w-12 h-1 bg-[#0066CC] mx-auto mb-6 rounded-full" />
                 <h3 className="text-lg font-semibold mb-3">{c.email}</h3>
-                <a href="mailto:hello@bluecarbon.energy" className="text-[#0066CC] hover:underline">
-                  {c.emailValue}
+                <a href={`mailto:${c.emailMark}`} className="block text-[#0066CC] hover:underline text-sm mb-1">
+                  {c.emailMark}
+                </a>
+                <a href={`mailto:${c.emailLuke}`} className="block text-[#0066CC] hover:underline text-sm">
+                  {c.emailLuke}
                 </a>
                 <p className="text-sm text-muted-foreground mt-2">{c.emailNote}</p>
               </div>
