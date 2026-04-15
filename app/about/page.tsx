@@ -16,7 +16,7 @@ export default function About() {
       storyP2:
         "Our research-backed approach combines decades of marine biology, thermochemical engineering, and environmental policy expertise. We partner with universities, municipalities, and NGOs to develop scalable, community-centered solutions.",
       storyP3:
-        "Today, BlueCarbon operates across multiple Caribbean and Atlantic locations, directly supporting coastal economies while addressing one of the ocean's greatest challenges.",
+        "Today, Blue Carbon Materials operates across multiple Caribbean and Atlantic locations, directly supporting coastal economies while addressing one of the ocean's greatest challenges.",
       missionTitle: "Our Mission",
       missionText:
         "To create sustainable solutions that transform environmental challenges into economic opportunities for coastal communities, while generating clean energy and restoring ecosystems.",
@@ -61,7 +61,7 @@ export default function About() {
       storyP2:
         "Nuestro enfoque respaldado por investigación combina décadas de experiencia en biología marina, ingeniería termoquímica y política ambiental. Nos asociamos con universidades, municipios y ONGs para desarrollar soluciones escalables centradas en la comunidad.",
       storyP3:
-        "Hoy, BlueCarbon opera en múltiples ubicaciones del Caribe y el Atlántico, apoyando directamente las economías costeras mientras aborda uno de los mayores desafíos del océano.",
+        "Hoy, Blue Carbon Materials opera en múltiples ubicaciones del Caribe y el Atlántico, apoyando directamente las economías costeras mientras aborda uno de los mayores desafíos del océano.",
       missionTitle: "Nuestra Misión",
       missionText:
         "Crear soluciones sostenibles que transformen los desafíos ambientales en oportunidades económicas para las comunidades costeras, mientras generamos energía limpia y restauramos ecosistemas.",
@@ -130,7 +130,7 @@ export default function About() {
               <div className="relative h-96 rounded-2xl overflow-hidden bg-[#F5F0E8]">
                 <Image
                   src="/team-working-on-sustainable-ocean-research-laborat.jpg"
-                  alt="BlueCarbon research and development team"
+                  alt="Blue Carbon Materials research and development team"
                   fill
                   className="object-cover"
                 />

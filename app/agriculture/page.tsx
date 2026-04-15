@@ -114,7 +114,7 @@ export default function Agriculture() {
           text: "In tropical sandy soils, biochar reduces irrigation needs by 30-50% by acting as a moisture reservoir that releases water slowly to plant roots.",
         },
       ],
-      ctaTitle: "Start Growing With BlueCarbon",
+      ctaTitle: "Start Growing With Blue Carbon Materials",
       ctaText:
         "Whether you're a smallholder farmer, agricultural cooperative, or commercial operation — our team provides tailored solutions and ongoing support.",
       ctaButton: "Contact Our Agronomy Team",
@@ -224,7 +224,7 @@ export default function Agriculture() {
           text: "En suelos tropicales arenosos, el biocarbón reduce necesidades de riego 30-50% actuando como reservorio de humedad que libera agua lentamente a las raíces.",
         },
       ],
-      ctaTitle: "Empieza a Cultivar con BlueCarbon",
+      ctaTitle: "Empieza a Cultivar con Blue Carbon Materials",
       ctaText:
         "Ya seas un pequeño agricultor, cooperativa agrícola u operación comercial — nuestro equipo ofrece soluciones personalizadas y soporte continuo.",
       ctaButton: "Contactar Nuestro Equipo de Agronomía",

@@ -12,7 +12,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <h3 className="text-xl font-bold text-[#0066CC] mb-4">BlueCarbon</h3>
+            <h3 className="text-xl font-bold text-[#0066CC] mb-4">Blue Carbon Materials</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">{t("footer.description")}</p>
           </div>
 
@@ -71,10 +71,10 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="mailto:hello@bluecarbon.energy"
+                  href="mailto:Mark.Mathis@bluecarbonmaterials.com"
                   className="text-sm text-muted-foreground hover:text-[#0066CC] transition-colors"
                 >
-                  hello@bluecarbon.energy
+                  Mark.Mathis@bluecarbonmaterials.com
                 </a>
               </li>
             </ul>

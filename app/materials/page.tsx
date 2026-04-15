@@ -42,7 +42,7 @@ export default function Materials() {
           specs: ["Consistent melt flow", "Custom formulations", "Bulk supply available", "Compatible with standard equipment"],
         },
       ],
-      benefitsTitle: "Why BlueCarbon Composites",
+      benefitsTitle: "Why Blue Carbon Materials Composites",
       benefitsSubtitle: "Performance that traditional materials can't match in tropical environments",
       benefits: [
         {
@@ -123,7 +123,7 @@ export default function Materials() {
       visionText:
         "Imagine every new home, school, dock, and resort in the Caribbean built from the very waste that washes up on its shores. That's not a distant dream — it's what we're building right now. Sargassum and landfill plastic become walls, roofs, and infrastructure. Ocean waste becomes economic opportunity. Environmental cleanup becomes construction supply chain.",
       visionCta: "Partner With Us",
-      ctaTitle: "Ready to Build With BlueCarbon?",
+      ctaTitle: "Ready to Build With Blue Carbon Materials?",
       ctaSubtitle:
         "Whether you're a developer, contractor, government agency, or distributor — we want to hear from you.",
       ctaButton: "Get in Touch",
@@ -161,7 +161,7 @@ export default function Materials() {
           specs: ["Flujo de fusión consistente", "Formulaciones personalizadas", "Suministro a granel", "Compatible con equipos estándar"],
         },
       ],
-      benefitsTitle: "Por Qué Compuestos BlueCarbon",
+      benefitsTitle: "Por Qué Compuestos Blue Carbon Materials",
       benefitsSubtitle: "Rendimiento que los materiales tradicionales no pueden igualar en ambientes tropicales",
       benefits: [
         {
@@ -242,7 +242,7 @@ export default function Materials() {
       visionText:
         "Imagina cada nuevo hogar, escuela, muelle y resort en el Caribe construido con los mismos residuos que llegan a sus costas. Eso no es un sueño lejano — es lo que estamos construyendo ahora mismo. El sargazo y el plástico de vertedero se convierten en paredes, techos e infraestructura.",
       visionCta: "Asóciate con Nosotros",
-      ctaTitle: "¿Listo para Construir con BlueCarbon?",
+      ctaTitle: "¿Listo para Construir con Blue Carbon Materials?",
       ctaSubtitle:
         "Ya seas desarrollador, contratista, agencia gubernamental o distribuidor — queremos saber de ti.",
       ctaButton: "Contáctanos",

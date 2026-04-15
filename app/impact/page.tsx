@@ -82,7 +82,7 @@ export default function Impact() {
       testimonials: [
         {
           quote:
-            "BlueCarbon transformed our waste problem into an economic opportunity. Our farmers now use biochar products and see 25% yield improvements.",
+            "Blue Carbon Materials transformed our waste problem into an economic opportunity. Our farmers now use biochar products and see 25% yield improvements.",
           author: "Mayor Rosa Hernández",
           role: "Municipality of Punta Cana",
         },
@@ -94,7 +94,7 @@ export default function Impact() {
         },
         {
           quote:
-            "Working with BlueCarbon gave me stable income and a career path. I'm now training others in collection techniques and management.",
+            "Working with Blue Carbon Materials gave me stable income and a career path. I'm now training others in collection techniques and management.",
           author: "Antonio Silva",
           role: "Operations Supervisor",
         },
@@ -169,7 +169,7 @@ export default function Impact() {
       testimonials: [
         {
           quote:
-            "BlueCarbon transformó nuestro problema de desechos en una oportunidad económica. Nuestros agricultores ahora usan productos de biocarbón y ven mejoras del 25% en rendimiento.",
+            "Blue Carbon Materials transformó nuestro problema de desechos en una oportunidad económica. Nuestros agricultores ahora usan productos de biocarbón y ven mejoras del 25% en rendimiento.",
           author: "Alcaldesa Rosa Hernández",
           role: "Municipalidad de Punta Cana",
         },
@@ -181,7 +181,7 @@ export default function Impact() {
         },
         {
           quote:
-            "Trabajar con BlueCarbon me dio un ingreso estable y una trayectoria profesional. Ahora estoy capacitando a otros en técnicas de recolección y gestión.",
+            "Trabajar con Blue Carbon Materials me dio un ingreso estable y una trayectoria profesional. Ahora estoy capacitando a otros en técnicas de recolección y gestión.",
           author: "Antonio Silva",
           role: "Supervisor de Operaciones",
         },

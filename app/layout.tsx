@@ -15,11 +15,11 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: {
-    default: "BlueCarbon - Turning Ocean Waste Into High-Performance Building Materials",
-    template: "%s | BlueCarbon",
+    default: "Blue Carbon Materials - Turning Ocean Waste Into High-Performance Building Materials",
+    template: "%s | Blue Carbon Materials",
   },
   description:
-    "BlueCarbon converts sargassum seaweed and recycled plastics into composite building materials, agricultural inputs, and clean energy through carbon-negative manufacturing.",
+    "Blue Carbon Materials converts sargassum seaweed and recycled plastics into composite building materials, agricultural inputs, and clean energy through carbon-negative manufacturing.",
   keywords: [
     "composite building materials",
     "sargassum",
@@ -35,11 +35,11 @@ export const metadata: Metadata = {
   ],
   metadataBase: new URL("https://bluecarbon.org"),
   openGraph: {
-    title: "BlueCarbon - Turning Ocean Waste Into High-Performance Building Materials",
+    title: "Blue Carbon Materials - Turning Ocean Waste Into High-Performance Building Materials",
     description:
       "Converting sargassum and recycled plastics into composites, agricultural inputs, and energy through carbon-negative manufacturing.",
     url: "https://bluecarbon.org",
-    siteName: "BlueCarbon",
+    siteName: "Blue Carbon Materials",
     type: "website",
   },
 }
