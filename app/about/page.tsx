@@ -12,7 +12,7 @@ export default function About() {
     en: {
       storyTitle: "Our Story",
       storyP1:
-        "Founded in 2021, BlueCarbon Energy emerged from conversations between marine scientists, climate technologists, and coastal community leaders. We recognized an urgent opportunity: sargassum—a natural resource often seen as a burden—could become the foundation for sustainable energy and agricultural products.",
+        "Founded in 2021, Blue Carbon Materials emerged from conversations between marine scientists, climate technologists, and coastal community leaders. We recognized an urgent opportunity: sargassum—a natural resource often seen as a burden—could become the foundation for sustainable energy and agricultural products.",
       storyP2:
         "Our research-backed approach combines decades of marine biology, thermochemical engineering, and environmental policy expertise. We partner with universities, municipalities, and NGOs to develop scalable, community-centered solutions.",
       storyP3:
@@ -57,7 +57,7 @@ export default function About() {
     es: {
       storyTitle: "Nuestra Historia",
       storyP1:
-        "Fundada en 2021, BlueCarbon Energy surgió de conversaciones entre científicos marinos, tecnólogos climáticos y líderes comunitarios costeros. Reconocimos una oportunidad urgente: el sargazo—un recurso natural a menudo visto como una carga—podría convertirse en la base para energía sostenible y productos agrícolas.",
+        "Fundada en 2021, Blue Carbon Materials surgió de conversaciones entre científicos marinos, tecnólogos climáticos y líderes comunitarios costeros. Reconocimos una oportunidad urgente: el sargazo—un recurso natural a menudo visto como una carga—podría convertirse en la base para energía sostenible y productos agrícolas.",
       storyP2:
         "Nuestro enfoque respaldado por investigación combina décadas de experiencia en biología marina, ingeniería termoquímica y política ambiental. Nos asociamos con universidades, municipios y ONGs para desarrollar soluciones escalables centradas en la comunidad.",
       storyP3:
@@ -109,10 +109,14 @@ export default function About() {
   const c = content[language]
 
   const team = [
-    { name: "Mark Mathis", role: language === "en" ? "CEO" : "CEO", image: "/mark_mathis.jpeg" },
-    { name: "Dr. Maria Santos", role: language === "en" ? "Founder" : "Fundadora", image: "/placeholder-user.jpg" },
-    { name: "Prof. James Chen", role: language === "en" ? "Chief Science Officer" : "Director Científico", image: "/placeholder-user.jpg" },
-    { name: "Sofia Rodriguez", role: language === "en" ? "Director of Operations" : "Directora de Operaciones", image: "/placeholder-user.jpg" },
+    { name: "Mark Mathis", role: "CEO", image: "/mark_mathis.jpeg" },
+    { name: "Luke Mathis", role: "Co-Founder", image: "/placeholder-user.jpg" },
+    {
+      name: 'John "Cade" Johnson',
+      role: "Environmental Engineering Advisor",
+      bio: "B.S. Chemical Engineering, Georgia Tech (1983); Certificate in Biochemistry. 40+ years in industrial environmental engineering — wastewater treatment, air emissions, hazardous waste, and contaminated site remediation. Former corporate VP managing a 40-person consulting office. Now focused on carbon dioxide removal, climate justice, and STEM education.",
+      image: "/placeholder-user.jpg",
+    },
   ]
 
   return (
@@ -185,7 +189,7 @@ export default function About() {
               <h2 className="text-3xl sm:text-4xl font-bold mb-4">{c.teamTitle}</h2>
               <p className="text-muted-foreground">{c.teamSubtitle}</p>
             </div>
-            <div className="grid md:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-3 gap-8">
               {team.map((member) => (
                 <div key={member.name} className="text-center">
                   <div className="mb-4 w-32 h-32 mx-auto rounded-2xl overflow-hidden relative bg-gradient-to-br from-[#0066CC]/20 to-[#2d8a6e]/20">
@@ -198,6 +202,9 @@ export default function About() {
                   </div>
                   <h3 className="font-semibold text-lg">{member.name}</h3>
                   <p className="text-sm text-muted-foreground">{member.role}</p>
+                  {"bio" in member && member.bio && (
+                    <p className="text-xs text-muted-foreground mt-2 leading-relaxed max-w-xs mx-auto">{member.bio}</p>
+                  )}
                 </div>
               ))}
             </div>

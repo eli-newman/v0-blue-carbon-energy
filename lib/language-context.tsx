@@ -21,6 +21,7 @@ const translations: Record<string, { en: string; es: string }> = {
   "nav.technology": { en: "Technology", es: "Tecnología" },
   "nav.impact": { en: "Impact", es: "Impacto" },
   "nav.about": { en: "About Us", es: "Nosotros" },
+  "nav.partners": { en: "Partners", es: "Socios" },
   "nav.contact": { en: "Contact", es: "Contacto" },
   "nav.cta": { en: "Get Involved", es: "Participa" },
 

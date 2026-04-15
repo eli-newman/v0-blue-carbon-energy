@@ -53,6 +53,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/partners" className="text-sm text-muted-foreground hover:text-[#0066CC] transition-colors">
+                  {t("nav.partners")}
+                </Link>
+              </li>
+              <li>
                 <Link href="/contact" className="text-sm text-muted-foreground hover:text-[#0066CC] transition-colors">
                   {t("nav.contact")}
                 </Link>
@@ -78,7 +83,7 @@ export function Footer() {
 
         {/* Copyright */}
         <div className="pt-8 border-t border-[#E5DFD3] text-center text-sm text-muted-foreground">
-          <p>&copy; 2026 BlueCarbon Energy. {t("footer.rights")}</p>
+          <p>&copy; 2026 Blue Carbon Materials. {t("footer.rights")}</p>
         </div>
       </div>
     </footer>

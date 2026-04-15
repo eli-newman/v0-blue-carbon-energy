@@ -41,6 +41,7 @@ export function Header() {
     { href: "/technology", label: t("nav.technology") },
     { href: "/impact", label: t("nav.impact") },
     { href: "/about", label: t("nav.about") },
+    { href: "/partners", label: t("nav.partners") },
     { href: "/contact", label: t("nav.contact") },
   ]
 

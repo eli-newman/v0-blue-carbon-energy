@@ -117,7 +117,7 @@ export default function Home() {
           {/* Background Image */}
           <div className="absolute inset-0">
             <Image
-              src="/hero.jpg"
+              src="/main_pic.png"
               alt="Coastal sargassum seaweed"
               fill
               priority
