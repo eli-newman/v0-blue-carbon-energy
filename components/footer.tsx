@@ -77,6 +77,14 @@ export function Footer() {
                   Mark.Mathis@bluecarbonmaterials.com
                 </a>
               </li>
+              <li>
+                <a
+                  href="tel:+19703892220"
+                  className="text-sm text-muted-foreground hover:text-[#0066CC] transition-colors"
+                >
+                  +1 (970) 389-2220
+                </a>
+              </li>
             </ul>
           </div>
         </div>

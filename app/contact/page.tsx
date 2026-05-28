@@ -30,11 +30,11 @@ export default function Contact() {
       emailLuke: "luke.mathis@bluecarbonmaterials.com",
       emailNote: "Response within 24 hours",
       phone: "Phone",
-      phoneValue: "+1 (809) 555-1234",
-      phoneNote: "Monday–Friday, 9 AM–5 PM EST",
+      phoneValue: "+1 (970) 389-2220",
+      phoneNote: "Mark Mathis, Principal — Monday–Friday, 9 AM–5 PM EST",
       office: "Office",
-      officeValue: "Santo Domingo, Dominican Republic",
-      officeNote: "Regional operations across Caribbean",
+      officeValue: "Fajardo–Humacao Corridor, Puerto Rico",
+      officeNote: "Correspondence via email",
       formTitle: "Send us a Message",
       formSubtitle: "We're here to help and discuss how we can work together",
       successTitle: "Thank you! Your message has been sent.",
@@ -79,11 +79,11 @@ export default function Contact() {
       emailLuke: "luke.mathis@bluecarbonmaterials.com",
       emailNote: "Respuesta en 24 horas",
       phone: "Teléfono",
-      phoneValue: "+1 (809) 555-1234",
-      phoneNote: "Lunes–Viernes, 9 AM–5 PM EST",
+      phoneValue: "+1 (970) 389-2220",
+      phoneNote: "Mark Mathis, Principal — Lunes–Viernes, 9 AM–5 PM EST",
       office: "Oficina",
-      officeValue: "Santo Domingo, República Dominicana",
-      officeNote: "Operaciones regionales en el Caribe",
+      officeValue: "Corredor Fajardo–Humacao, Puerto Rico",
+      officeNote: "Correspondencia por correo electrónico",
       formTitle: "Envíanos un Mensaje",
       formSubtitle: "Estamos aquí para ayudar y discutir cómo podemos trabajar juntos",
       successTitle: "¡Gracias! Tu mensaje ha sido enviado.",
@@ -180,7 +180,7 @@ export default function Contact() {
               <div className="p-8 rounded-2xl bg-[#FAF8F5] border border-[#E5DFD3] text-center">
                 <div className="w-12 h-1 bg-[#2d8a6e] mx-auto mb-6 rounded-full" />
                 <h3 className="text-lg font-semibold mb-3">{c.phone}</h3>
-                <a href="tel:+18095551234" className="text-[#2d8a6e] hover:underline">
+                <a href="tel:+19703892220" className="text-[#2d8a6e] hover:underline">
                   {c.phoneValue}
                 </a>
                 <p className="text-sm text-muted-foreground mt-2">{c.phoneNote}</p>

@@ -58,47 +58,26 @@ export default function Impact() {
           image: "/tomatofarm.png",
         },
       ],
-      economicTitle: "Economic & Community Impact",
-      economicSubtitle: "Building prosperity in coastal regions",
+      economicTitle: "Projected Economic & Community Impact",
+      economicSubtitle: "Planned impact at full-scale operations",
       employment: {
-        title: "Local Employment",
+        title: "Projected Local Employment",
         items: [
-          "485+ jobs across collection, processing, and distribution",
-          "Average salary 30% above regional averages",
+          "485+ jobs projected across collection, processing, and distribution at full scale",
+          "Competitive wages planned above regional averages",
           "Training programs for skills development and advancement",
-          "Women comprise 45% of workforce leadership",
+          "Commitment to diverse and inclusive workforce leadership",
         ],
       },
       community: {
-        title: "Community Benefits",
+        title: "Community Goals",
         items: [
-          "20% of profits reinvested in local education and infrastructure",
-          "Partnerships with 8 universities for research and training",
-          "Direct support to 15 municipalities for coastal restoration",
-          "Youth mentorship programs and internships",
+          "Community reinvestment plan under development for education and infrastructure",
+          "Research partnerships being established with regional universities",
+          "Engagement with coastal municipalities for restoration initiatives",
+          "Youth mentorship programs and internships planned",
         ],
       },
-      testimonialsTitle: "What Our Partners Say",
-      testimonials: [
-        {
-          quote:
-            "Blue Carbon Materials transformed our waste problem into an economic opportunity. Our farmers now use biochar products and see 25% yield improvements.",
-          author: "Mayor Rosa Hernández",
-          role: "Municipality of Punta Cana",
-        },
-        {
-          quote:
-            "The marine ecosystem recovery we've documented in partnership areas is remarkable. Biodiversity has increased measurably in just 18 months.",
-          author: "Dr. Emmanuel Okafor",
-          role: "Marine Biology Institute",
-        },
-        {
-          quote:
-            "Working with Blue Carbon Materials gave me stable income and a career path. I'm now training others in collection techniques and management.",
-          author: "Antonio Silva",
-          role: "Operations Supervisor",
-        },
-      ],
       ctaTitle: "Be Part of the Solution",
       ctaText:
         "Join us in scaling sustainable sargassum solutions. Whether you're a municipality, researcher, partner, or investor, there's a role for you.",
@@ -145,47 +124,26 @@ export default function Impact() {
           image: "/tomatofarm.png",
         },
       ],
-      economicTitle: "Impacto Económico y Comunitario",
-      economicSubtitle: "Construyendo prosperidad en regiones costeras",
+      economicTitle: "Impacto Económico y Comunitario Proyectado",
+      economicSubtitle: "Impacto planificado a escala completa de operaciones",
       employment: {
-        title: "Empleo Local",
+        title: "Empleo Local Proyectado",
         items: [
-          "485+ empleos en recolección, procesamiento y distribución",
-          "Salario promedio 30% por encima de los promedios regionales",
+          "485+ empleos proyectados en recolección, procesamiento y distribución a escala completa",
+          "Salarios competitivos planificados por encima de los promedios regionales",
           "Programas de capacitación para desarrollo de habilidades",
-          "Las mujeres comprenden el 45% del liderazgo laboral",
+          "Compromiso con liderazgo laboral diverso e inclusivo",
         ],
       },
       community: {
-        title: "Beneficios Comunitarios",
+        title: "Metas Comunitarias",
         items: [
-          "20% de las ganancias reinvertidas en educación e infraestructura local",
-          "Asociaciones con 8 universidades para investigación y capacitación",
-          "Apoyo directo a 15 municipios para restauración costera",
-          "Programas de mentoría juvenil y pasantías",
+          "Plan de reinversión comunitaria en desarrollo para educación e infraestructura",
+          "Asociaciones de investigación siendo establecidas con universidades regionales",
+          "Coordinación con municipios costeros para iniciativas de restauración",
+          "Programas de mentoría juvenil y pasantías planificados",
         ],
       },
-      testimonialsTitle: "Lo Que Dicen Nuestros Socios",
-      testimonials: [
-        {
-          quote:
-            "Blue Carbon Materials transformó nuestro problema de desechos en una oportunidad económica. Nuestros agricultores ahora usan productos de biocarbón y ven mejoras del 25% en rendimiento.",
-          author: "Alcaldesa Rosa Hernández",
-          role: "Municipalidad de Punta Cana",
-        },
-        {
-          quote:
-            "La recuperación del ecosistema marino que hemos documentado en áreas de asociación es notable. La biodiversidad ha aumentado mediblemente en solo 18 meses.",
-          author: "Dr. Emmanuel Okafor",
-          role: "Instituto de Biología Marina",
-        },
-        {
-          quote:
-            "Trabajar con Blue Carbon Materials me dio un ingreso estable y una trayectoria profesional. Ahora estoy capacitando a otros en técnicas de recolección y gestión.",
-          author: "Antonio Silva",
-          role: "Supervisor de Operaciones",
-        },
-      ],
       ctaTitle: "Sé Parte de la Solución",
       ctaText:
         "Únete a nosotros para escalar soluciones sostenibles de sargazo. Ya seas un municipio, investigador, socio o inversionista, hay un rol para ti.",
@@ -417,25 +375,6 @@ export default function Impact() {
                   ))}
                 </ul>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Testimonials */}
-        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#FAF8F5]">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold text-center mb-16">{c.testimonialsTitle}</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              {c.testimonials.map((testimonial, index) => (
-                <div key={index} className="p-8 rounded-2xl bg-white border border-[#E5DFD3]">
-                  <div className={`w-10 h-1 ${index === 1 ? "bg-[#2d8a6e]" : "bg-[#0066CC]"} mb-6 rounded-full`} />
-                  <p className="text-muted-foreground italic mb-6 leading-relaxed">"{testimonial.quote}"</p>
-                  <div className="pt-4 border-t border-[#E5DFD3]">
-                    <p className="font-semibold">{testimonial.author}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </section>

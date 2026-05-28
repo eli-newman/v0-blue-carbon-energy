@@ -13,11 +13,6 @@ const nextConfig = {
         destination: "/technology",
         permanent: true,
       },
-      {
-        source: "/partners",
-        destination: "/about",
-        permanent: true,
-      },
     ]
   },
 }

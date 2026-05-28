@@ -51,52 +51,50 @@ export default function Partners() {
 
   const content = {
     en: {
-      modelTitle: "Partnership Model",
+      modelTitle: "Our Partners",
       modelP1:
-        "We don't believe in one-size-fits-all solutions. Each partnership is customized to local contexts, capacities, and goals. Whether you're a coastal municipality, research institution, or agricultural cooperative, we work together to develop sustainable sargassum solutions.",
+        "Blue Carbon Materials works with government agencies, operational partners, and research institutions to develop and scale sustainable sargassum solutions in Puerto Rico and the broader Caribbean.",
       modelP2:
-        "Our model prioritizes long-term, equitable relationships where all partners benefit financially, technically, and environmentally.",
+        "Our partnerships are built on shared commitment to environmental restoration, regulatory compliance, and community benefit. We are actively expanding our partner network as operations scale.",
       howTitle: "How We Partner",
       partnerTypes: [
         {
-          title: "Municipalities",
+          title: "Government & Regulatory",
           description:
-            "Coastal cities and regional governments partner with us to solve sargassum challenges, create jobs, and generate municipal revenue through biochar sales and carbon credits.",
-          focus: ["Waste management", "Local employment", "Carbon markets"],
+            "We work with federal and territorial agencies to secure permits, ensure environmental compliance, and align operations with public policy goals.",
+          focus: ["Permitting", "Environmental compliance", "Policy alignment"],
         },
         {
-          title: "Research Institutions",
+          title: "Operational Partners",
           description:
-            "Universities and research centers collaborate on process optimization, product development, and environmental monitoring. We provide real-world data and facilities.",
-          focus: ["Process innovation", "Product development", "Environmental data"],
+            "Confirmed operational partners collaborate on sargassum collection, processing logistics, and facility development across coastal sites.",
+          focus: ["Collection operations", "Processing", "Facility development"],
         },
         {
-          title: "Agricultural Partners",
+          title: "Research & Academic",
           description:
-            "Farmers and agricultural networks integrate our biochar and biostimulants into regenerative practices. We provide technical support and market linkages.",
-          focus: ["Soil health", "Yield optimization", "Sustainability"],
+            "Universities conducting field trials help validate biochar applications in agriculture and environmental restoration.",
+          focus: ["Field trials", "Product validation", "Environmental monitoring"],
         },
       ],
-      activeTitle: "Our Active Partners",
-      activeSubtitle: "Building solutions across the Caribbean and Atlantic",
-      municipalities: {
-        title: "Municipalities",
+      activeTitle: "Confirmed Partners & Engagements",
+      activeSubtitle: "Current partnerships and active regulatory engagements",
+      operationalPartners: {
+        title: "Operational & Government",
         list: [
-          { name: "Municipality of Punta Cana, Dominican Republic", focus: "Collection operations, waste management" },
-          { name: "Puerto Plata Municipal Government", focus: "Processing facility development, employment" },
-          { name: "Belizean Coast Conservation Authority", focus: "Marine restoration, research partnership" },
-          { name: "Barbados Environmental Ministry", focus: "Regional coordination, policy development" },
+          { name: "Reclaim Nature, Inc.", focus: "Confirmed operational partner per signed USACE Letter of Intent" },
+          { name: "USACE Caribbean District", focus: "Active regulatory engagement — Letter of Intent signed" },
+          { name: "Puerto Rico DDEC", focus: "Potential collaboration on economic development and permitting" },
         ],
       },
-      research: {
-        title: "Research Institutions",
+      researchPartners: {
+        title: "Research & Field Trials",
         list: [
-          { name: "University of the West Indies", focus: "Marine biology, carbon cycling research" },
-          { name: "Instituto Tecnológico de Santo Domingo", focus: "Process engineering optimization" },
-          { name: "Caribbean Institute for Marine Research", focus: "Ecosystem monitoring, biodiversity studies" },
-          { name: "Global Biochar Initiative", focus: "Product certification, standards development" },
+          { name: "University partners conducting biochar field trials", focus: "Agricultural applications, yield improvement studies" },
         ],
       },
+      becomePartnerTitle: "Become a Partner",
+      becomePartnerText: "We are actively seeking partnerships with coastal municipalities, research institutions, agricultural cooperatives, and environmental organizations across the Caribbean. If your organization shares our commitment to sustainable sargassum solutions, we'd like to hear from you.",
       buildTitle: "Build With Us",
       buildSubtitle: "Interested in using our materials or working with us on a project? Tell us what you're building.",
       buildNameLabel: "Full Name",
@@ -122,64 +120,50 @@ export default function Partners() {
       ctaButton: "Explore Partnership Opportunities",
     },
     es: {
-      modelTitle: "Modelo de Asociación",
+      modelTitle: "Nuestros Socios",
       modelP1:
-        "No creemos en soluciones únicas para todos. Cada asociación se personaliza según los contextos locales, capacidades y objetivos. Ya seas un municipio costero, institución de investigación o cooperativa agrícola, trabajamos juntos para desarrollar soluciones sostenibles de sargazo.",
+        "Blue Carbon Materials trabaja con agencias gubernamentales, socios operativos e instituciones de investigación para desarrollar y escalar soluciones sostenibles de sargazo en Puerto Rico y el Caribe en general.",
       modelP2:
-        "Nuestro modelo prioriza relaciones a largo plazo y equitativas donde todos los socios se benefician financiera, técnica y ambientalmente.",
+        "Nuestras asociaciones se basan en un compromiso compartido con la restauración ambiental, el cumplimiento regulatorio y el beneficio comunitario. Estamos expandiendo activamente nuestra red de socios a medida que crecen las operaciones.",
       howTitle: "Cómo Nos Asociamos",
       partnerTypes: [
         {
-          title: "Municipalidades",
+          title: "Gobierno y Regulación",
           description:
-            "Las ciudades costeras y los gobiernos regionales se asocian con nosotros para resolver los desafíos del sargazo, crear empleos y generar ingresos municipales a través de ventas de biocarbón y créditos de carbono.",
-          focus: ["Gestión de residuos", "Empleo local", "Mercados de carbono"],
+            "Trabajamos con agencias federales y territoriales para asegurar permisos, garantizar el cumplimiento ambiental y alinear operaciones con objetivos de políticas públicas.",
+          focus: ["Permisos", "Cumplimiento ambiental", "Alineación de políticas"],
         },
         {
-          title: "Instituciones de Investigación",
+          title: "Socios Operativos",
           description:
-            "Universidades y centros de investigación colaboran en optimización de procesos, desarrollo de productos y monitoreo ambiental. Proporcionamos datos del mundo real e instalaciones.",
-          focus: ["Innovación de procesos", "Desarrollo de productos", "Datos ambientales"],
+            "Socios operativos confirmados colaboran en la recolección de sargazo, logística de procesamiento y desarrollo de instalaciones en sitios costeros.",
+          focus: ["Operaciones de recolección", "Procesamiento", "Desarrollo de instalaciones"],
         },
         {
-          title: "Socios Agrícolas",
+          title: "Investigación y Academia",
           description:
-            "Agricultores y redes agrícolas integran nuestro biocarbón y bioestimulantes en prácticas regenerativas. Proporcionamos soporte técnico y vínculos de mercado.",
-          focus: ["Salud del suelo", "Optimización del rendimiento", "Sostenibilidad"],
+            "Universidades realizando ensayos de campo ayudan a validar aplicaciones de biocarbón en agricultura y restauración ambiental.",
+          focus: ["Ensayos de campo", "Validación de productos", "Monitoreo ambiental"],
         },
       ],
-      activeTitle: "Nuestros Socios Activos",
-      activeSubtitle: "Construyendo soluciones en el Caribe y el Atlántico",
-      municipalities: {
-        title: "Municipalidades",
+      activeTitle: "Socios y Compromisos Confirmados",
+      activeSubtitle: "Asociaciones actuales y compromisos regulatorios activos",
+      operationalPartners: {
+        title: "Operativos y Gobierno",
         list: [
-          {
-            name: "Municipalidad de Punta Cana, República Dominicana",
-            focus: "Operaciones de recolección, gestión de residuos",
-          },
-          { name: "Gobierno Municipal de Puerto Plata", focus: "Desarrollo de instalaciones de procesamiento, empleo" },
-          {
-            name: "Autoridad de Conservación de la Costa de Belice",
-            focus: "Restauración marina, asociación de investigación",
-          },
-          { name: "Ministerio de Medio Ambiente de Barbados", focus: "Coordinación regional, desarrollo de políticas" },
+          { name: "Reclaim Nature, Inc.", focus: "Socio operativo confirmado según Carta de Intención firmada con USACE" },
+          { name: "USACE Distrito del Caribe", focus: "Compromiso regulatorio activo — Carta de Intención firmada" },
+          { name: "DDEC Puerto Rico", focus: "Colaboración potencial en desarrollo económico y permisos" },
         ],
       },
-      research: {
-        title: "Instituciones de Investigación",
+      researchPartners: {
+        title: "Investigación y Ensayos de Campo",
         list: [
-          {
-            name: "Universidad de las Indias Occidentales",
-            focus: "Biología marina, investigación del ciclo del carbono",
-          },
-          { name: "Instituto Tecnológico de Santo Domingo", focus: "Optimización de ingeniería de procesos" },
-          {
-            name: "Instituto Caribeño de Investigación Marina",
-            focus: "Monitoreo de ecosistemas, estudios de biodiversidad",
-          },
-          { name: "Iniciativa Global de Biocarbón", focus: "Certificación de productos, desarrollo de estándares" },
+          { name: "Socios universitarios realizando ensayos de biocarbón", focus: "Aplicaciones agrícolas, estudios de mejora de rendimiento" },
         ],
       },
+      becomePartnerTitle: "Conviértete en Socio",
+      becomePartnerText: "Estamos buscando activamente asociaciones con municipios costeros, instituciones de investigación, cooperativas agrícolas y organizaciones ambientales en todo el Caribe. Si tu organización comparte nuestro compromiso con soluciones sostenibles de sargazo, nos gustaría saber de ti.",
       buildTitle: "Construye Con Nosotros",
       buildSubtitle: "¿Interesado en usar nuestros materiales o trabajar con nosotros en un proyecto? Cuéntanos qué estás construyendo.",
       buildNameLabel: "Nombre Completo",
@@ -269,10 +253,10 @@ export default function Partners() {
               <div>
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-1 bg-[#0066CC] rounded-full" />
-                  <h3 className="text-xl font-bold text-[#0066CC]">{c.municipalities.title}</h3>
+                  <h3 className="text-xl font-bold text-[#0066CC]">{c.operationalPartners.title}</h3>
                 </div>
                 <div className="space-y-4">
-                  {c.municipalities.list.map((partner) => (
+                  {c.operationalPartners.list.map((partner) => (
                     <div key={partner.name} className="p-5 rounded-xl bg-[#FAF8F5] border border-[#E5DFD3]">
                       <h4 className="font-semibold mb-1">{partner.name}</h4>
                       <p className="text-sm text-muted-foreground">{partner.focus}</p>
@@ -284,15 +268,20 @@ export default function Partners() {
               <div>
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-1 bg-[#2d8a6e] rounded-full" />
-                  <h3 className="text-xl font-bold text-[#2d8a6e]">{c.research.title}</h3>
+                  <h3 className="text-xl font-bold text-[#2d8a6e]">{c.researchPartners.title}</h3>
                 </div>
                 <div className="space-y-4">
-                  {c.research.list.map((partner) => (
+                  {c.researchPartners.list.map((partner) => (
                     <div key={partner.name} className="p-5 rounded-xl bg-[#FAF8F5] border border-[#E5DFD3]">
                       <h4 className="font-semibold mb-1">{partner.name}</h4>
                       <p className="text-sm text-muted-foreground">{partner.focus}</p>
                     </div>
                   ))}
+                </div>
+
+                <div className="mt-8 p-6 rounded-xl bg-[#2d8a6e]/10 border border-[#2d8a6e]/30">
+                  <h4 className="font-semibold text-[#2d8a6e] mb-2">{c.becomePartnerTitle}</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{c.becomePartnerText}</p>
                 </div>
               </div>
             </div>

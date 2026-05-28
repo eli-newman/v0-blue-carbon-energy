@@ -116,7 +116,7 @@ export default function Materials() {
         {
           stat: "Net -",
           label: "Carbon Negative Lifecycle",
-          detail: "From harvest to installation, our materials sequester more carbon than they emit. Verified by third-party lifecycle analysis.",
+          detail: "Designed for a carbon-negative lifecycle, with third-party lifecycle analysis currently in development.",
         },
       ],
       visionTitle: "Building a Circular Caribbean",
@@ -235,7 +235,7 @@ export default function Materials() {
         {
           stat: "Neto -",
           label: "Ciclo de Vida Carbono Negativo",
-          detail: "Desde la cosecha hasta la instalación, nuestros materiales secuestran más carbono del que emiten.",
+          detail: "Diseñado para un ciclo de vida carbono-negativo, con análisis de ciclo de vida por terceros actualmente en desarrollo.",
         },
       ],
       visionTitle: "Construyendo un Caribe Circular",
