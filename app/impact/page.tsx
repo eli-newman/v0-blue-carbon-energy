@@ -22,10 +22,10 @@ export default function Impact() {
       metricsSubtitle: "Projected impact based on current pilot operations and expansion plans",
       metricsNote: "Target metrics based on full-scale deployment across partner sites",
       metrics: [
-        { metric: "125K+", label: "Metric Tons of Sargassum Processed", sublabel: "(Annual Target)" },
-        { metric: "38K", label: "Metric Tons CO₂ Sequestered", sublabel: "(Annual Target)" },
-        { metric: "485+", label: "Jobs Created & Sustained", sublabel: "(Full-Scale Target)" },
-        { metric: "12", label: "Active Operational Sites", sublabel: "(Planned)" },
+        { metric: "40K", label: "Metric Tons Annual Processing Capacity", sublabel: "(Projected)" },
+        { metric: "17.5K", label: "Metric Tons CO₂ Sequestered", sublabel: "(Projected Annual)" },
+        { metric: "485+", label: "Projected Jobs Created", sublabel: "(Full-Scale Target)" },
+        { metric: "12", label: "Planned Operational Sites", sublabel: "(Planned)" },
       ],
       climateTitle: "Climate Impact",
       climateItems: [
@@ -88,10 +88,10 @@ export default function Impact() {
       metricsSubtitle: "Impacto proyectado basado en operaciones piloto actuales y planes de expansión",
       metricsNote: "Métricas objetivo basadas en despliegue a escala completa en sitios asociados",
       metrics: [
-        { metric: "125K+", label: "Toneladas Métricas de Sargazo Procesado", sublabel: "(Meta Anual)" },
-        { metric: "38K", label: "Toneladas Métricas de CO₂ Secuestrado", sublabel: "(Meta Anual)" },
-        { metric: "485+", label: "Empleos Creados y Sostenidos", sublabel: "(Meta a Escala Completa)" },
-        { metric: "12", label: "Sitios Operativos Activos", sublabel: "(Planificado)" },
+        { metric: "40K", label: "Toneladas Métricas de Capacidad Anual de Procesamiento", sublabel: "(Proyectado)" },
+        { metric: "17.5K", label: "Toneladas Métricas de CO₂ Secuestrado", sublabel: "(Proyectado Anual)" },
+        { metric: "485+", label: "Empleos Proyectados Creados", sublabel: "(Meta a Escala Completa)" },
+        { metric: "12", label: "Sitios Operativos Planificados", sublabel: "(Planificado)" },
       ],
       climateTitle: "Impacto Climático",
       climateItems: [
@@ -161,28 +161,28 @@ export default function Impact() {
           if (entry.isIntersecting && !hasAnimated) {
             setHasAnimated(true)
 
-            // Animate first metric to 125000
+            // Animate first metric to 40000
             const duration = 2000
             const steps = 60
-            const increment1 = 125000 / steps
+            const increment1 = 40000 / steps
             let current1 = 0
             const timer1 = setInterval(() => {
               current1 += increment1
-              if (current1 >= 125000) {
-                setMetric1(125000)
+              if (current1 >= 40000) {
+                setMetric1(40000)
                 clearInterval(timer1)
               } else {
                 setMetric1(Math.floor(current1))
               }
             }, duration / steps)
 
-            // Animate second metric to 38000
-            const increment2 = 38000 / steps
+            // Animate second metric to 17500
+            const increment2 = 17500 / steps
             let current2 = 0
             const timer2 = setInterval(() => {
               current2 += increment2
-              if (current2 >= 38000) {
-                setMetric2(38000)
+              if (current2 >= 17500) {
+                setMetric2(17500)
                 clearInterval(timer2)
               } else {
                 setMetric2(Math.floor(current2))
@@ -254,7 +254,7 @@ export default function Impact() {
               </div>
               <div className="p-8 rounded-2xl bg-[#FAF8F5] border border-[#E5DFD3] text-center">
                 <div className="text-5xl font-bold text-[#2d8a6e] mb-3">
-                  {(metric2 / 1000).toFixed(0)}K
+                  {(metric2 / 1000).toFixed(1)}K
                 </div>
                 <p className="text-muted-foreground text-sm mb-1">{c.metrics[1].label}</p>
                 <p className="text-xs text-muted-foreground/70">{c.metrics[1].sublabel}</p>

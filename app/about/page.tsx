@@ -12,11 +12,13 @@ export default function About() {
     en: {
       storyTitle: "Our Story",
       storyP1:
-        "Founded in 2021, Blue Carbon Materials grew from the recognition that sargassum — a natural resource overwhelming Caribbean coastlines — could become the foundation for sustainable building materials and agricultural products. Since then, the company has moved from concept to active permitting and pilot operations.",
+        "Though Blue Carbon Materials is a new company, the idea behind it has been years in the making.",
       storyP2:
-        "Key milestones include filing a Letter of Intent with the U.S. Army Corps of Engineers (USACE), engaging with Puerto Rico's Department of Natural and Environmental Resources (DRNA) and DDEC, and initiating field trials for biochar agricultural applications.",
+        "When our founder moved to Puerto Rico in 2022, he quickly fell in love with the island's natural beauty, vibrant culture, and rich coastal ecosystems. What he didn't love was the overwhelming presence of rotting sargassum, a growing environmental problem that fouled the beaches, disrupted marine ecosystems, and filled the air with an unpleasant odor while he fished along the island's eastern coast and throughout his neighborhood during the summer months.",
       storyP3:
-        "Blue Carbon Materials is establishing its first commercial facility in Fajardo, Puerto Rico, with plans for Caribbean-wide expansion following initial operations.",
+        "Inspired by this increasingly urgent challenge, he leveraged his background in sustainable materials processing to found Blue Carbon Materials. Drawing on his experience developing environmentally focused processing technologies, he set out to transform an ecological nuisance into valuable, sustainable products that create both environmental and economic impact.",
+      storyP4:
+        "While addressing the sargassum crisis, Blue Carbon Materials is also committed to strengthening local communities by creating jobs, improving agricultural productivity, developing sustainable building materials, and helping restore these vital coastal ecosystems to their natural beauty.",
       missionTitle: "Our Mission",
       missionText:
         "To create sustainable solutions that transform environmental challenges into economic opportunities for coastal communities, while generating clean energy and restoring ecosystems.",
@@ -57,11 +59,13 @@ export default function About() {
     es: {
       storyTitle: "Nuestra Historia",
       storyP1:
-        "Fundada en 2021, Blue Carbon Materials nació del reconocimiento de que el sargazo — un recurso natural que abruma las costas del Caribe — podría convertirse en la base para materiales de construcción sostenibles y productos agrícolas. Desde entonces, la empresa ha avanzado del concepto a permisos activos y operaciones piloto.",
+        "Aunque Blue Carbon Materials es una empresa nueva, la idea detrás de ella lleva años gestándose.",
       storyP2:
-        "Los hitos clave incluyen la presentación de una Carta de Intención ante el Cuerpo de Ingenieros del Ejército de EE.UU. (USACE), la coordinación con el Departamento de Recursos Naturales y Ambientales de Puerto Rico (DRNA) y DDEC, y el inicio de ensayos de campo para aplicaciones agrícolas de biocarbón.",
+        "Cuando nuestro fundador se mudó a Puerto Rico en 2022, rápidamente se enamoró de la belleza natural de la isla, su cultura vibrante y sus ricos ecosistemas costeros. Lo que no le gustó fue la abrumadora presencia de sargazo en descomposición, un problema ambiental creciente que ensuciaba las playas, alteraba los ecosistemas marinos y llenaba el aire de un olor desagradable mientras pescaba a lo largo de la costa este de la isla y por su vecindario durante los meses de verano.",
       storyP3:
-        "Blue Carbon Materials está estableciendo su primera instalación comercial en Fajardo, Puerto Rico, con planes de expansión por todo el Caribe tras las operaciones iniciales.",
+        "Inspirado por este desafío cada vez más urgente, aprovechó su experiencia en el procesamiento sostenible de materiales para fundar Blue Carbon Materials. Basándose en su experiencia desarrollando tecnologías de procesamiento con enfoque ambiental, se propuso transformar una molestia ecológica en productos valiosos y sostenibles que generan impacto tanto ambiental como económico.",
+      storyP4:
+        "Además de abordar la crisis del sargazo, Blue Carbon Materials también está comprometida con el fortalecimiento de las comunidades locales mediante la creación de empleos, la mejora de la productividad agrícola, el desarrollo de materiales de construcción sostenibles y la restauración de estos vitales ecosistemas costeros a su belleza natural.",
       missionTitle: "Nuestra Misión",
       missionText:
         "Crear soluciones sostenibles que transformen los desafíos ambientales en oportunidades económicas para las comunidades costeras, mientras generamos energía limpia y restauramos ecosistemas.",
@@ -117,7 +121,7 @@ export default function About() {
     },
     {
       name: "Luke Mathis",
-      role: "Co-Founder",
+      role: "Founding Executive & Strategy Director",
       bio: "Luke Mathis is the Co-Founder of Blue Carbon Materials and a recent graduate of the Daniels College of Business at the University of Denver. Since BCM's early development stages, Luke has worked closely with leadership on financial planning, operational organization, and growth strategy. His primary focus includes supporting financing initiatives, scalable business development, and investor-facing materials, while also overseeing BCM's social media presence and public brand positioning.",
       image: "/luke_mathis.jpg",
     },
@@ -125,13 +129,19 @@ export default function About() {
       name: "Julianne Collazo",
       role: "Director of Communications",
       bio: "A board member of the largest airport development project in the Caribbean, Julianne Collazo is a multilingual entrepreneur and business leader fluent in English, Spanish, and Italian, with over two decades of experience turning connections into results across Latin America and the Caribbean. As founder and president of Commercial Banking Group and Midwest Holdings Investment for 19 years, Julianne built deep expertise in financial management, institutional negotiations, and strategic partnerships.",
-      image: "/placeholder-user.jpg",
+      image: "/julianne_collazo.jpg",
     },
     {
       name: "Rosalind Humphreys Pérez",
       role: "Permit Compliance Lead",
       bio: "Rosalind Humphreys Pérez serves as Permit Compliance Lead, ensuring all permitting requirements are met and maintained across coastal environmental operations. She brings decades of experience in program management and operations, including startup environments where she built and managed systems from the ground up. She oversees adherence to permit conditions throughout project execution, proactively identifying risk and ensuring operations remain within regulatory limits.",
       image: "/rosalind_humphreys.jpg",
+    },
+    {
+      name: 'John "Cade" Johnson',
+      role: "Chemist",
+      bio: 'John "Cade" Johnson holds a Bachelor of Chemical Engineering from Georgia Tech (1983) with a certificate in biochemistry. He worked in the field of environmental engineering consulting until retirement — which was official some years ago, but seems to be a difficult profession to quit. During his years of gainful employment, he focused on industrial environmental issues — wastewater treatment, air emission controls and permitting, hazardous and toxic waste management, and contaminated site remediation. He managed projects with expenditures in the millions of dollars and directed engineering teams of dozens. He served as a corporate vice president and managed a consulting office of 40 employees. In recent years, he has shifted focus to climate change mitigation efforts. His interests are in carbon dioxide removal, climate justice, and sustainability improvements. He has gained extensive experience training youth in STEM (Science, Technology, Engineering and Mathematics).',
+      image: "/placeholder-user.jpg",
     },
   ]
 
@@ -155,7 +165,8 @@ export default function About() {
                 <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-8">{c.storyTitle}</h1>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">{c.storyP1}</p>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">{c.storyP2}</p>
-                <p className="text-lg text-muted-foreground leading-relaxed">{c.storyP3}</p>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-6">{c.storyP3}</p>
+                <p className="text-lg text-muted-foreground leading-relaxed">{c.storyP4}</p>
               </div>
             </div>
           </div>

@@ -21,13 +21,13 @@ export default function Technology() {
           step: "Collection",
           details:
             "Sargassum is harvested from beaches using environmentally conscious methods. Our marine-safe collection process protects ecosystems while removing excess biomass that would otherwise decompose and release methane.",
-          image: "/get_weed.png",
+          image: "/sargassum-harvest.jpg",
         },
         {
           step: "Drying & Pre-processing",
           details:
             "Collected seaweed is transported to our facilities for mechanical drying and preliminary processing. Sand, salt, and contaminants are removed. Recycled plastics are sorted and shredded for composite blending.",
-          image: "/dry_da_weed.jpeg",
+          image: "/mechanical-dryer.jpg",
         },
         {
           step: "Thermochemical Conversion",
@@ -39,7 +39,7 @@ export default function Technology() {
           step: "Composite Manufacturing",
           details:
             "Sargassum fiber and recycled plastic are compounded into composite pellets, then extruded or molded into boards, tiles, and structural profiles. Biochar and biostimulants are refined for agricultural markets.",
-          image: "/factory.jpg",
+          image: "/composite-decking.jpg",
         },
       ],
       outputsTitle: "What Comes Out",
@@ -94,13 +94,13 @@ export default function Technology() {
           step: "Recolección",
           details:
             "El sargazo se cosecha de las playas utilizando métodos ambientalmente conscientes. Nuestro proceso protege los ecosistemas mientras elimina biomasa excedente que de otro modo se descompondría liberando metano.",
-          image: "/get_weed.png",
+          image: "/sargassum-harvest.jpg",
         },
         {
           step: "Secado y Preprocesamiento",
           details:
             "Las algas recolectadas se transportan a nuestras instalaciones para secado mecánico y procesamiento preliminar. Se eliminan arena, sal y contaminantes. Los plásticos reciclados se clasifican y trituran para mezcla de compuestos.",
-          image: "/dry_da_weed.jpeg",
+          image: "/mechanical-dryer.jpg",
         },
         {
           step: "Conversión Termoquímica",
@@ -112,7 +112,7 @@ export default function Technology() {
           step: "Manufactura de Compuestos",
           details:
             "La fibra de sargazo y plástico reciclado se componen en pellets, luego se extruyen o moldean en tableros, tejas y perfiles estructurales. El biocarbón y bioestimulantes se refinan para mercados agrícolas.",
-          image: "/factory.jpg",
+          image: "/composite-decking.jpg",
         },
       ],
       outputsTitle: "Lo Que Producimos",

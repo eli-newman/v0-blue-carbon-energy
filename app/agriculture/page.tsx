@@ -44,9 +44,9 @@ export default function Agriculture() {
           applications: ["Vegetable farms", "Tropical fruit", "Nurseries", "Organic agriculture"],
         },
         {
-          name: "Biochar-Compost Blend",
+          name: "BioInoculated BioChar",
           description:
-            "Pre-charged biochar blended with locally sourced compost for immediate soil benefits. The biochar matrix holds nutrients from the compost and releases them slowly to plants.",
+            "A carbon-negative, high-surface-area biochar impregnated under vacuum with concentrated sargassum-derived biostimulants and soluble organic compounds, designed to serve as a carrier and controlled-release delivery system for plant nutrients, polysaccharides, and bioactive molecules while improving soil structure, water retention, and microbial activity.",
           benefits: [
             "Ready-to-apply — no charging period",
             "Balanced nutrient profile",
@@ -154,9 +154,9 @@ export default function Agriculture() {
           applications: ["Granjas de vegetales", "Fruta tropical", "Viveros", "Agricultura orgánica"],
         },
         {
-          name: "Mezcla Biocarbón-Compost",
+          name: "BioChar BioInoculado",
           description:
-            "Biocarbón pre-cargado mezclado con compost local para beneficios inmediatos al suelo. La matriz de biocarbón retiene nutrientes del compost y los libera lentamente.",
+            "Un biocarbón carbono-negativo de alta superficie específica, impregnado al vacío con bioestimulantes concentrados derivados de sargazo y compuestos orgánicos solubles, diseñado para servir como portador y sistema de liberación controlada de nutrientes vegetales, polisacáridos y moléculas bioactivas, mientras mejora la estructura del suelo, la retención de agua y la actividad microbiana.",
           benefits: [
             "Listo para aplicar — sin período de carga",
             "Perfil de nutrientes balanceado",

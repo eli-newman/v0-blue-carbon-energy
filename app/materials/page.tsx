@@ -22,12 +22,14 @@ export default function Materials() {
           description:
             "Structural and decorative boards made from sargassum fiber and recycled plastic matrix. Ideal for walls, ceilings, partitions, and interior finishing in residential and commercial construction.",
           specs: ["Rot & termite resistant", "Waterproof", "Lightweight", "Machinable — cuts, drills, screws like wood"],
+          image: "/composite-boards.jpg",
         },
         {
           name: "Composite Tiles",
           description:
             "Durable flooring and roofing tiles engineered for tropical climates. UV-stable coloring throughout the material — no paint or coating required.",
           specs: ["UV stable", "Slip resistant", "No sealing required", "Available in multiple profiles"],
+          image: "/composite-tiles.jpg",
         },
         {
           name: "Structural Profiles",
@@ -141,12 +143,14 @@ export default function Materials() {
           description:
             "Tableros estructurales y decorativos hechos de fibra de sargazo y matriz de plástico reciclado. Ideales para paredes, techos, particiones y acabados interiores en construcción residencial y comercial.",
           specs: ["Resistente a putrefacción y termitas", "Impermeable", "Ligero", "Maquinable — corta, perfora y atornilla como madera"],
+          image: "/composite-boards.jpg",
         },
         {
           name: "Tejas Compuestas",
           description:
             "Tejas duraderas para pisos y techos diseñadas para climas tropicales. Color estable a UV en todo el material — sin pintura ni recubrimiento necesario.",
           specs: ["Estable a UV", "Antideslizante", "No requiere sellado", "Disponible en múltiples perfiles"],
+          image: "/composite-tiles.jpg",
         },
         {
           name: "Perfiles Estructurales",
@@ -282,15 +286,21 @@ export default function Materials() {
                   key={product.name}
                   className="p-8 rounded-2xl bg-[#FAF8F5] border border-[#E5DFD3] hover:border-[#0066CC]/30 hover:shadow-lg transition-all duration-300"
                 >
-                  {/* Conceptual visual placeholder */}
-                  <div className="h-48 rounded-xl bg-gradient-to-br from-[#0066CC]/5 to-[#2d8a6e]/10 mb-6 flex items-center justify-center border border-[#E5DFD3]">
-                    <div className="text-center">
-                      <div className={`text-5xl font-bold mb-2 ${index % 2 === 0 ? "text-[#0066CC]/20" : "text-[#2d8a6e]/20"}`}>
-                        {["◫", "⬡", "▦", "●"][index]}
-                      </div>
-                      <p className="text-sm text-muted-foreground/60 font-medium">{product.name}</p>
+                  {/* Product visual — real photo when available, otherwise conceptual placeholder */}
+                  {product.image ? (
+                    <div className="relative h-48 rounded-xl mb-6 overflow-hidden border border-[#E5DFD3]">
+                      <Image src={product.image} alt={product.name} fill className="object-cover" />
                     </div>
-                  </div>
+                  ) : (
+                    <div className="h-48 rounded-xl bg-gradient-to-br from-[#0066CC]/5 to-[#2d8a6e]/10 mb-6 flex items-center justify-center border border-[#E5DFD3]">
+                      <div className="text-center">
+                        <div className={`text-5xl font-bold mb-2 ${index % 2 === 0 ? "text-[#0066CC]/20" : "text-[#2d8a6e]/20"}`}>
+                          {["◫", "⬡", "▦", "●"][index]}
+                        </div>
+                        <p className="text-sm text-muted-foreground/60 font-medium">{product.name}</p>
+                      </div>
+                    </div>
+                  )}
                   <div className={`w-12 h-1 ${index % 2 === 0 ? "bg-[#0066CC]" : "bg-[#2d8a6e]"} mb-4 rounded-full`} />
                   <h3 className="text-xl font-bold mb-3">{product.name}</h3>
                   <p className="text-muted-foreground leading-relaxed mb-6 text-sm">{product.description}</p>

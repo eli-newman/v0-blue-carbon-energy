@@ -102,7 +102,7 @@ export default function Home() {
   }, [hasAnimated])
 
   const processSteps = [
-    { step: "01", titleKey: "home.process.step1.title", descKey: "home.process.step1.desc", image: "/get_weed.png" },
+    { step: "01", titleKey: "home.process.step1.title", descKey: "home.process.step1.desc", image: "/sargassum-harvest.jpg" },
     { step: "02", titleKey: "home.process.step2.title", descKey: "home.process.step2.desc", image: "/process.png" },
     { step: "03", titleKey: "home.process.step3.title", descKey: "home.process.step3.desc", image: "/factory.jpg" },
     { step: "04", titleKey: "home.process.step4.title", descKey: "home.process.step4.desc", image: "/cucs.jpg" },
