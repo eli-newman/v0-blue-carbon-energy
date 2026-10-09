@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://bluecarbon.org/sitemap.xml",
+    sitemap: "https://www.bluecarbonmaterials.com/sitemap.xml",
   }
 }

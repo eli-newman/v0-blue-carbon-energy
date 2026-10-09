@@ -33,12 +33,16 @@ export const metadata: Metadata = {
     "renewable energy",
     "climate tech",
   ],
-  metadataBase: new URL("https://bluecarbon.org"),
+  icons: {
+    icon: "/icon.svg",
+    apple: "/apple-icon.png",
+  },
+  metadataBase: new URL("https://www.bluecarbonmaterials.com"),
   openGraph: {
     title: "Blue Carbon Materials - Turning Ocean Waste Into High-Performance Building Materials",
     description:
       "Converting sargassum and recycled plastics into composites, agricultural inputs, and energy through carbon-negative manufacturing.",
-    url: "https://bluecarbon.org",
+    url: "https://www.bluecarbonmaterials.com",
     siteName: "Blue Carbon Materials",
     type: "website",
   },

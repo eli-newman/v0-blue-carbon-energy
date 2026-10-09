@@ -158,6 +158,8 @@ export default function About() {
                   src="/team-working-on-sustainable-ocean-research-laborat.jpg"
                   alt="Blue Carbon Materials research and development team"
                   fill
+                  priority
+                  sizes="(min-width: 768px) 50vw, 100vw"
                   className="object-cover"
                 />
               </div>
