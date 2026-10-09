@@ -117,42 +117,38 @@ export default function Home() {
           {/* Background Image */}
           <div className="absolute inset-0">
             <Image
-              src="/main_pic.png"
-              alt="Coastal sargassum seaweed"
+              src="/hero-beach.jpg"
+              alt="Sargassum seaweed and plastic waste washed up on a Caribbean beach"
               fill
               priority
-              className="object-cover"
-              quality={90}
+              sizes="100vw"
+              className="object-cover object-[88%_center] md:object-[65%_center]"
+              quality={85}
             />
           </div>
 
-          {/* Subtle overlay for text readability */}
-          <div className="absolute inset-0 bg-black/20" />
+          {/* Scrims: dark on the text side, plus top and bottom, so text stays readable on any screen */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-transparent" />
+          <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/50 to-transparent" />
+          <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/50 to-transparent" />
 
-          <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 sm:pb-32">
-            <div className="grid md:grid-cols-2 gap-8 items-end">
-              {/* Left side - Headline and Tagline */}
-              <div className="text-left">
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 text-balance leading-tight">
-                  {t("home.hero.headline")}
-                </h1>
-                <p className="text-2xl sm:text-3xl font-bold text-[#0066CC] bg-white/95 inline-block px-4 py-2 rounded-lg">
-                  {t("home.hero.tagline")}
-                </p>
-              </div>
-
-              {/* Right side - Description and CTA */}
-              <div className="text-right flex flex-col items-end">
-                <p className="text-xl sm:text-2xl text-white mb-8 max-w-lg text-balance">
-                  {t("home.hero.subheadline")}
-                </p>
-                <Link
-                  href="/materials"
-                  className="inline-block px-8 py-4 bg-white text-[#0066CC] font-semibold rounded-lg hover:bg-[#0066CC] hover:text-white transition-all text-lg border-2 border-white shadow-lg hover:shadow-xl"
-                >
-                  {t("home.hero.cta")}
-                </Link>
-              </div>
+          <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24">
+            <div className="max-w-2xl text-left">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-5 text-balance leading-[1.1] drop-shadow-md">
+                {t("home.hero.headline").replace(/-/g, "‑")}
+              </h1>
+              <p className="text-lg sm:text-xl font-semibold text-[#0066CC] bg-white/95 inline-block px-4 py-2 rounded-lg mb-6 text-balance">
+                {t("home.hero.tagline")}
+              </p>
+              <p className="text-lg sm:text-xl text-white/95 mb-8 max-w-xl text-pretty drop-shadow">
+                {t("home.hero.subheadline")}
+              </p>
+              <Link
+                href="/materials"
+                className="inline-block px-8 py-4 bg-white text-[#0066CC] font-semibold rounded-lg hover:bg-[#0066CC] hover:text-white transition-all text-lg border-2 border-white shadow-lg hover:shadow-xl"
+              >
+                {t("home.hero.cta")}
+              </Link>
             </div>
           </div>
         </section>
