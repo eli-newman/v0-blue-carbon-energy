@@ -49,25 +49,26 @@ export function Header() {
     <header className={`fixed top-0 z-50 w-full transition-all duration-300 ${
       isTransparent
         ? "bg-transparent"
-        : "bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 border-b border-[#E5DFD3]"
+        : "bg-[#F7F3EA]/97 backdrop-blur border-b border-[#D8CFBB]"
     }`}>
-      <nav className="flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <nav className="flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8 max-w-[84rem] mx-auto">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-1 hover:opacity-80 transition-opacity" onClick={handleNavClick}>
-          <span className={`text-xl font-bold transition-colors ${isTransparent ? "text-white" : "text-[#0066CC]"}`}>Blue</span>
-          <span className={`text-xl font-bold transition-colors ${isTransparent ? "text-white" : "text-[#2d8a6e]"}`}>Carbon</span>
+        <Link href="/" className="flex items-center hover:opacity-80 transition-opacity" onClick={handleNavClick} aria-label="Blue Carbon Materials home">
+          <span className={`whitespace-nowrap font-[family-name:var(--font-display)] text-xl sm:text-2xl tracking-tight transition-colors ${isTransparent ? "text-white" : "text-[#0E4A5A]"}`}>
+            Blue Carbon <span className={`hidden min-[400px]:inline ${isTransparent ? "text-white/70" : "text-[#4A7A55]"}`}>Materials</span>
+          </span>
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden xl:flex items-center gap-7">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium transition-colors ${
+              className={`whitespace-nowrap text-sm font-medium transition-colors ${
                 isTransparent
                   ? "text-white hover:text-white/80"
-                  : "text-foreground hover:text-[#0066CC]"
+                  : "text-foreground hover:text-[#0E4A5A]"
               }`}
               onClick={handleNavClick}
             >
@@ -77,22 +78,22 @@ export function Header() {
         </div>
 
         {/* Language Toggle & CTA */}
-        <div className="flex items-center gap-4">
-          <div className={`flex items-center rounded-lg overflow-hidden transition-all ${
+        <div className="flex items-center gap-2 sm:gap-4">
+          <div className={`flex items-center overflow-hidden transition-all ${
             isTransparent
               ? "border border-white/30 bg-white/10 backdrop-blur-sm"
-              : "border border-[#E5DFD3]"
+              : "border border-[#D8CFBB]"
           }`}>
             <button
               onClick={() => setLanguage("en")}
               className={`px-3 py-1.5 text-xs font-medium transition-colors ${
                 language === "en"
                   ? isTransparent
-                    ? "bg-white text-[#0066CC]"
-                    : "bg-[#0066CC] text-white"
+                    ? "bg-white text-[#0E4A5A]"
+                    : "bg-[#0E4A5A] text-white"
                   : isTransparent
                     ? "bg-transparent text-white hover:bg-white/20"
-                    : "bg-transparent text-muted-foreground hover:bg-[#FAF8F5]"
+                    : "bg-transparent text-muted-foreground hover:bg-[#F7F3EA]"
               }`}
               aria-label="Switch to English"
             >
@@ -103,11 +104,11 @@ export function Header() {
               className={`px-3 py-1.5 text-xs font-medium transition-colors ${
                 language === "es"
                   ? isTransparent
-                    ? "bg-white text-[#0066CC]"
-                    : "bg-[#0066CC] text-white"
+                    ? "bg-white text-[#0E4A5A]"
+                    : "bg-[#0E4A5A] text-white"
                   : isTransparent
                     ? "bg-transparent text-white hover:bg-white/20"
-                    : "bg-transparent text-muted-foreground hover:bg-[#FAF8F5]"
+                    : "bg-transparent text-muted-foreground hover:bg-[#F7F3EA]"
               }`}
               aria-label="Cambiar a Español"
             >
@@ -116,8 +117,8 @@ export function Header() {
           </div>
           <Button asChild className={`hidden sm:inline-flex transition-all ${
             isTransparent
-              ? "bg-white text-[#0066CC] hover:bg-[#0066CC] hover:text-white"
-              : "bg-[#0066CC] hover:bg-[#0052A3] text-white"
+              ? "bg-white text-[#0E4A5A] hover:bg-[#0E4A5A] hover:text-white"
+              : "bg-[#0E4A5A] hover:bg-[#0A3541] text-white"
           }`}>
             <Link href="/contact" onClick={handleNavClick}>
               {t("nav.cta")}
@@ -126,7 +127,7 @@ export function Header() {
 
           {/* Mobile menu button */}
           <button
-            className={`md:hidden p-2 transition-colors ${isTransparent ? "text-white" : "text-foreground"}`}
+            className={`xl:hidden p-2 transition-colors ${isTransparent ? "text-white" : "text-foreground"}`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -137,10 +138,10 @@ export function Header() {
 
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className={`md:hidden px-4 py-4 transition-colors ${
+        <div className={`xl:hidden px-4 py-4 transition-colors ${
           isTransparent
             ? "bg-black/90 backdrop-blur-lg border-t border-white/20"
-            : "bg-white border-t border-[#E5DFD3]"
+            : "bg-white border-t border-[#D8CFBB]"
         }`}>
           <div className="flex flex-col gap-4">
             {navLinks.map((link) => (

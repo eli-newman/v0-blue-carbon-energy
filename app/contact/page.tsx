@@ -6,6 +6,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { useLanguage } from "@/lib/language-context"
 import { Button } from "@/components/ui/button"
+import { submitInquiry } from "@/lib/submit-inquiry"
 
 export default function Contact() {
   const { language } = useLanguage()
@@ -18,6 +19,9 @@ export default function Contact() {
     message: "",
   })
   const [submitted, setSubmitted] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [sendFailed, setSendFailed] = useState(false)
+  const [honeypot, setHoneypot] = useState("")
   const [errors, setErrors] = useState<Record<string, string>>({})
 
   const content = {
@@ -39,6 +43,9 @@ export default function Contact() {
       formSubtitle: "We're here to help and discuss how we can work together",
       successTitle: "Thank you! Your message has been sent.",
       successText: "We'll get back to you as soon as possible.",
+      errorTitle: "Sorry, we couldn't send your message.",
+      errorText: "Please try again, or email us directly at",
+      sending: "Sending...",
       nameLabel: "Full Name",
       emailLabel: "Email Address",
       phoneLabel: "Phone Number",
@@ -88,6 +95,9 @@ export default function Contact() {
       formSubtitle: "Estamos aquí para ayudar y discutir cómo podemos trabajar juntos",
       successTitle: "¡Gracias! Tu mensaje ha sido enviado.",
       successText: "Te responderemos lo antes posible.",
+      errorTitle: "Lo sentimos, no pudimos enviar tu mensaje.",
+      errorText: "Inténtalo de nuevo o escríbenos directamente a",
+      sending: "Enviando...",
       nameLabel: "Nombre Completo",
       emailLabel: "Correo Electrónico",
       phoneLabel: "Número de Teléfono",
@@ -142,14 +152,23 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    if (sending) return
     const newErrors = validateForm()
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors)
       return
     }
+    setSending(true)
+    setSendFailed(false)
+    const ok = await submitInquiry({ source: "contact", ...formData, website: honeypot })
+    setSending(false)
+    if (!ok) {
+      setSendFailed(true)
+      return
+    }
     setSubmitted(true)
     setFormData({ name: "", email: "", phone: "", organization: "", type: "inquiry", message: "" })
-    setTimeout(() => setSubmitted(false), 5000)
+    setTimeout(() => setSubmitted(false), 8000)
   }
 
   return (
@@ -157,53 +176,50 @@ export default function Contact() {
       <Header />
       <main>
         {/* Contact Info - starts directly */}
-        <section className="pt-16 pb-24 sm:pt-24 sm:pb-32 px-4 sm:px-6 lg:px-8 bg-white">
+        <section className="pt-28 pb-24 sm:pt-36 sm:pb-32 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">{c.title}</h1>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">{c.subtitle}</p>
+            <div className="mb-14 max-w-3xl">
+              <h1 className="text-4xl sm:text-5xl font-medium text-foreground mb-4">{c.title}</h1>
+              <p className="text-lg text-muted-foreground max-w-2xl">{c.subtitle}</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-6 mb-20">
-              <div className="p-8 rounded-2xl bg-[#FAF8F5] border border-[#E5DFD3] text-center">
-                <div className="w-12 h-1 bg-[#0066CC] mx-auto mb-6 rounded-full" />
-                <h3 className="text-lg font-semibold mb-3">{c.email}</h3>
-                <a href={`mailto:${c.emailMark}`} className="block text-[#0066CC] hover:underline text-sm mb-1">
+              <div className="p-6 sm:p-8 min-w-0 break-words rounded-sm bg-[#F7F3EA] border border-[#D8CFBB] text-center">
+                <h3 className="text-lg font-medium mb-3">{c.email}</h3>
+                <a href={`mailto:${c.emailMark}`} className="block text-[#0E4A5A] hover:underline text-sm mb-1">
                   {c.emailMark}
                 </a>
-                <a href={`mailto:${c.emailLuke}`} className="block text-[#0066CC] hover:underline text-sm">
+                <a href={`mailto:${c.emailLuke}`} className="block text-[#0E4A5A] hover:underline text-sm">
                   {c.emailLuke}
                 </a>
                 <p className="text-sm text-muted-foreground mt-2">{c.emailNote}</p>
               </div>
 
-              <div className="p-8 rounded-2xl bg-[#FAF8F5] border border-[#E5DFD3] text-center">
-                <div className="w-12 h-1 bg-[#2d8a6e] mx-auto mb-6 rounded-full" />
-                <h3 className="text-lg font-semibold mb-3">{c.phone}</h3>
-                <a href="tel:+19703892220" className="text-[#2d8a6e] hover:underline">
+              <div className="p-6 sm:p-8 min-w-0 break-words rounded-sm bg-[#F7F3EA] border border-[#D8CFBB] text-center">
+                <h3 className="text-lg font-medium mb-3">{c.phone}</h3>
+                <a href="tel:+19703892220" className="text-[#4A7A55] hover:underline">
                   {c.phoneValue}
                 </a>
                 <p className="text-sm text-muted-foreground mt-2">{c.phoneNote}</p>
               </div>
 
-              <div className="p-8 rounded-2xl bg-[#FAF8F5] border border-[#E5DFD3] text-center">
-                <div className="w-12 h-1 bg-[#0066CC] mx-auto mb-6 rounded-full" />
-                <h3 className="text-lg font-semibold mb-3">{c.office}</h3>
-                <p className="text-[#0066CC]">{c.officeValue}</p>
+              <div className="p-6 sm:p-8 min-w-0 break-words rounded-sm bg-[#F7F3EA] border border-[#D8CFBB] text-center">
+                <h3 className="text-lg font-medium mb-3">{c.office}</h3>
+                <p className="text-[#0E4A5A]">{c.officeValue}</p>
                 <p className="text-sm text-muted-foreground mt-2">{c.officeNote}</p>
               </div>
             </div>
 
             {/* Form */}
             <div className="max-w-2xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-2xl font-bold mb-2">{c.formTitle}</h2>
+              <div className="mb-12">
+                <h2 className="text-2xl font-medium mb-2">{c.formTitle}</h2>
                 <p className="text-muted-foreground">{c.formSubtitle}</p>
               </div>
 
               {submitted && (
                 <div
-                  className="mb-6 p-4 rounded-xl bg-[#2d8a6e]/10 border border-[#2d8a6e] text-[#2d8a6e]"
+                  className="mb-6 p-4 rounded-sm bg-[#4A7A55]/10 border border-[#4A7A55] text-[#4A7A55]"
                   role="alert"
                 >
                   <p className="font-semibold">{c.successTitle}</p>
@@ -211,7 +227,31 @@ export default function Contact() {
                 </div>
               )}
 
+              {sendFailed && (
+                <div className="mb-6 p-4 rounded-sm bg-red-50 border border-red-300 text-red-800" role="alert">
+                  <p className="font-semibold">{c.errorTitle}</p>
+                  <p className="text-sm">
+                    {c.errorText}{" "}
+                    <a href={`mailto:${c.emailMark}`} className="underline font-medium">
+                      {c.emailMark}
+                    </a>
+                  </p>
+                </div>
+              )}
+
               <form onSubmit={handleSubmit} className="space-y-6" noValidate>
+                <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
+                  <label htmlFor="website">Website</label>
+                  <input
+                    type="text"
+                    id="website"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={honeypot}
+                    onChange={(e) => setHoneypot(e.target.value)}
+                  />
+                </div>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-semibold mb-2">
@@ -224,7 +264,7 @@ export default function Contact() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className={`w-full px-4 py-3 rounded-xl border ${errors.name ? "border-red-500" : "border-[#E5DFD3]"} bg-white focus:outline-none focus:ring-2 focus:ring-[#0066CC]/50 transition-all`}
+                      className={`w-full px-4 py-3 rounded-sm border ${errors.name ? "border-red-500" : "border-[#D8CFBB]"} bg-white focus:outline-none focus:ring-2 focus:ring-[#0E4A5A]/50 transition-all`}
                     />
                     {errors.name && <p className="text-sm text-red-500 mt-1">{errors.name}</p>}
                   </div>
@@ -239,7 +279,7 @@ export default function Contact() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className={`w-full px-4 py-3 rounded-xl border ${errors.email ? "border-red-500" : "border-[#E5DFD3]"} bg-white focus:outline-none focus:ring-2 focus:ring-[#0066CC]/50 transition-all`}
+                      className={`w-full px-4 py-3 rounded-sm border ${errors.email ? "border-red-500" : "border-[#D8CFBB]"} bg-white focus:outline-none focus:ring-2 focus:ring-[#0E4A5A]/50 transition-all`}
                     />
                     {errors.email && <p className="text-sm text-red-500 mt-1">{errors.email}</p>}
                   </div>
@@ -256,7 +296,7 @@ export default function Contact() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl border border-[#E5DFD3] bg-white focus:outline-none focus:ring-2 focus:ring-[#0066CC]/50 transition-all"
+                      className="w-full px-4 py-3 rounded-sm border border-[#D8CFBB] bg-white focus:outline-none focus:ring-2 focus:ring-[#0E4A5A]/50 transition-all"
                     />
                   </div>
                   <div>
@@ -269,7 +309,7 @@ export default function Contact() {
                       name="organization"
                       value={formData.organization}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl border border-[#E5DFD3] bg-white focus:outline-none focus:ring-2 focus:ring-[#0066CC]/50 transition-all"
+                      className="w-full px-4 py-3 rounded-sm border border-[#D8CFBB] bg-white focus:outline-none focus:ring-2 focus:ring-[#0E4A5A]/50 transition-all"
                     />
                   </div>
                 </div>
@@ -283,7 +323,7 @@ export default function Contact() {
                     name="type"
                     value={formData.type}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-[#E5DFD3] bg-white focus:outline-none focus:ring-2 focus:ring-[#0066CC]/50 transition-all"
+                    className="w-full px-4 py-3 rounded-sm border border-[#D8CFBB] bg-white focus:outline-none focus:ring-2 focus:ring-[#0E4A5A]/50 transition-all"
                   >
                     <option value="inquiry">{c.typeOptions[0]}</option>
                     <option value="partnership">{c.typeOptions[1]}</option>
@@ -304,16 +344,17 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className={`w-full px-4 py-3 rounded-xl border ${errors.message ? "border-red-500" : "border-[#E5DFD3]"} bg-white focus:outline-none focus:ring-2 focus:ring-[#0066CC]/50 transition-all resize-vertical`}
+                    className={`w-full px-4 py-3 rounded-sm border ${errors.message ? "border-red-500" : "border-[#D8CFBB]"} bg-white focus:outline-none focus:ring-2 focus:ring-[#0E4A5A]/50 transition-all resize-vertical`}
                   />
                   {errors.message && <p className="text-sm text-red-500 mt-1">{errors.message}</p>}
                 </div>
 
                 <Button
                   type="submit"
-                  className="w-full bg-[#0066CC] hover:bg-[#004A99] text-white py-6 rounded-xl text-lg"
+                  disabled={sending}
+                  className="w-full bg-[#0E4A5A] hover:bg-[#0A3541] text-white py-6 rounded-sm text-lg disabled:opacity-70"
                 >
-                  {c.submit}
+                  {sending ? c.sending : c.submit}
                 </Button>
 
                 <p className="text-xs text-muted-foreground text-center">{c.privacy}</p>
@@ -323,13 +364,13 @@ export default function Contact() {
         </section>
 
         {/* FAQ */}
-        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#FAF8F5]">
+        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#F7F3EA]">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">{c.faqTitle}</h2>
+            <h2 className="text-3xl font-medium mb-12">{c.faqTitle}</h2>
             <div className="space-y-4">
               {c.faqs.map((faq, index) => (
-                <div key={index} className="p-6 rounded-2xl bg-white border border-[#E5DFD3]">
-                  <h3 className="font-semibold mb-3">{faq.q}</h3>
+                <div key={index} className="p-6 rounded-sm bg-white border border-[#D8CFBB]">
+                  <h3 className="font-medium mb-3">{faq.q}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{faq.a}</p>
                 </div>
               ))}

@@ -36,12 +36,14 @@ export default function Materials() {
           description:
             "Beams, posts, joists, and decking for structural applications. Engineered to meet Caribbean building codes for wind and seismic resistance.",
           specs: ["Load-bearing capacity", "Corrosion proof", "25+ year lifespan", "No maintenance"],
+          image: "/product-profiles.jpg",
         },
         {
           name: "Pellets & Raw Feedstock",
           description:
             "Composite pellets for manufacturers who want to mold their own products. Consistent quality feedstock for injection molding, extrusion, and compression molding.",
           specs: ["Consistent melt flow", "Custom formulations", "Bulk supply available", "Compatible with standard equipment"],
+          image: "/product-pellets.jpg",
         },
       ],
       benefitsTitle: "Why Blue Carbon Materials Composites",
@@ -116,7 +118,7 @@ export default function Materials() {
           detail: "Our production facilities run on syngas generated from sargassum — the same feedstock as our products.",
         },
         {
-          stat: "Net -",
+          stat: "Net Negative",
           label: "Carbon Negative Lifecycle",
           detail: "Designed for a carbon-negative lifecycle, with third-party lifecycle analysis currently in development.",
         },
@@ -157,12 +159,14 @@ export default function Materials() {
           description:
             "Vigas, postes, viguetas y pisos para aplicaciones estructurales. Diseñados para cumplir con los códigos de construcción del Caribe para resistencia a viento y sismos.",
           specs: ["Capacidad de carga", "A prueba de corrosión", "Vida útil de 25+ años", "Sin mantenimiento"],
+          image: "/product-profiles.jpg",
         },
         {
           name: "Pellets y Materia Prima",
           description:
             "Pellets compuestos para fabricantes que quieran moldear sus propios productos. Materia prima de calidad consistente para moldeo por inyección, extrusión y compresión.",
           specs: ["Flujo de fusión consistente", "Formulaciones personalizadas", "Suministro a granel", "Compatible con equipos estándar"],
+          image: "/product-pellets.jpg",
         },
       ],
       benefitsTitle: "Por Qué Compuestos Blue Carbon Materials",
@@ -237,7 +241,7 @@ export default function Materials() {
           detail: "Nuestras instalaciones funcionan con gas de síntesis generado del sargazo — la misma materia prima que nuestros productos.",
         },
         {
-          stat: "Neto -",
+          stat: "Neto Negativo",
           label: "Ciclo de Vida Carbono Negativo",
           detail: "Diseñado para un ciclo de vida carbono-negativo, con análisis de ciclo de vida por terceros actualmente en desarrollo.",
         },
@@ -261,12 +265,12 @@ export default function Materials() {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="pt-24 pb-16 sm:pt-32 sm:pb-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#0066CC] to-[#004A99]">
-          <div className="max-w-7xl mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 text-balance leading-tight">
+        <section className="pt-24 pb-16 sm:pt-32 sm:pb-24 px-4 sm:px-6 lg:px-8 bg-[#0E4A5A]">
+          <div className="max-w-7xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-medium text-white mb-6 text-balance leading-[1.05] max-w-4xl">
               {c.heroTitle}
             </h1>
-            <p className="text-xl sm:text-2xl text-white/90 max-w-3xl mx-auto text-balance leading-relaxed">
+            <p className="text-xl sm:text-2xl text-white/85 max-w-2xl text-pretty leading-relaxed">
               {c.heroSubtitle}
             </p>
           </div>
@@ -275,8 +279,8 @@ export default function Materials() {
         {/* Products Grid */}
         <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">{c.productsTitle}</h2>
+            <div className="mb-14 max-w-3xl">
+              <h2 className="text-3xl sm:text-4xl font-medium text-foreground mb-4">{c.productsTitle}</h2>
               <p className="text-lg text-muted-foreground">{c.productsSubtitle}</p>
             </div>
 
@@ -284,34 +288,33 @@ export default function Materials() {
               {c.products.map((product, index) => (
                 <div
                   key={product.name}
-                  className="p-8 rounded-2xl bg-[#FAF8F5] border border-[#E5DFD3] hover:border-[#0066CC]/30 hover:shadow-lg transition-all duration-300"
+                  className="p-8 rounded-sm bg-[#F7F3EA] border border-[#D8CFBB] hover:border-[#0E4A5A]/30 transition-all duration-300"
                 >
                   {/* Product visual — real photo when available, otherwise conceptual placeholder */}
                   {product.image ? (
-                    <div className="relative h-48 rounded-xl mb-6 overflow-hidden border border-[#E5DFD3]">
+                    <div className="relative h-48 rounded-sm mb-6 overflow-hidden border border-[#D8CFBB]">
                       <Image src={product.image} alt={product.name} fill className="object-cover" />
                     </div>
                   ) : (
-                    <div className="h-48 rounded-xl bg-gradient-to-br from-[#0066CC]/5 to-[#2d8a6e]/10 mb-6 flex items-center justify-center border border-[#E5DFD3]">
+                    <div className="h-48 rounded-sm bg-gradient-to-br from-[#0E4A5A]/5 to-[#4A7A55]/10 mb-6 flex items-center justify-center border border-[#D8CFBB]">
                       <div className="text-center">
-                        <div className={`text-5xl font-bold mb-2 ${index % 2 === 0 ? "text-[#0066CC]/20" : "text-[#2d8a6e]/20"}`}>
+                        <div className={`text-5xl font-bold mb-2 ${index % 2 === 0 ? "text-[#0E4A5A]/20" : "text-[#4A7A55]/20"}`}>
                           {["◫", "⬡", "▦", "●"][index]}
                         </div>
                         <p className="text-sm text-muted-foreground/60 font-medium">{product.name}</p>
                       </div>
                     </div>
                   )}
-                  <div className={`w-12 h-1 ${index % 2 === 0 ? "bg-[#0066CC]" : "bg-[#2d8a6e]"} mb-4 rounded-full`} />
-                  <h3 className="text-xl font-bold mb-3">{product.name}</h3>
+                  <h3 className="text-xl font-medium mb-3">{product.name}</h3>
                   <p className="text-muted-foreground leading-relaxed mb-6 text-sm">{product.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {product.specs.map((spec) => (
                       <span
                         key={spec}
-                        className={`text-xs px-3 py-1.5 rounded-full font-medium ${
+                        className={`text-xs px-3 py-1.5 rounded-sm font-medium ${
                           index % 2 === 0
-                            ? "bg-[#0066CC]/10 text-[#0066CC]"
-                            : "bg-[#2d8a6e]/10 text-[#2d8a6e]"
+                            ? "bg-[#0E4A5A]/10 text-[#0E4A5A]"
+                            : "bg-[#4A7A55]/10 text-[#4A7A55]"
                         }`}
                       >
                         {spec}
@@ -325,10 +328,10 @@ export default function Materials() {
         </section>
 
         {/* Performance Benefits */}
-        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#FAF8F5]">
+        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#F7F3EA]">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">{c.benefitsTitle}</h2>
+            <div className="mb-14 max-w-3xl">
+              <h2 className="text-3xl sm:text-4xl font-medium text-foreground mb-4">{c.benefitsTitle}</h2>
               <p className="text-lg text-muted-foreground">{c.benefitsSubtitle}</p>
             </div>
 
@@ -336,10 +339,9 @@ export default function Materials() {
               {c.benefits.map((benefit, index) => (
                 <div
                   key={benefit.title}
-                  className="p-8 rounded-2xl bg-white border border-[#E5DFD3] hover:border-[#0066CC]/30 transition-all duration-300"
+                  className="p-8 rounded-sm bg-white border border-[#D8CFBB] hover:border-[#0E4A5A]/30 transition-all duration-300"
                 >
-                  <div className={`w-10 h-1 ${index % 2 === 0 ? "bg-[#0066CC]" : "bg-[#2d8a6e]"} mb-4 rounded-full`} />
-                  <h3 className="text-lg font-semibold mb-3">{benefit.title}</h3>
+                  <h3 className="text-lg font-medium mb-3">{benefit.title}</h3>
                   <p className="text-muted-foreground leading-relaxed text-sm">{benefit.description}</p>
                 </div>
               ))}
@@ -350,8 +352,8 @@ export default function Materials() {
         {/* Applications */}
         <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">{c.applicationsTitle}</h2>
+            <div className="mb-14 max-w-3xl">
+              <h2 className="text-3xl sm:text-4xl font-medium text-foreground mb-4">{c.applicationsTitle}</h2>
               <p className="text-lg text-muted-foreground">{c.applicationsSubtitle}</p>
             </div>
 
@@ -359,11 +361,10 @@ export default function Materials() {
               {c.applications.map((app, index) => (
                 <div
                   key={app.sector}
-                  className="grid md:grid-cols-3 gap-6 p-8 rounded-2xl bg-[#FAF8F5] border border-[#E5DFD3]"
+                  className="grid md:grid-cols-3 gap-6 p-8 rounded-sm bg-[#F7F3EA] border border-[#D8CFBB]"
                 >
                   <div>
-                    <div className={`w-10 h-1 ${index % 2 === 0 ? "bg-[#0066CC]" : "bg-[#2d8a6e]"} mb-4 rounded-full`} />
-                    <h3 className="text-xl font-bold">{app.sector}</h3>
+                    <h3 className="text-xl font-medium">{app.sector}</h3>
                   </div>
                   <div>
                     <p className="text-sm font-semibold text-muted-foreground mb-2">
@@ -384,17 +385,17 @@ export default function Materials() {
         </section>
 
         {/* Sustainability */}
-        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#F5F0E8]">
+        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#EDE5D3]">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">{c.sustainabilityTitle}</h2>
+            <div className="mb-14 max-w-3xl">
+              <h2 className="text-3xl sm:text-4xl font-medium text-foreground mb-4">{c.sustainabilityTitle}</h2>
               <p className="text-lg text-muted-foreground">{c.sustainabilitySubtitle}</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
               {c.sustainabilityPoints.map((point, index) => (
-                <div key={point.label} className="text-center p-10 rounded-2xl bg-white border border-[#E5DFD3]">
-                  <div className={`text-5xl font-bold mb-4 ${index === 1 ? "text-[#2d8a6e]" : "text-[#0066CC]"}`}>
+                <div key={point.label} className="text-center p-6 lg:p-10 rounded-sm bg-white border border-[#D8CFBB]">
+                  <div className={`font-[family-name:var(--font-display)] text-3xl lg:text-5xl mb-4 break-words ${index === 1 ? "text-[#4A7A55]" : "text-[#0E4A5A]"}`}>
                     {point.stat}
                   </div>
                   <p className="text-lg font-semibold mb-3">{point.label}</p>
@@ -406,13 +407,13 @@ export default function Materials() {
         </section>
 
         {/* Vision */}
-        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#0066CC]">
+        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#0E4A5A]">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">{c.visionTitle}</h2>
+            <h2 className="text-3xl sm:text-4xl font-medium text-white mb-6">{c.visionTitle}</h2>
             <p className="text-lg text-white/90 leading-relaxed mb-10">{c.visionText}</p>
             <Link
               href="/contact"
-              className="inline-block px-8 py-4 bg-white text-[#0066CC] font-semibold rounded-xl hover:bg-[#F5F0E8] transition-colors"
+              className="inline-block px-8 py-4 bg-white text-[#0E4A5A] font-semibold rounded-sm hover:bg-[#EDE5D3] transition-colors"
             >
               {c.visionCta}
             </Link>
@@ -422,18 +423,18 @@ export default function Materials() {
         {/* CTA */}
         <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">{c.ctaTitle}</h2>
+            <h2 className="text-3xl sm:text-4xl font-medium mb-4">{c.ctaTitle}</h2>
             <p className="text-lg text-muted-foreground mb-10">{c.ctaSubtitle}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="px-8 py-4 bg-[#0066CC] text-white font-semibold rounded-lg hover:bg-[#0052A3] transition-colors text-lg"
+                className="px-8 py-4 bg-[#0E4A5A] text-white font-semibold rounded-sm hover:bg-[#0A3541] transition-colors text-lg"
               >
                 {c.ctaButton}
               </Link>
               <Link
                 href="/contact"
-                className="px-8 py-4 border-2 border-[#0066CC] text-[#0066CC] font-semibold rounded-lg hover:bg-[#0066CC] hover:text-white transition-colors text-lg"
+                className="px-8 py-4 border-2 border-[#0E4A5A] text-[#0E4A5A] font-semibold rounded-sm hover:bg-[#0E4A5A] hover:text-white transition-colors text-lg"
               >
                 {c.ctaSamples}
               </Link>

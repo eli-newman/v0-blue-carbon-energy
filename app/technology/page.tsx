@@ -165,12 +165,12 @@ export default function Technology() {
       <Header />
       <main>
         {/* Hero */}
-        <section className="pt-24 pb-16 sm:pt-32 sm:pb-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#1a1a2e] to-[#16213e]">
-          <div className="max-w-7xl mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 text-balance leading-tight">
+        <section className="pt-24 pb-16 sm:pt-32 sm:pb-24 px-4 sm:px-6 lg:px-8 bg-[#0A3541]">
+          <div className="max-w-7xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-medium text-white mb-6 text-balance leading-[1.05] max-w-4xl">
               {c.heroTitle}
             </h1>
-            <p className="text-xl sm:text-2xl text-white/80 max-w-3xl mx-auto text-balance leading-relaxed">
+            <p className="text-xl sm:text-2xl text-white/80 max-w-2xl text-balance leading-relaxed">
               {c.heroSubtitle}
             </p>
           </div>
@@ -179,8 +179,8 @@ export default function Technology() {
         {/* Process Steps */}
         <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">{c.processTitle}</h2>
+            <div className="mb-14 max-w-3xl">
+              <h2 className="text-4xl sm:text-5xl font-medium text-foreground mb-4">{c.processTitle}</h2>
               <p className="text-lg text-muted-foreground">{c.processSubtitle}</p>
             </div>
 
@@ -189,39 +189,39 @@ export default function Technology() {
                 <div key={index} className="grid md:grid-cols-2 gap-12 items-center">
                   {index % 2 === 0 ? (
                     <>
-                      <div className="relative h-96 bg-white rounded-3xl overflow-hidden">
+                      <div className="relative h-96 bg-white rounded-sm overflow-hidden">
                         <Image src={item.image} alt={item.step} fill className="object-contain p-4" />
                       </div>
-                      <div className="p-8 rounded-2xl bg-[#FAF8F5]">
+                      <div className="p-6 sm:p-8 min-w-0 break-words rounded-sm bg-[#F7F3EA]">
                         <div className="flex items-center gap-4 mb-6">
                           <div
-                            className={`flex items-center justify-center h-12 w-12 rounded-xl ${
-                              index % 2 === 0 ? "bg-[#0066CC]" : "bg-[#2d8a6e]"
+                            className={`flex items-center justify-center h-12 w-12 rounded-sm ${
+                              index % 2 === 0 ? "bg-[#0E4A5A]" : "bg-[#4A7A55]"
                             } text-white font-bold flex-shrink-0`}
                           >
                             {String(index + 1).padStart(2, "0")}
                           </div>
-                          <h3 className="text-2xl font-semibold">{item.step}</h3>
+                          <h3 className="text-2xl font-medium">{item.step}</h3>
                         </div>
                         <p className="text-muted-foreground leading-relaxed text-base">{item.details}</p>
                       </div>
                     </>
                   ) : (
                     <>
-                      <div className="p-8 rounded-2xl bg-[#FAF8F5]">
+                      <div className="p-6 sm:p-8 min-w-0 break-words rounded-sm bg-[#F7F3EA]">
                         <div className="flex items-center gap-4 mb-6">
                           <div
-                            className={`flex items-center justify-center h-12 w-12 rounded-xl ${
-                              index % 2 === 0 ? "bg-[#0066CC]" : "bg-[#2d8a6e]"
+                            className={`flex items-center justify-center h-12 w-12 rounded-sm ${
+                              index % 2 === 0 ? "bg-[#0E4A5A]" : "bg-[#4A7A55]"
                             } text-white font-bold flex-shrink-0`}
                           >
                             {String(index + 1).padStart(2, "0")}
                           </div>
-                          <h3 className="text-2xl font-semibold">{item.step}</h3>
+                          <h3 className="text-2xl font-medium">{item.step}</h3>
                         </div>
                         <p className="text-muted-foreground leading-relaxed text-base">{item.details}</p>
                       </div>
-                      <div className="relative h-96 bg-white rounded-3xl overflow-hidden">
+                      <div className="relative h-96 bg-white rounded-sm overflow-hidden">
                         <Image src={item.image} alt={item.step} fill className="object-contain p-4" />
                       </div>
                     </>
@@ -233,10 +233,10 @@ export default function Technology() {
         </section>
 
         {/* Output Streams */}
-        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#FAF8F5]">
+        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#F7F3EA]">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">{c.outputsTitle}</h2>
+            <div className="mb-14 max-w-3xl">
+              <h2 className="text-3xl sm:text-4xl font-medium text-foreground mb-4">{c.outputsTitle}</h2>
               <p className="text-muted-foreground">{c.outputsSubtitle}</p>
             </div>
 
@@ -244,15 +244,14 @@ export default function Technology() {
               {c.outputs.map((output, index) => (
                 <div
                   key={output.name}
-                  className="p-8 rounded-2xl bg-white border border-[#E5DFD3] hover:shadow-lg transition-all duration-300 flex flex-col"
+                  className="p-8 rounded-sm bg-white border border-[#D8CFBB] transition-all duration-300 flex flex-col"
                 >
-                  <div className={`w-12 h-1 ${index === 1 ? "bg-[#2d8a6e]" : "bg-[#0066CC]"} mb-6 rounded-full`} />
-                  <h3 className="text-xl font-bold mb-4">{output.name}</h3>
+                  <h3 className="text-xl font-medium mb-4">{output.name}</h3>
                   <p className="text-muted-foreground leading-relaxed text-sm mb-6 flex-grow">{output.description}</p>
                   <Link
                     href={output.link}
                     className={`text-sm font-semibold ${
-                      index === 1 ? "text-[#2d8a6e] hover:text-[#1d6b4f]" : "text-[#0066CC] hover:text-[#0052A3]"
+                      index === 1 ? "text-[#4A7A55] hover:text-[#365C40]" : "text-[#0E4A5A] hover:text-[#0A3541]"
                     } transition-colors`}
                   >
                     {output.linkText} →
@@ -267,14 +266,14 @@ export default function Technology() {
         <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-6">{c.safetyTitle}</h2>
+              <h2 className="text-3xl sm:text-4xl font-medium mb-6">{c.safetyTitle}</h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-8">{c.safetyP1}</p>
               <ul className="space-y-4">
                 {c.safetyItems.map((item, index) => (
                   <li key={item} className="flex gap-3 items-center justify-center">
                     <span
                       className={`flex-shrink-0 w-6 h-6 rounded-full ${
-                        index % 2 === 0 ? "bg-[#0066CC]" : "bg-[#2d8a6e]"
+                        index % 2 === 0 ? "bg-[#0E4A5A]" : "bg-[#4A7A55]"
                       } flex items-center justify-center`}
                     >
                       <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -290,17 +289,17 @@ export default function Technology() {
         </section>
 
         {/* Innovation */}
-        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#0066CC]">
+        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#0E4A5A]">
           <div className="max-w-7xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">{c.innovationTitle}</h2>
+                <h2 className="text-3xl sm:text-4xl font-medium text-white mb-6">{c.innovationTitle}</h2>
                 <p className="text-lg text-white/90 leading-relaxed mb-8">{c.innovationText}</p>
               </div>
               <div className="space-y-4">
                 {c.innovationAreas.map((area, index) => (
-                  <div key={area} className="flex items-center gap-4 p-4 rounded-xl bg-white/10 backdrop-blur-sm">
-                    <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
+                  <div key={area} className="flex items-center gap-4 p-4 rounded-sm bg-white/10 backdrop-blur-sm">
+                    <div className="w-8 h-8 rounded-sm bg-white/20 flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
                       {String(index + 1).padStart(2, "0")}
                     </div>
                     <p className="text-white/90 text-sm">{area}</p>

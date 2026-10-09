@@ -236,38 +236,38 @@ export default function Impact() {
       <Header />
       <main>
         {/* Metrics - starts directly */}
-        <section ref={metricsRef} className="pt-16 pb-24 sm:pt-24 sm:pb-32 px-4 sm:px-6 lg:px-8 bg-white">
+        <section ref={metricsRef} className="pt-28 pb-24 sm:pt-36 sm:pb-32 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">{c.metricsTitle}</h1>
+            <div className="mb-14 max-w-3xl">
+              <h1 className="text-4xl sm:text-5xl font-medium text-foreground mb-4">{c.metricsTitle}</h1>
               <p className="text-lg text-muted-foreground mb-2">{c.metricsSubtitle}</p>
               <p className="text-sm text-muted-foreground italic">{c.metricsNote}</p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="p-8 rounded-2xl bg-[#FAF8F5] border border-[#E5DFD3] text-center">
-                <div className="text-5xl font-bold text-[#0066CC] mb-3">
+              <div className="p-8 rounded-sm bg-[#F7F3EA] border border-[#D8CFBB] text-center">
+                <div className="text-5xl font-bold text-[#0E4A5A] mb-3">
                   {(metric1 / 1000).toFixed(0)}K+
                 </div>
                 <p className="text-muted-foreground text-sm mb-1">{c.metrics[0].label}</p>
                 <p className="text-xs text-muted-foreground/70">{c.metrics[0].sublabel}</p>
               </div>
-              <div className="p-8 rounded-2xl bg-[#FAF8F5] border border-[#E5DFD3] text-center">
-                <div className="text-5xl font-bold text-[#2d8a6e] mb-3">
+              <div className="p-8 rounded-sm bg-[#F7F3EA] border border-[#D8CFBB] text-center">
+                <div className="text-5xl font-bold text-[#4A7A55] mb-3">
                   {(metric2 / 1000).toFixed(1)}K
                 </div>
                 <p className="text-muted-foreground text-sm mb-1">{c.metrics[1].label}</p>
                 <p className="text-xs text-muted-foreground/70">{c.metrics[1].sublabel}</p>
               </div>
-              <div className="p-8 rounded-2xl bg-[#FAF8F5] border border-[#E5DFD3] text-center">
-                <div className="text-5xl font-bold text-[#0066CC] mb-3">
+              <div className="p-8 rounded-sm bg-[#F7F3EA] border border-[#D8CFBB] text-center">
+                <div className="text-5xl font-bold text-[#0E4A5A] mb-3">
                   {metric3}+
                 </div>
                 <p className="text-muted-foreground text-sm mb-1">{c.metrics[2].label}</p>
                 <p className="text-xs text-muted-foreground/70">{c.metrics[2].sublabel}</p>
               </div>
-              <div className="p-8 rounded-2xl bg-[#FAF8F5] border border-[#E5DFD3] text-center">
-                <div className="text-5xl font-bold text-[#2d8a6e] mb-3">
+              <div className="p-8 rounded-sm bg-[#F7F3EA] border border-[#D8CFBB] text-center">
+                <div className="text-5xl font-bold text-[#4A7A55] mb-3">
                   {metric4}
                 </div>
                 <p className="text-muted-foreground text-sm mb-1">{c.metrics[3].label}</p>
@@ -278,10 +278,10 @@ export default function Impact() {
         </section>
 
         {/* Climate Impact */}
-        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#FAF8F5]">
+        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#F7F3EA]">
           <div className="max-w-7xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="relative h-96 rounded-2xl overflow-hidden bg-[#E5DFD3]">
+              <div className="relative h-96 rounded-sm overflow-hidden bg-[#D8CFBB]">
                 <Image
                   src="/climate-impact-visualization-carbon-sequestration-.jpg"
                   alt="Climate impact visualization"
@@ -290,12 +290,11 @@ export default function Impact() {
                 />
               </div>
               <div>
-                <h2 className="text-3xl sm:text-4xl font-bold mb-8">{c.climateTitle}</h2>
+                <h2 className="text-3xl sm:text-4xl font-medium mb-8">{c.climateTitle}</h2>
                 <div className="space-y-6">
                   {c.climateItems.map((item, index) => (
                     <div key={item.title}>
-                      <div className={`w-10 h-1 ${index === 1 ? "bg-[#2d8a6e]" : "bg-[#0066CC]"} mb-3 rounded-full`} />
-                      <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
+                      <h3 className="text-lg font-medium mb-2">{item.title}</h3>
                       <p className="text-muted-foreground leading-relaxed text-sm">{item.text}</p>
                     </div>
                   ))}
@@ -308,8 +307,8 @@ export default function Impact() {
         {/* Agricultural Trials */}
         <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">{c.trialsTitle}</h2>
+            <div className="mb-14 max-w-3xl">
+              <h2 className="text-3xl sm:text-4xl font-medium mb-4">{c.trialsTitle}</h2>
               <p className="text-muted-foreground">{c.trialsSubtitle}</p>
             </div>
 
@@ -317,9 +316,9 @@ export default function Impact() {
               {c.trials.map((trial, index) => (
                 <div
                   key={trial.crop}
-                  className="rounded-2xl bg-[#FAF8F5] border border-[#E5DFD3] overflow-hidden hover:shadow-lg transition-all duration-300"
+                  className="rounded-sm bg-[#F7F3EA] border border-[#D8CFBB] overflow-hidden transition-all duration-300"
                 >
-                  <div className="relative h-64 bg-gradient-to-br from-[#0066CC]/10 to-[#2d8a6e]/10">
+                  <div className="relative h-64 bg-gradient-to-br from-[#0E4A5A]/10 to-[#4A7A55]/10">
                     <Image
                       src={trial.image}
                       alt={`${trial.crop} field trial results`}
@@ -328,9 +327,8 @@ export default function Impact() {
                     />
                   </div>
                   <div className="p-8">
-                    <div className={`w-12 h-1 ${index === 0 ? "bg-[#0066CC]" : "bg-[#2d8a6e]"} mb-4 rounded-full`} />
-                    <h3 className="text-2xl font-bold mb-2">{trial.crop}</h3>
-                    <div className={`text-3xl font-bold ${index === 0 ? "text-[#0066CC]" : "text-[#2d8a6e]"} mb-4`}>
+                    <h3 className="text-2xl font-medium mb-2">{trial.crop}</h3>
+                    <div className={`text-3xl font-bold ${index === 0 ? "text-[#0E4A5A]" : "text-[#4A7A55]"} mb-4`}>
                       {trial.improvement}
                     </div>
                     <p className="text-muted-foreground leading-relaxed">{trial.details}</p>
@@ -342,34 +340,32 @@ export default function Impact() {
         </section>
 
         {/* Economic & Community */}
-        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#FAF8F5]">
+        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#F7F3EA]">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">{c.economicTitle}</h2>
+            <div className="mb-14 max-w-3xl">
+              <h2 className="text-3xl sm:text-4xl font-medium mb-4">{c.economicTitle}</h2>
               <p className="text-muted-foreground">{c.economicSubtitle}</p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="p-8 rounded-2xl bg-[#FAF8F5] border border-[#E5DFD3]">
-                <div className="w-12 h-1 bg-[#0066CC] mb-6 rounded-full" />
-                <h3 className="text-xl font-bold mb-6">{c.employment.title}</h3>
+              <div className="p-8 rounded-sm bg-[#F7F3EA] border border-[#D8CFBB]">
+                <h3 className="text-xl font-medium mb-6">{c.employment.title}</h3>
                 <ul className="space-y-3">
                   {c.employment.items.map((item) => (
                     <li key={item} className="flex gap-3 text-muted-foreground text-sm">
-                      <span className="text-[#0066CC] flex-shrink-0">•</span>
+                      <span className="text-[#0E4A5A] flex-shrink-0">•</span>
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="p-8 rounded-2xl bg-[#FAF8F5] border border-[#E5DFD3]">
-                <div className="w-12 h-1 bg-[#2d8a6e] mb-6 rounded-full" />
-                <h3 className="text-xl font-bold mb-6">{c.community.title}</h3>
+              <div className="p-8 rounded-sm bg-[#F7F3EA] border border-[#D8CFBB]">
+                <h3 className="text-xl font-medium mb-6">{c.community.title}</h3>
                 <ul className="space-y-3">
                   {c.community.items.map((item) => (
                     <li key={item} className="flex gap-3 text-muted-foreground text-sm">
-                      <span className="text-[#2d8a6e] flex-shrink-0">•</span>
+                      <span className="text-[#4A7A55] flex-shrink-0">•</span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -380,13 +376,13 @@ export default function Impact() {
         </section>
 
         {/* CTA */}
-        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#0066CC]">
+        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#0E4A5A]">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">{c.ctaTitle}</h2>
+            <h2 className="text-3xl sm:text-4xl font-medium text-white mb-6">{c.ctaTitle}</h2>
             <p className="text-lg text-white/90 mb-10">{c.ctaText}</p>
             <Link
               href="/contact"
-              className="inline-block px-8 py-4 bg-white text-[#0066CC] font-semibold rounded-xl hover:bg-[#F5F0E8] transition-colors"
+              className="inline-block px-8 py-4 bg-white text-[#0E4A5A] font-semibold rounded-sm hover:bg-[#EDE5D3] transition-colors"
             >
               {c.ctaButton}
             </Link>

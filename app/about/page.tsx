@@ -149,62 +149,68 @@ export default function About() {
     <>
       <Header />
       <main>
-        {/* Our Story - starts directly */}
-        <section className="pt-16 pb-24 sm:pt-24 sm:pb-32 px-4 sm:px-6 lg:px-8 bg-white">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="relative h-96 rounded-2xl overflow-hidden bg-[#F5F0E8]">
-                <Image
-                  src="/team-working-on-sustainable-ocean-research-laborat.jpg"
-                  alt="Blue Carbon Materials research and development team"
-                  fill
-                  priority
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-              <div>
-                <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-8">{c.storyTitle}</h1>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-6">{c.storyP1}</p>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-6">{c.storyP2}</p>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-6">{c.storyP3}</p>
-                <p className="text-lg text-muted-foreground leading-relaxed">{c.storyP4}</p>
-              </div>
+        {/* Hero: title + opening line */}
+        <section className="relative overflow-hidden pt-32 pb-20 sm:pt-44 sm:pb-28 px-4 sm:px-6 lg:px-8 bg-[#0A3541]">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -right-24 -top-24 h-[28rem] w-[28rem] rounded-full border border-white/10"
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -right-8 top-10 h-[20rem] w-[20rem] rounded-full border border-white/10"
+          />
+          <div className="relative max-w-7xl mx-auto">
+            <h1 className="text-5xl sm:text-7xl lg:text-8xl text-white leading-[1.02] mb-10 sm:mb-14">{c.storyTitle}</h1>
+            <div className="grid md:grid-cols-12">
+              <p className="md:col-start-5 md:col-span-8 font-[family-name:var(--font-display)] text-2xl sm:text-3xl text-white/90 leading-snug text-pretty border-t border-white/30 pt-8">
+                {c.storyP1}
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Story */}
+        <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-[#F7F3EA]">
+          <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-10">
+            <div className="md:col-start-5 md:col-span-7 space-y-7">
+              <p className="text-xl text-foreground/85 leading-[1.75] first-letter:font-[family-name:var(--font-display)] first-letter:text-6xl first-letter:float-left first-letter:mr-3 first-letter:leading-[0.9] first-letter:text-[#0E4A5A]">
+                {c.storyP2}
+              </p>
+              <p className="text-xl text-foreground/85 leading-[1.75]">{c.storyP3}</p>
+              <p className="text-xl text-foreground/85 leading-[1.75]">{c.storyP4}</p>
             </div>
           </div>
         </section>
 
         {/* Mission & Vision */}
-        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#FAF8F5]">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="p-10 rounded-2xl bg-white border border-[#E5DFD3]">
-                <div className="w-12 h-1 bg-[#0066CC] mb-6 rounded-full" />
-                <h2 className="text-2xl font-bold mb-4">{c.missionTitle}</h2>
-                <p className="text-muted-foreground leading-relaxed">{c.missionText}</p>
-              </div>
-              <div className="p-10 rounded-2xl bg-white border border-[#E5DFD3]">
-                <div className="w-12 h-1 bg-[#2d8a6e] mb-6 rounded-full" />
-                <h2 className="text-2xl font-bold mb-4">{c.visionTitle}</h2>
-                <p className="text-muted-foreground leading-relaxed">{c.visionText}</p>
-              </div>
+        <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-[#0E4A5A]">
+          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 md:gap-0">
+            <div className="md:pr-16">
+              <h2 className="text-sm uppercase tracking-[0.2em] text-[#9FD0AE] mb-6 font-[family-name:var(--font-sans)] font-normal">{c.missionTitle}</h2>
+              <p className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl text-white leading-snug text-pretty">{c.missionText}</p>
+            </div>
+            <div className="md:pl-16 md:border-l border-white/25">
+              <h2 className="text-sm uppercase tracking-[0.2em] text-[#9FD0AE] mb-6 font-[family-name:var(--font-sans)] font-normal">{c.visionTitle}</h2>
+              <p className="font-[family-name:var(--font-display)] text-2xl sm:text-3xl text-white leading-snug text-pretty">{c.visionText}</p>
             </div>
           </div>
         </section>
 
         {/* Values */}
-        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold text-center mb-16">{c.valuesTitle}</h2>
-            <div className="grid md:grid-cols-3 gap-6">
+        <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-white">
+          <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-10">
+            <h2 className="md:col-span-4 text-4xl sm:text-5xl leading-[1.1]">{c.valuesTitle}</h2>
+            <div className="md:col-span-8 border-t border-foreground/80">
               {c.values.map((value, index) => (
                 <div
                   key={value.title}
-                  className="p-8 rounded-2xl bg-[#FAF8F5] border border-[#E5DFD3] hover:border-[#0066CC]/30 transition-all duration-300"
+                  className="group grid sm:grid-cols-[3rem_1fr_1.4fr] gap-x-6 gap-y-2 py-6 border-b border-[#D8CFBB] transition-colors hover:bg-[#F7F3EA]"
                 >
-                  <div className={`w-10 h-1 ${index % 2 === 0 ? "bg-[#0066CC]" : "bg-[#2d8a6e]"} mb-4 rounded-full`} />
-                  <h3 className="text-lg font-semibold mb-3">{value.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed text-sm">{value.description}</p>
+                  <span className="font-[family-name:var(--font-display)] text-sm tracking-widest text-[#4A7A55] pt-1.5">
+                    0{index + 1}
+                  </span>
+                  <h3 className="text-2xl">{value.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{value.description}</p>
                 </div>
               ))}
             </div>
@@ -212,16 +218,16 @@ export default function About() {
         </section>
 
         {/* Team */}
-        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#FAF8F5]">
+        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#F7F3EA]">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">{c.teamTitle}</h2>
+            <div className="mb-14 max-w-3xl">
+              <h2 className="text-3xl sm:text-4xl font-medium mb-4">{c.teamTitle}</h2>
               <p className="text-muted-foreground">{c.teamSubtitle}</p>
             </div>
             <div className="grid md:grid-cols-2 gap-8">
               {team.map((member) => (
-                <div key={member.name} className="flex gap-6 p-6 rounded-2xl bg-white border border-[#E5DFD3]">
-                  <div className="flex-shrink-0 w-28 h-28 rounded-2xl overflow-hidden relative bg-gradient-to-br from-[#0066CC]/20 to-[#2d8a6e]/20">
+                <div key={member.name} className="flex gap-6 p-6 rounded-sm bg-white border border-[#D8CFBB]">
+                  <div className="flex-shrink-0 w-28 h-28 rounded-sm overflow-hidden relative bg-gradient-to-br from-[#0E4A5A]/20 to-[#4A7A55]/20">
                     <Image
                       src={member.image}
                       alt={member.name}
@@ -230,8 +236,8 @@ export default function About() {
                     />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-lg">{member.name}</h3>
-                    <p className="text-sm text-[#0066CC] font-medium mb-2">{member.role}</p>
+                    <h3 className="font-medium text-lg">{member.name}</h3>
+                    <p className="text-sm text-[#0E4A5A] font-medium mb-2">{member.role}</p>
                     {"bio" in member && member.bio && (
                       <p className="text-xs text-muted-foreground leading-relaxed">{member.bio}</p>
                     )}

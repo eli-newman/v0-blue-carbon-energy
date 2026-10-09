@@ -6,6 +6,8 @@ import { useLanguage } from "@/lib/language-context"
 import Image from "next/image"
 import Link from "next/link"
 
+const productImages = ["/ag-biochar.jpg", "/ag-biostimulant.jpg", "/ag-bioinoculated.jpg"]
+
 export default function Agriculture() {
   const { language } = useLanguage()
 
@@ -239,12 +241,12 @@ export default function Agriculture() {
       <Header />
       <main>
         {/* Hero */}
-        <section className="pt-24 pb-16 sm:pt-32 sm:pb-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#2d8a6e] to-[#1d6b4f]">
-          <div className="max-w-7xl mx-auto text-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 text-balance leading-tight">
+        <section className="pt-24 pb-16 sm:pt-32 sm:pb-24 px-4 sm:px-6 lg:px-8 bg-[#365C40]">
+          <div className="max-w-7xl mx-auto">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-medium text-white mb-6 text-balance leading-[1.05] max-w-4xl">
               {c.heroTitle}
             </h1>
-            <p className="text-xl sm:text-2xl text-white/90 max-w-3xl mx-auto text-balance leading-relaxed">
+            <p className="text-xl sm:text-2xl text-white/85 max-w-2xl text-pretty leading-relaxed">
               {c.heroSubtitle}
             </p>
           </div>
@@ -253,8 +255,8 @@ export default function Agriculture() {
         {/* Products */}
         <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">{c.productsTitle}</h2>
+            <div className="mb-14 max-w-3xl">
+              <h2 className="text-3xl sm:text-4xl font-medium text-foreground mb-4">{c.productsTitle}</h2>
               <p className="text-lg text-muted-foreground">{c.productsSubtitle}</p>
             </div>
 
@@ -262,18 +264,26 @@ export default function Agriculture() {
               {c.products.map((product, index) => (
                 <div
                   key={product.name}
-                  className="grid md:grid-cols-2 gap-8 p-8 rounded-2xl bg-[#FAF8F5] border border-[#E5DFD3]"
+                  className="grid lg:grid-cols-12 gap-0 rounded-sm bg-[#F7F3EA] border border-[#D8CFBB] overflow-hidden"
                 >
-                  <div>
-                    <div className={`w-12 h-1 ${index === 1 ? "bg-[#2d8a6e]" : "bg-[#0066CC]"} mb-4 rounded-full`} />
-                    <h3 className="text-2xl font-bold mb-4">{product.name}</h3>
+                  <div className="relative h-64 lg:h-auto lg:min-h-[20rem] lg:col-span-4 bg-[#D8CFBB]">
+                    <Image
+                      src={productImages[index]}
+                      alt={product.name}
+                      fill
+                      sizes="(min-width: 1024px) 33vw, 100vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-6 sm:p-8 lg:col-span-4 min-w-0">
+                    <h3 className="text-2xl font-medium mb-4">{product.name}</h3>
                     <p className="text-muted-foreground leading-relaxed mb-6">{product.description}</p>
                     <div className="flex flex-wrap gap-2">
                       {product.applications.map((app) => (
                         <span
                           key={app}
-                          className={`text-xs px-3 py-1 rounded-full ${
-                            index === 1 ? "bg-[#2d8a6e]/10 text-[#2d8a6e]" : "bg-[#0066CC]/10 text-[#0066CC]"
+                          className={`text-xs px-3 py-1 rounded-sm ${
+                            index === 1 ? "bg-[#4A7A55]/10 text-[#4A7A55]" : "bg-[#0E4A5A]/10 text-[#0E4A5A]"
                           }`}
                         >
                           {app}
@@ -281,14 +291,14 @@ export default function Agriculture() {
                       ))}
                     </div>
                   </div>
-                  <div>
+                  <div className="p-6 sm:p-8 lg:pl-0 lg:col-span-4 min-w-0">
                     <p className="text-sm font-semibold mb-4 text-foreground">
                       {language === "en" ? "Key Benefits" : "Beneficios Clave"}
                     </p>
                     <ul className="space-y-3">
                       {product.benefits.map((benefit) => (
                         <li key={benefit} className="flex gap-3 text-sm text-muted-foreground">
-                          <span className={`flex-shrink-0 ${index === 1 ? "text-[#2d8a6e]" : "text-[#0066CC]"}`}>
+                          <span className={`flex-shrink-0 ${index === 1 ? "text-[#4A7A55]" : "text-[#0E4A5A]"}`}>
                             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                             </svg>
@@ -305,10 +315,10 @@ export default function Agriculture() {
         </section>
 
         {/* Field Trials */}
-        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#FAF8F5]">
+        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#F7F3EA]">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">{c.trialsTitle}</h2>
+            <div className="mb-14 max-w-3xl">
+              <h2 className="text-3xl sm:text-4xl font-medium mb-4">{c.trialsTitle}</h2>
               <p className="text-muted-foreground">{c.trialsSubtitle}</p>
             </div>
 
@@ -316,9 +326,9 @@ export default function Agriculture() {
               {c.trials.map((trial, index) => (
                 <div
                   key={trial.crop}
-                  className="rounded-2xl bg-white border border-[#E5DFD3] overflow-hidden hover:shadow-lg transition-all duration-300"
+                  className="rounded-sm bg-white border border-[#D8CFBB] overflow-hidden transition-all duration-300"
                 >
-                  <div className="relative h-64 bg-gradient-to-br from-[#0066CC]/10 to-[#2d8a6e]/10">
+                  <div className="relative h-64 bg-gradient-to-br from-[#0E4A5A]/10 to-[#4A7A55]/10">
                     <Image
                       src={trial.image}
                       alt={`${trial.crop} field trial`}
@@ -327,12 +337,11 @@ export default function Agriculture() {
                     />
                   </div>
                   <div className="p-8">
-                    <div className={`w-12 h-1 ${index === 0 ? "bg-[#0066CC]" : "bg-[#2d8a6e]"} mb-4 rounded-full`} />
-                    <h3 className="text-2xl font-bold mb-2">{trial.crop}</h3>
-                    <div className={`text-4xl font-bold ${index === 0 ? "text-[#0066CC]" : "text-[#2d8a6e]"} mb-1`}>
+                    <h3 className="text-2xl font-medium mb-2">{trial.crop}</h3>
+                    <div className={`text-4xl font-bold ${index === 0 ? "text-[#0E4A5A]" : "text-[#4A7A55]"} mb-1`}>
                       {trial.improvement}
                     </div>
-                    <p className={`text-lg font-medium ${index === 0 ? "text-[#0066CC]" : "text-[#2d8a6e]"} mb-4`}>
+                    <p className={`text-lg font-medium ${index === 0 ? "text-[#0E4A5A]" : "text-[#4A7A55]"} mb-4`}>
                       {trial.unit}
                     </p>
                     <p className="text-muted-foreground leading-relaxed">{trial.details}</p>
@@ -346,18 +355,18 @@ export default function Agriculture() {
         {/* How It Works */}
         <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">{c.howTitle}</h2>
+            <div className="mb-14 max-w-3xl">
+              <h2 className="text-3xl sm:text-4xl font-medium mb-4">{c.howTitle}</h2>
               <p className="text-muted-foreground">{c.howSubtitle}</p>
             </div>
 
             <div className="grid md:grid-cols-4 gap-6">
               {c.howSteps.map((item, index) => (
-                <div key={item.step} className="text-center p-6 rounded-2xl bg-[#FAF8F5] border border-[#E5DFD3]">
-                  <div className={`text-4xl font-bold mb-4 ${index % 2 === 0 ? "text-[#0066CC]" : "text-[#2d8a6e]"}`}>
+                <div key={item.step} className="text-center p-6 rounded-sm bg-[#F7F3EA] border border-[#D8CFBB]">
+                  <div className={`text-4xl font-bold mb-4 ${index % 2 === 0 ? "text-[#0E4A5A]" : "text-[#4A7A55]"}`}>
                     {item.step}
                   </div>
-                  <h3 className="text-lg font-semibold mb-3">{item.title}</h3>
+                  <h3 className="text-lg font-medium mb-3">{item.title}</h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">{item.description}</p>
                 </div>
               ))}
@@ -366,13 +375,13 @@ export default function Agriculture() {
         </section>
 
         {/* Science */}
-        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#2d8a6e]">
+        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#4A7A55]">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-16">{c.scienceTitle}</h2>
+            <h2 className="text-3xl sm:text-4xl font-medium text-white text-center mb-16">{c.scienceTitle}</h2>
             <div className="grid md:grid-cols-3 gap-8">
               {c.sciencePoints.map((point, index) => (
-                <div key={point.title} className="p-8 rounded-2xl bg-white/10 backdrop-blur-sm">
-                  <h3 className="text-xl font-bold text-white mb-4">{point.title}</h3>
+                <div key={point.title} className="p-8 rounded-sm bg-white/10 backdrop-blur-sm">
+                  <h3 className="text-xl font-medium text-white mb-4">{point.title}</h3>
                   <p className="text-white/85 leading-relaxed text-sm">{point.text}</p>
                 </div>
               ))}
@@ -383,18 +392,18 @@ export default function Agriculture() {
         {/* CTA */}
         <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">{c.ctaTitle}</h2>
+            <h2 className="text-3xl sm:text-4xl font-medium mb-4">{c.ctaTitle}</h2>
             <p className="text-lg text-muted-foreground mb-10">{c.ctaText}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
-                className="px-8 py-4 bg-[#2d8a6e] text-white font-semibold rounded-lg hover:bg-[#1d6b4f] transition-colors text-lg"
+                className="px-8 py-4 bg-[#4A7A55] text-white font-semibold rounded-sm hover:bg-[#365C40] transition-colors text-lg"
               >
                 {c.ctaButton}
               </Link>
               <Link
                 href="/contact"
-                className="px-8 py-4 border-2 border-[#2d8a6e] text-[#2d8a6e] font-semibold rounded-lg hover:bg-[#2d8a6e] hover:text-white transition-colors text-lg"
+                className="px-8 py-4 border-2 border-[#4A7A55] text-[#4A7A55] font-semibold rounded-sm hover:bg-[#4A7A55] hover:text-white transition-colors text-lg"
               >
                 {c.ctaTrials}
               </Link>

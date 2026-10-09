@@ -7,6 +7,13 @@ import Image from "next/image"
 import Link from "next/link"
 import React, { useState } from "react"
 import { Button } from "@/components/ui/button"
+import { submitInquiry } from "@/lib/submit-inquiry"
+
+const partnerLogos = [
+  { src: "/logos/reclaim-nature.png", alt: "Reclaim Nature" },
+  { src: "/logos/usace.png", alt: "U.S. Army Corps of Engineers" },
+  { src: "/logos/ddec-pr.png", alt: "Puerto Rico DDEC" },
+]
 
 export default function Partners() {
   const { language } = useLanguage()
@@ -18,6 +25,9 @@ export default function Partners() {
     message: "",
   })
   const [submitted, setSubmitted] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [sendFailed, setSendFailed] = useState(false)
+  const [honeypot, setHoneypot] = useState("")
   const [errors, setErrors] = useState<Record<string, string>>({})
 
   const validateForm = () => {
@@ -37,16 +47,33 @@ export default function Partners() {
     if (errors[name]) setErrors((prev) => ({ ...prev, [name]: "" }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    if (sending) return
     const newErrors = validateForm()
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors)
       return
     }
+    setSending(true)
+    setSendFailed(false)
+    const ok = await submitInquiry({
+      source: "partners",
+      name: formData.name,
+      email: formData.email,
+      organization: formData.company,
+      type: formData.projectType,
+      message: formData.message,
+      website: honeypot,
+    })
+    setSending(false)
+    if (!ok) {
+      setSendFailed(true)
+      return
+    }
     setSubmitted(true)
     setFormData({ name: "", email: "", company: "", projectType: "", message: "" })
-    setTimeout(() => setSubmitted(false), 5000)
+    setTimeout(() => setSubmitted(false), 8000)
   }
 
   const content = {
@@ -111,9 +138,12 @@ export default function Partners() {
         "Other",
       ],
       buildMessageLabel: "Tell us more about your project",
-      buildSubmit: "Send Application",
+      buildSubmit: "Send Inquiry",
       buildSuccess: "Thanks! We'll be in touch shortly.",
-      buildSuccessText: "Our team will review your application and reach out within 2 business days.",
+      buildSuccessText: "Our team will review your inquiry and reach out within 2 business days.",
+      buildErrorTitle: "Sorry, we couldn't send your inquiry.",
+      buildErrorText: "Please try again, or email us directly at",
+      buildSending: "Sending...",
       ctaTitle: "Interested in Partnering?",
       ctaText:
         "We're actively seeking partners—municipalities, research institutions, and agricultural networks—ready to scale sustainable sargassum solutions.",
@@ -180,9 +210,12 @@ export default function Partners() {
         "Otro",
       ],
       buildMessageLabel: "Cuéntanos más sobre tu proyecto",
-      buildSubmit: "Enviar Solicitud",
+      buildSubmit: "Enviar Consulta",
       buildSuccess: "¡Gracias! Nos pondremos en contacto pronto.",
       buildSuccessText: "Nuestro equipo revisará tu solicitud y se comunicará contigo en 2 días hábiles.",
+      buildErrorTitle: "Lo sentimos, no pudimos enviar tu solicitud.",
+      buildErrorText: "Inténtalo de nuevo o escríbenos directamente a",
+      buildSending: "Enviando...",
       ctaTitle: "¿Interesado en Asociarte?",
       ctaText:
         "Estamos buscando activamente socios—municipalidades, instituciones de investigación y redes agrícolas—listos para escalar soluciones sostenibles de sargazo.",
@@ -197,39 +230,45 @@ export default function Partners() {
       <Header />
       <main>
         {/* Partnership Model - starts directly */}
-        <section className="pt-16 pb-24 sm:pt-24 sm:pb-32 px-4 sm:px-6 lg:px-8 bg-white">
+        <section className="pt-28 pb-24 sm:pt-36 sm:pb-32 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-8">{c.modelTitle}</h1>
+                <h1 className="text-4xl sm:text-5xl font-medium text-foreground mb-8">{c.modelTitle}</h1>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6">{c.modelP1}</p>
                 <p className="text-lg text-muted-foreground leading-relaxed">{c.modelP2}</p>
               </div>
-              <div className="relative h-96 rounded-2xl overflow-hidden bg-[#F5F0E8]">
-                <Image src="/partnership-collaboration-meeting-sustainable-busi.jpg" alt="Partnership collaboration" fill className="object-cover" />
+              <div className="relative h-96 rounded-sm overflow-hidden bg-[#EDE5D3]">
+                <Image
+                  src="/partners-hero.jpg"
+                  alt="Project partners reviewing plans on a Caribbean beach while an excavator clears sargassum"
+                  fill
+                  priority
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover"
+                />
               </div>
             </div>
           </div>
         </section>
 
         {/* How We Partner */}
-        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#FAF8F5]">
+        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#F7F3EA]">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold text-center mb-16">{c.howTitle}</h2>
+            <h2 className="text-3xl sm:text-4xl font-medium mb-14">{c.howTitle}</h2>
             <div className="grid md:grid-cols-3 gap-8">
               {c.partnerTypes.map((type, index) => (
                 <div
                   key={type.title}
-                  className="p-8 rounded-2xl bg-white border border-[#E5DFD3] hover:shadow-lg transition-all duration-300"
+                  className="p-8 rounded-sm bg-white border border-[#D8CFBB] transition-all duration-300"
                 >
-                  <div className={`w-12 h-1 ${index === 1 ? "bg-[#2d8a6e]" : "bg-[#0066CC]"} mb-6 rounded-full`} />
-                  <h3 className="text-xl font-bold mb-4">{type.title}</h3>
+                  <h3 className="text-xl font-medium mb-4">{type.title}</h3>
                   <p className="text-muted-foreground leading-relaxed mb-6 text-sm">{type.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {type.focus.map((area) => (
                       <span
                         key={area}
-                        className={`text-xs px-3 py-1 ${index === 1 ? "bg-[#2d8a6e]/10 text-[#2d8a6e]" : "bg-[#0066CC]/10 text-[#0066CC]"} rounded-full`}
+                        className={`text-xs px-3 py-1 ${index === 1 ? "bg-[#4A7A55]/10 text-[#4A7A55]" : "bg-[#0E4A5A]/10 text-[#0E4A5A]"} rounded-sm`}
                       >
                         {area}
                       </span>
@@ -244,22 +283,36 @@ export default function Partners() {
         {/* Active Partners */}
         <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">{c.activeTitle}</h2>
+            <div className="mb-14 max-w-3xl">
+              <h2 className="text-3xl sm:text-4xl font-medium mb-4">{c.activeTitle}</h2>
               <p className="text-muted-foreground">{c.activeSubtitle}</p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-12">
               <div>
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-1 bg-[#0066CC] rounded-full" />
-                  <h3 className="text-xl font-bold text-[#0066CC]">{c.operationalPartners.title}</h3>
+                  <div className="w-10 h-1 bg-[#0E4A5A] rounded-full" />
+                  <h3 className="text-xl font-medium text-[#0E4A5A]">{c.operationalPartners.title}</h3>
                 </div>
                 <div className="space-y-4">
-                  {c.operationalPartners.list.map((partner) => (
-                    <div key={partner.name} className="p-5 rounded-xl bg-[#FAF8F5] border border-[#E5DFD3]">
-                      <h4 className="font-semibold mb-1">{partner.name}</h4>
-                      <p className="text-sm text-muted-foreground">{partner.focus}</p>
+                  {c.operationalPartners.list.map((partner, i) => (
+                    <div
+                      key={partner.name}
+                      className="flex items-center gap-5 p-5 rounded-sm bg-[#F7F3EA] border border-[#D8CFBB]"
+                    >
+                      <div className="relative shrink-0 w-28 h-24 sm:w-40 sm:h-28 bg-white border border-[#D8CFBB] rounded-sm">
+                        <Image
+                          src={partnerLogos[i].src}
+                          alt={`${partnerLogos[i].alt} logo`}
+                          fill
+                          sizes="160px"
+                          className="object-contain p-2"
+                        />
+                      </div>
+                      <div className="min-w-0">
+                        <h4 className="font-semibold mb-1">{partner.name}</h4>
+                        <p className="text-sm text-muted-foreground">{partner.focus}</p>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -267,20 +320,20 @@ export default function Partners() {
 
               <div>
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-1 bg-[#2d8a6e] rounded-full" />
-                  <h3 className="text-xl font-bold text-[#2d8a6e]">{c.researchPartners.title}</h3>
+                  <div className="w-10 h-1 bg-[#4A7A55] rounded-full" />
+                  <h3 className="text-xl font-medium text-[#4A7A55]">{c.researchPartners.title}</h3>
                 </div>
                 <div className="space-y-4">
                   {c.researchPartners.list.map((partner) => (
-                    <div key={partner.name} className="p-5 rounded-xl bg-[#FAF8F5] border border-[#E5DFD3]">
+                    <div key={partner.name} className="p-5 rounded-sm bg-[#F7F3EA] border border-[#D8CFBB]">
                       <h4 className="font-semibold mb-1">{partner.name}</h4>
                       <p className="text-sm text-muted-foreground">{partner.focus}</p>
                     </div>
                   ))}
                 </div>
 
-                <div className="mt-8 p-6 rounded-xl bg-[#2d8a6e]/10 border border-[#2d8a6e]/30">
-                  <h4 className="font-semibold text-[#2d8a6e] mb-2">{c.becomePartnerTitle}</h4>
+                <div className="mt-8 p-6 rounded-sm bg-[#4A7A55]/10 border border-[#4A7A55]/30">
+                  <h4 className="font-semibold text-[#4A7A55] mb-2">{c.becomePartnerTitle}</h4>
                   <p className="text-sm text-muted-foreground leading-relaxed">{c.becomePartnerText}</p>
                 </div>
               </div>
@@ -289,21 +342,45 @@ export default function Partners() {
         </section>
 
         {/* Build With Us */}
-        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#FAF8F5]">
+        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#F7F3EA]">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">{c.buildTitle}</h2>
+              <h2 className="text-3xl sm:text-4xl font-medium mb-4">{c.buildTitle}</h2>
               <p className="text-muted-foreground text-lg">{c.buildSubtitle}</p>
             </div>
 
             {submitted && (
-              <div className="mb-6 p-4 rounded-xl bg-[#2d8a6e]/10 border border-[#2d8a6e] text-[#2d8a6e]" role="alert">
+              <div className="mb-6 p-4 rounded-sm bg-[#4A7A55]/10 border border-[#4A7A55] text-[#4A7A55]" role="alert">
                 <p className="font-semibold">{c.buildSuccess}</p>
                 <p className="text-sm">{c.buildSuccessText}</p>
               </div>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-6 bg-white p-8 rounded-2xl border border-[#E5DFD3]" noValidate>
+            {sendFailed && (
+              <div className="mb-6 p-4 rounded-sm bg-red-50 border border-red-300 text-red-800" role="alert">
+                <p className="font-semibold">{c.buildErrorTitle}</p>
+                <p className="text-sm">
+                  {c.buildErrorText}{" "}
+                  <a href="mailto:Mark.Mathis@bluecarbonmaterials.com" className="underline font-medium">
+                    Mark.Mathis@bluecarbonmaterials.com
+                  </a>
+                </p>
+              </div>
+            )}
+
+            <form onSubmit={handleSubmit} className="space-y-6 bg-white p-8 rounded-sm border border-[#D8CFBB]" noValidate>
+              <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
+                <label htmlFor="build-website">Website</label>
+                <input
+                  type="text"
+                  id="build-website"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={honeypot}
+                  onChange={(e) => setHoneypot(e.target.value)}
+                />
+              </div>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="build-name" className="block text-sm font-semibold mb-2">
@@ -316,7 +393,7 @@ export default function Partners() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className={`w-full px-4 py-3 rounded-xl border ${errors.name ? "border-red-500" : "border-[#E5DFD3]"} bg-white focus:outline-none focus:ring-2 focus:ring-[#0066CC]/50 transition-all`}
+                    className={`w-full px-4 py-3 rounded-sm border ${errors.name ? "border-red-500" : "border-[#D8CFBB]"} bg-white focus:outline-none focus:ring-2 focus:ring-[#0E4A5A]/50 transition-all`}
                   />
                   {errors.name && <p className="text-sm text-red-500 mt-1">{errors.name}</p>}
                 </div>
@@ -331,7 +408,7 @@ export default function Partners() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className={`w-full px-4 py-3 rounded-xl border ${errors.email ? "border-red-500" : "border-[#E5DFD3]"} bg-white focus:outline-none focus:ring-2 focus:ring-[#0066CC]/50 transition-all`}
+                    className={`w-full px-4 py-3 rounded-sm border ${errors.email ? "border-red-500" : "border-[#D8CFBB]"} bg-white focus:outline-none focus:ring-2 focus:ring-[#0E4A5A]/50 transition-all`}
                   />
                   {errors.email && <p className="text-sm text-red-500 mt-1">{errors.email}</p>}
                 </div>
@@ -348,7 +425,7 @@ export default function Partners() {
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-[#E5DFD3] bg-white focus:outline-none focus:ring-2 focus:ring-[#0066CC]/50 transition-all"
+                    className="w-full px-4 py-3 rounded-sm border border-[#D8CFBB] bg-white focus:outline-none focus:ring-2 focus:ring-[#0E4A5A]/50 transition-all"
                   />
                 </div>
                 <div>
@@ -360,7 +437,7 @@ export default function Partners() {
                     name="projectType"
                     value={formData.projectType}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-[#E5DFD3] bg-white focus:outline-none focus:ring-2 focus:ring-[#0066CC]/50 transition-all"
+                    className="w-full px-4 py-3 rounded-sm border border-[#D8CFBB] bg-white focus:outline-none focus:ring-2 focus:ring-[#0E4A5A]/50 transition-all"
                   >
                     {c.buildProjectOptions.map((opt, i) => (
                       <option key={i} value={i === 0 ? "" : opt}>{opt}</option>
@@ -380,26 +457,30 @@ export default function Partners() {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className={`w-full px-4 py-3 rounded-xl border ${errors.message ? "border-red-500" : "border-[#E5DFD3]"} bg-white focus:outline-none focus:ring-2 focus:ring-[#0066CC]/50 transition-all resize-vertical`}
+                  className={`w-full px-4 py-3 rounded-sm border ${errors.message ? "border-red-500" : "border-[#D8CFBB]"} bg-white focus:outline-none focus:ring-2 focus:ring-[#0E4A5A]/50 transition-all resize-vertical`}
                 />
                 {errors.message && <p className="text-sm text-red-500 mt-1">{errors.message}</p>}
               </div>
 
-              <Button type="submit" className="w-full bg-[#0066CC] hover:bg-[#004A99] text-white py-6 rounded-xl text-lg">
-                {c.buildSubmit}
+              <Button
+                type="submit"
+                disabled={sending}
+                className="w-full bg-[#0E4A5A] hover:bg-[#0A3541] text-white py-6 rounded-sm text-lg disabled:opacity-70"
+              >
+                {sending ? c.buildSending : c.buildSubmit}
               </Button>
             </form>
           </div>
         </section>
 
         {/* CTA */}
-        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#2d8a6e]">
+        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#4A7A55]">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">{c.ctaTitle}</h2>
+            <h2 className="text-3xl sm:text-4xl font-medium text-white mb-6">{c.ctaTitle}</h2>
             <p className="text-lg text-white/90 mb-10">{c.ctaText}</p>
             <Link
               href="/contact"
-              className="inline-block px-8 py-4 bg-white text-[#2d8a6e] font-semibold rounded-xl hover:bg-[#F5F0E8] transition-colors"
+              className="inline-block px-8 py-4 bg-white text-[#4A7A55] font-semibold rounded-sm hover:bg-[#EDE5D3] transition-colors"
             >
               {c.ctaButton}
             </Link>

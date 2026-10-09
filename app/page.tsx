@@ -101,20 +101,12 @@ export default function Home() {
     }
   }, [hasAnimated])
 
-  const processSteps = [
-    { step: "01", titleKey: "home.process.step1.title", descKey: "home.process.step1.desc", image: "/sargassum-harvest.jpg" },
-    { step: "02", titleKey: "home.process.step2.title", descKey: "home.process.step2.desc", image: "/process.png" },
-    { step: "03", titleKey: "home.process.step3.title", descKey: "home.process.step3.desc", image: "/factory.jpg" },
-    { step: "04", titleKey: "home.process.step4.title", descKey: "home.process.step4.desc", image: "/cucs.jpg" },
-  ]
-
   return (
     <>
       <Header />
       <main>
-        {/* Hero Section */}
+        {/* Hero */}
         <section ref={heroRef} className="relative min-h-screen flex items-end overflow-hidden">
-          {/* Background Image */}
           <div className="absolute inset-0">
             <Image
               src="/hero-beach.jpg"
@@ -126,70 +118,67 @@ export default function Home() {
               quality={85}
             />
           </div>
-
-          {/* Scrims: dark on the text side, plus top and bottom, so text stays readable on any screen */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-transparent" />
           <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/50 to-transparent" />
           <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/50 to-transparent" />
 
-          <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24">
+          <div className="relative z-10 w-full max-w-[84rem] mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24">
             <div className="max-w-2xl text-left">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-5 text-balance leading-[1.1] drop-shadow-md">
-                {t("home.hero.headline").replace(/-/g, "‑")}
-              </h1>
-              <p className="text-lg sm:text-xl font-semibold text-[#0066CC] bg-white/95 inline-block px-4 py-2 rounded-lg mb-6 text-balance">
+              <p className="flex items-center gap-3 text-[11px] sm:text-sm uppercase tracking-[0.16em] sm:tracking-[0.2em] text-white/85 mb-6">
+                <span className="h-px w-8 shrink-0 bg-white/70" />
                 {t("home.hero.tagline")}
               </p>
-              <p className="text-lg sm:text-xl text-white/95 mb-8 max-w-xl text-pretty drop-shadow">
+              <h1 className="text-4xl sm:text-5xl lg:text-7xl text-white mb-6 text-balance leading-[1.05] drop-shadow-md">
+                {t("home.hero.headline").replace(/-/g, "\u2011")}
+              </h1>
+              <p className="text-lg sm:text-xl text-white/90 mb-10 max-w-xl text-pretty leading-relaxed drop-shadow">
                 {t("home.hero.subheadline")}
               </p>
               <Link
                 href="/materials"
-                className="inline-block px-8 py-4 bg-white text-[#0066CC] font-semibold rounded-lg hover:bg-[#0066CC] hover:text-white transition-all text-lg border-2 border-white shadow-lg hover:shadow-xl"
+                className="group inline-flex items-center gap-3 px-7 py-4 bg-[#F7F3EA] text-[#0E4A5A] font-medium rounded-sm hover:bg-white transition-colors"
               >
                 {t("home.hero.cta")}
+                <span aria-hidden className="transition-transform group-hover:translate-x-1">&rarr;</span>
               </Link>
             </div>
           </div>
         </section>
 
-        {/* Why It Matters Section */}
-        <section className="py-20 sm:py-24 px-4 sm:px-6 lg:px-8 bg-white border-b-4 border-[#0066CC]">
+        {/* Three problems */}
+        <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-[#F7F3EA]">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-12 text-center">
+            <h2 className="text-3xl sm:text-5xl text-foreground mb-14 max-w-3xl text-balance leading-[1.1]">
               {t("home.why.title")}
             </h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="flex items-start gap-4">
-                <div className="text-[#0066CC] text-4xl font-bold flex-shrink-0">→</div>
-                <p className="text-lg text-muted-foreground leading-relaxed">{t("home.why.bullet1")}</p>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="text-[#0066CC] text-4xl font-bold flex-shrink-0">→</div>
-                <p className="text-lg text-muted-foreground leading-relaxed">{t("home.why.bullet2")}</p>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="text-[#0066CC] text-4xl font-bold flex-shrink-0">→</div>
-                <p className="text-lg text-muted-foreground leading-relaxed">{t("home.why.bullet3")}</p>
-              </div>
+            <div className="grid md:grid-cols-3 gap-x-12 gap-y-10">
+              {(["bullet1", "bullet2", "bullet3"] as const).map((key, i) => (
+                <div key={key} className="border-t border-foreground/80 pt-5">
+                  <div className="font-[family-name:var(--font-display)] text-sm tracking-widest text-[#4A7A55] mb-4">
+                    0{i + 1}
+                  </div>
+                  <p className="text-lg text-foreground/85 leading-relaxed">{t(`home.why.${key}`)}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Challenge Section */}
-        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#FAF8F5]">
+        {/* Challenge */}
+        <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-white">
           <div className="max-w-7xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-16 items-center">
-              <div>
-                <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-8">{t("home.challenge.title")}</h2>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-6">{t("home.challenge.p1")}</p>
+            <div className="grid md:grid-cols-12 gap-12 lg:gap-20 items-center">
+              <div className="md:col-span-5">
+                <h2 className="text-4xl sm:text-5xl text-foreground mb-8 leading-[1.1]">{t("home.challenge.title")}</h2>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-5">{t("home.challenge.p1")}</p>
                 <p className="text-lg text-muted-foreground leading-relaxed">{t("home.challenge.p2")}</p>
               </div>
-              <div className="relative h-[400px] rounded-2xl overflow-hidden bg-[#E5DFD3]">
+              <div className="md:col-span-7 relative h-[320px] sm:h-[460px] overflow-hidden bg-[#D8CFBB]">
                 <Image
                   src="/sargassum-seaweed-on-tropical-beach-aerial-view.jpg"
                   alt="Sargassum accumulation on beach"
                   fill
+                  sizes="(min-width: 768px) 58vw, 100vw"
                   className="object-cover"
                 />
               </div>
@@ -197,85 +186,67 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Process Section */}
-        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#F5F0E8]">
+        {/* Process video */}
+        <section className="py-14 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[#0A3541]">
+          <div className="max-w-5xl mx-auto">
+            <video
+              className="w-full aspect-video bg-black"
+              controls
+              playsInline
+              preload="metadata"
+              poster="/how-it-works-poster.jpg"
+              aria-label="How Blue Carbon Materials turns sargassum into building materials, biochar, and clean energy"
+            >
+              <source src="/how-it-works.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </section>
+
+        {/* Targets */}
+        <section ref={impactRef} className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-[#F7F3EA]">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-20">
-              <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">{t("home.process.title")}</h2>
-              <p className="text-lg text-muted-foreground">{t("home.process.subtitle")}</p>
+            <div className="grid md:grid-cols-12 gap-6 md:gap-12 items-end mb-14">
+              <h2 className="md:col-span-6 text-4xl sm:text-5xl text-foreground leading-[1.1]">{t("home.impact.title")}</h2>
+              <p className="md:col-span-6 text-lg text-muted-foreground max-w-md">{t("home.impact.subtitle")}</p>
             </div>
 
-            <div className="grid md:grid-cols-4 gap-8">
-              {processSteps.map((item) => (
+            <div className="grid md:grid-cols-3 border-t border-foreground/80">
+              {[
+                { v: `${(metric1 / 1000).toFixed(0)}K+`, k: "home.impact.metric1" },
+                { v: `${(metric2 / 1000).toFixed(0)}K`, k: "home.impact.metric2" },
+                { v: `${metric3}+`, k: "home.impact.metric3" },
+              ].map((m, i) => (
                 <div
-                  key={item.step}
-                  className="flex flex-col rounded-2xl bg-white border border-[#E5DFD3] hover:border-[#0066CC]/30 transition-all duration-300 hover:shadow-lg overflow-hidden"
+                  key={m.k}
+                  className={`py-8 md:py-10 ${i > 0 ? "md:pl-10 md:border-l border-[#D8CFBB] border-t md:border-t-0" : ""}`}
                 >
-                  <div className="relative h-48 bg-gradient-to-br from-[#0066CC]/10 to-[#2d8a6e]/10">
-                    <Image
-                      src={item.image}
-                      alt={t(item.titleKey)}
-                      fill
-                      className="object-cover"
-                    />
+                  <div className="font-[family-name:var(--font-display)] text-6xl sm:text-7xl text-[#0E4A5A] mb-3 tabular-nums">
+                    {m.v}
                   </div>
-                  <div className="p-8">
-                    <div className="text-5xl font-bold text-[#0066CC] mb-6">{item.step}</div>
-                    <h3 className="text-xl font-semibold mb-4 text-foreground">{t(item.titleKey)}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{t(item.descKey)}</p>
-                  </div>
+                  <p className="text-base text-muted-foreground max-w-[16rem]">{t(m.k)}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Impact Section */}
-        <section ref={impactRef} className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-white">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-20">
-              <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">{t("home.impact.title")}</h2>
-              <p className="text-lg text-muted-foreground">{t("home.impact.subtitle")}</p>
+        {/* CTA */}
+        <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-[#0E4A5A]">
+          <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-10 items-end">
+            <div className="md:col-span-7">
+              <h2 className="text-4xl sm:text-6xl mb-5 text-white text-balance leading-[1.05]">{t("home.cta.title")}</h2>
+              <p className="text-lg sm:text-xl text-white/80 max-w-xl text-pretty">{t("home.cta.subtitle")}</p>
             </div>
-
-            <div className="grid md:grid-cols-3 gap-12">
-              <div className="text-center p-10 rounded-2xl bg-[#FAF8F5]">
-                <div className="text-6xl font-bold text-[#0066CC] mb-4">
-                  {(metric1 / 1000).toFixed(0)}K+
-                </div>
-                <p className="text-lg text-muted-foreground">{t("home.impact.metric1")}</p>
-              </div>
-              <div className="text-center p-10 rounded-2xl bg-[#FAF8F5]">
-                <div className="text-6xl font-bold text-[#0066CC] mb-4">
-                  {(metric2 / 1000).toFixed(0)}K
-                </div>
-                <p className="text-lg text-muted-foreground">{t("home.impact.metric2")}</p>
-              </div>
-              <div className="text-center p-10 rounded-2xl bg-[#FAF8F5]">
-                <div className="text-6xl font-bold text-[#0066CC] mb-4">
-                  {metric3}+
-                </div>
-                <p className="text-lg text-muted-foreground">{t("home.impact.metric3")}</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#0066CC]">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl sm:text-5xl font-bold mb-6 text-white text-balance">{t("home.cta.title")}</h2>
-            <p className="text-xl text-white/90 mb-10 text-balance">{t("home.cta.subtitle")}</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="md:col-span-5 flex flex-col sm:flex-row md:justify-end gap-3">
               <Link
                 href="/materials"
-                className="px-8 py-4 bg-white text-[#0066CC] font-semibold rounded-lg hover:bg-[#0052A3] hover:text-white transition-colors text-lg"
+                className="px-7 py-4 text-center bg-[#F7F3EA] text-[#0E4A5A] font-medium rounded-sm hover:bg-white transition-colors"
               >
                 {t("home.cta.learn")}
               </Link>
               <Link
                 href="/contact"
-                className="px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-[#0066CC] transition-colors text-lg"
+                className="px-7 py-4 text-center border border-white/60 text-white font-medium rounded-sm hover:bg-white hover:text-[#0E4A5A] transition-colors"
               >
                 {t("home.cta.contact")}
               </Link>

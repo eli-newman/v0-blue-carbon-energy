@@ -94,10 +94,10 @@ const translations: Record<string, { en: string; es: string }> = {
   },
 
   // Impact Section
-  "home.impact.title": { en: "Our Progress", es: "Nuestro Progreso" },
+  "home.impact.title": { en: "Our Targets", es: "Nuestras Metas" },
   "home.impact.subtitle": {
-    en: "Real results from pilot operations and field trials",
-    es: "Resultados reales de operaciones piloto y pruebas de campo",
+    en: "Goals for our first full-scale operations",
+    es: "Metas para nuestras primeras operaciones a gran escala",
   },
   "home.impact.metric1": { en: "Tons Sargassum Processed (Target)", es: "Toneladas de Sargazo Procesadas (Meta)" },
   "home.impact.metric2": { en: "Tons CO₂ Equivalent Captured (Target)", es: "Toneladas CO₂ Equivalente Capturado (Meta)" },
