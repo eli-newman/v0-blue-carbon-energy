@@ -92,6 +92,17 @@ export function Footer() {
         {/* Copyright */}
         <div className="pt-8 border-t border-[#D8CFBB] text-center text-sm text-muted-foreground">
           <p>&copy; 2026 Blue Carbon Materials. {t("footer.rights")}</p>
+          <p className="mt-2">
+            {t("footer.developedBy")}{" "}
+            <a
+              href="https://elijnewman.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-[#0E4A5A] underline-offset-4 hover:underline"
+            >
+              Eli Newman
+            </a>
+          </p>
         </div>
       </div>
     </footer>

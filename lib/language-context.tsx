@@ -120,6 +120,7 @@ const translations: Record<string, { en: string; es: string }> = {
   "footer.navigation": { en: "Products", es: "Productos" },
   "footer.connect": { en: "Company", es: "Empresa" },
   "footer.rights": { en: "All rights reserved.", es: "Todos los derechos reservados." },
+  "footer.developedBy": { en: "Developed by", es: "Desarrollado por" },
 }
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {

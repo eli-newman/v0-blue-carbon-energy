@@ -28,6 +28,8 @@
 
 Never push to `main`, force-push, or change Vercel project settings without the user's explicit go-ahead for that specific action.
 
+Full human-readable workflow: see `DEVELOPMENT.md`.
+
 ## Dev
 - `npm run dev` -> http://localhost:3000 (picks the next free port if busy)
 - Framework: Next.js 16 (Turbopack)
