@@ -48,7 +48,7 @@ export default function Partners() {
         title: "Operational & Government",
         list: [
           { name: "Reclaim Nature, Inc.", focus: "Confirmed operational partner per signed USACE Letter of Intent" },
-          { name: "USACE Caribbean District", focus: "Active regulatory engagement — Letter of Intent signed" },
+          { name: "USACE Caribbean District", focus: "Active regulatory engagement - Letter of Intent signed" },
           { name: "Puerto Rico DDEC", focus: "Potential collaboration on economic development and permitting" },
         ],
       },
@@ -64,7 +64,7 @@ export default function Partners() {
       buildSubtitle: "Interested in using our materials or working with us on a project? Tell us what you're building.",
       ctaTitle: "Interested in Partnering?",
       ctaText:
-        "We're actively seeking partners—municipalities, research institutions, and agricultural networks—ready to scale sustainable sargassum solutions.",
+        "We're actively seeking partners - municipalities, research institutions, and agricultural networks - ready to scale sustainable sargassum solutions.",
       ctaButton: "Explore Partnership Opportunities",
     },
     es: {
@@ -100,7 +100,7 @@ export default function Partners() {
         title: "Operativos y Gobierno",
         list: [
           { name: "Reclaim Nature, Inc.", focus: "Socio operativo confirmado según Carta de Intención firmada con USACE" },
-          { name: "USACE Distrito del Caribe", focus: "Compromiso regulatorio activo — Carta de Intención firmada" },
+          { name: "USACE Distrito del Caribe", focus: "Compromiso regulatorio activo - Carta de Intención firmada" },
           { name: "DDEC Puerto Rico", focus: "Colaboración potencial en desarrollo económico y permisos" },
         ],
       },
@@ -116,7 +116,7 @@ export default function Partners() {
       buildSubtitle: "¿Interesado en usar nuestros materiales o trabajar con nosotros en un proyecto? Cuéntanos qué estás construyendo.",
       ctaTitle: "¿Interesado en Asociarte?",
       ctaText:
-        "Estamos buscando activamente socios—municipalidades, instituciones de investigación y redes agrícolas—listos para escalar soluciones sostenibles de sargazo.",
+        "Estamos buscando activamente socios - municipalidades, instituciones de investigación y redes agrícolas - listos para escalar soluciones sostenibles de sargazo.",
       ctaButton: "Explorar Oportunidades de Asociación",
     },
   }

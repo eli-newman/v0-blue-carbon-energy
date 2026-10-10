@@ -17,7 +17,7 @@ export default function Contact() {
       emailNote: "Response within 24 hours",
       phone: "Phone",
       phoneValue: "+1 (970) 389-2220",
-      phoneNote: "Mark Mathis, Principal — Monday–Friday, 9 AM–5 PM EST",
+      phoneNote: "Mark Mathis, Principal - Monday–Friday, 9 AM–5 PM EST",
       office: "Office",
       officeValue: "Fajardo–Humacao Corridor, Puerto Rico",
       officeNote: "Correspondence via email",
@@ -47,7 +47,7 @@ export default function Contact() {
       emailNote: "Respuesta en 24 horas",
       phone: "Teléfono",
       phoneValue: "+1 (970) 389-2220",
-      phoneNote: "Mark Mathis, Principal — Lunes–Viernes, 9 AM–5 PM EST",
+      phoneNote: "Mark Mathis, Principal - Lunes–Viernes, 9 AM–5 PM EST",
       office: "Oficina",
       officeValue: "Corredor Fajardo–Humacao, Puerto Rico",
       officeNote: "Correspondencia por correo electrónico",
@@ -72,7 +72,7 @@ export default function Contact() {
   const c = content[language]
 
   const linkCls =
-    "group inline-flex items-baseline gap-3 font-[family-name:var(--font-display)] text-2xl sm:text-4xl text-[#0E4A5A] break-all sm:break-normal hover:text-[#4A7A55] transition-colors"
+    "group inline-flex max-w-full items-baseline gap-3 font-[family-name:var(--font-display)] text-xl min-[420px]:text-2xl lg:text-4xl text-[#0E4A5A] [overflow-wrap:anywhere] hover:text-[#4A7A55] transition-colors"
 
   return (
     <>
@@ -136,7 +136,7 @@ export default function Contact() {
                 {c.office}
               </h2>
               <div className="md:col-span-8 min-w-0 space-y-3">
-                <p className="font-[family-name:var(--font-display)] text-2xl sm:text-4xl text-foreground">
+                <p className="font-[family-name:var(--font-display)] text-2xl lg:text-4xl text-foreground">
                   {c.officeValue}
                 </p>
                 <p className="text-muted-foreground">{c.officeNote}</p>

@@ -13,7 +13,7 @@ export default function Technology() {
     en: {
       heroTitle: "Technology & Process",
       heroSubtitle:
-        "A vertically integrated system that converts sargassum and waste plastics into building materials, agricultural products, and clean energy — all in one carbon-negative facility.",
+        "A vertically integrated system that converts sargassum and waste plastics into building materials, agricultural products, and clean energy - all in one carbon-negative facility.",
       processTitle: "The Complete Process",
       processSubtitle: "From beach to value: a closed-loop system",
       steps: [
@@ -32,7 +32,7 @@ export default function Technology() {
         {
           step: "Thermochemical Conversion",
           details:
-            "Advanced pyrolysis converts dried sargassum into biochar, bio-oil, and synthesis gas. The syngas powers our manufacturing facility — making the entire operation energy self-sufficient and carbon negative.",
+            "Advanced pyrolysis converts dried sargassum into biochar, bio-oil, and synthesis gas. The syngas powers our manufacturing facility - making the entire operation energy self-sufficient and carbon negative.",
           image: "/process.png",
         },
         {
@@ -86,7 +86,7 @@ export default function Technology() {
     es: {
       heroTitle: "Tecnología y Proceso",
       heroSubtitle:
-        "Un sistema verticalmente integrado que convierte sargazo y plásticos residuales en materiales de construcción, productos agrícolas y energía limpia — todo en una instalación carbono-negativa.",
+        "Un sistema verticalmente integrado que convierte sargazo y plásticos residuales en materiales de construcción, productos agrícolas y energía limpia - todo en una instalación carbono-negativa.",
       processTitle: "El Proceso Completo",
       processSubtitle: "De la playa al valor: un sistema de ciclo cerrado",
       steps: [
@@ -105,7 +105,7 @@ export default function Technology() {
         {
           step: "Conversión Termoquímica",
           details:
-            "La pirólisis avanzada convierte el sargazo seco en biocarbón, bio-aceite y gas de síntesis. El gas alimenta nuestra instalación de manufactura — haciendo toda la operación autosuficiente energéticamente y carbono negativa.",
+            "La pirólisis avanzada convierte el sargazo seco en biocarbón, bio-aceite y gas de síntesis. El gas alimenta nuestra instalación de manufactura - haciendo toda la operación autosuficiente energéticamente y carbono negativa.",
           image: "/process.png",
         },
         {

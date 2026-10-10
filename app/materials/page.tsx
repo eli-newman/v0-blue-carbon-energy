@@ -13,7 +13,7 @@ export default function Materials() {
     en: {
       heroTitle: "Building the Caribbean from Ocean Waste",
       heroSubtitle:
-        "We transform sargassum seaweed and recycled plastics into high-performance composite materials — rot resistant, marine durable, and carbon negative.",
+        "We transform sargassum seaweed and recycled plastics into high-performance composite materials - rot resistant, marine durable, and carbon negative.",
       productsTitle: "Our Products",
       productsSubtitle: "Engineered composites that outperform traditional materials",
       products: [
@@ -21,13 +21,13 @@ export default function Materials() {
           name: "Composite Boards",
           description:
             "Structural and decorative boards made from sargassum fiber and recycled plastic matrix. Ideal for walls, ceilings, partitions, and interior finishing in residential and commercial construction.",
-          specs: ["Rot & termite resistant", "Waterproof", "Lightweight", "Machinable — cuts, drills, screws like wood"],
+          specs: ["Rot & termite resistant", "Waterproof", "Lightweight", "Machinable - cuts, drills, screws like wood"],
           image: "/composite-boards.jpg",
         },
         {
           name: "Composite Tiles",
           description:
-            "Durable flooring and roofing tiles engineered for tropical climates. UV-stable coloring throughout the material — no paint or coating required.",
+            "Durable flooring and roofing tiles engineered for tropical climates. UV-stable coloring throughout the material - no paint or coating required.",
           specs: ["UV stable", "Slip resistant", "No sealing required", "Available in multiple profiles"],
           image: "/composite-tiles.jpg",
         },
@@ -52,17 +52,17 @@ export default function Materials() {
         {
           title: "Rot & Pest Resistant",
           description:
-            "Unlike wood, our composites don't rot, warp, or attract termites. Zero chemical treatment needed — the material is inherently resistant.",
+            "Unlike wood, our composites don't rot, warp, or attract termites. Zero chemical treatment needed - the material is inherently resistant.",
         },
         {
           title: "Marine Durable",
           description:
-            "Engineered for saltwater environments. Our materials withstand constant marine exposure without degradation — ideal for docks, seawalls, and coastal infrastructure.",
+            "Engineered for saltwater environments. Our materials withstand constant marine exposure without degradation - ideal for docks, seawalls, and coastal infrastructure.",
         },
         {
           title: "Lightweight & Strong",
           description:
-            "30-40% lighter than concrete with comparable structural performance. Easier to transport, handle, and install — reducing construction time and labor costs.",
+            "30-40% lighter than concrete with comparable structural performance. Easier to transport, handle, and install - reducing construction time and labor costs.",
         },
         {
           title: "Carbon Negative",
@@ -77,11 +77,11 @@ export default function Materials() {
         {
           title: "Zero Maintenance",
           description:
-            "No painting, staining, sealing, or chemical treatment — ever. The color goes all the way through. Pressure wash and go.",
+            "No painting, staining, sealing, or chemical treatment - ever. The color goes all the way through. Pressure wash and go.",
         },
       ],
       applicationsTitle: "Applications",
-      applicationsSubtitle: "From homes to harbors — built to last in the Caribbean",
+      applicationsSubtitle: "From homes to harbors - built to last in the Caribbean",
       applications: [
         {
           sector: "Residential Construction",
@@ -115,7 +115,7 @@ export default function Materials() {
         {
           stat: "100%",
           label: "Renewable Energy Manufacturing",
-          detail: "Our production facilities run on syngas generated from sargassum — the same feedstock as our products.",
+          detail: "Our production facilities run on syngas generated from sargassum - the same feedstock as our products.",
         },
         {
           stat: "Net Negative",
@@ -125,18 +125,18 @@ export default function Materials() {
       ],
       visionTitle: "Building a Circular Caribbean",
       visionText:
-        "Imagine every new home, school, dock, and resort in the Caribbean built from the very waste that washes up on its shores. That's not a distant dream — it's what we're building right now. Sargassum and landfill plastic become walls, roofs, and infrastructure. Ocean waste becomes economic opportunity. Environmental cleanup becomes construction supply chain.",
+        "Imagine every new home, school, dock, and resort in the Caribbean built from the very waste that washes up on its shores. That's not a distant dream - it's what we're building right now. Sargassum and landfill plastic become walls, roofs, and infrastructure. Ocean waste becomes economic opportunity. Environmental cleanup becomes construction supply chain.",
       visionCta: "Partner With Us",
       ctaTitle: "Ready to Build With Blue Carbon Materials?",
       ctaSubtitle:
-        "Whether you're a developer, contractor, government agency, or distributor — we want to hear from you.",
+        "Whether you're a developer, contractor, government agency, or distributor - we want to hear from you.",
       ctaButton: "Get in Touch",
       ctaSamples: "Request Samples",
     },
     es: {
       heroTitle: "Construyendo el Caribe con Residuos del Océano",
       heroSubtitle:
-        "Transformamos sargazo y plásticos reciclados en materiales compuestos de alto rendimiento — resistentes a la putrefacción, duraderos en ambiente marino y carbono negativos.",
+        "Transformamos sargazo y plásticos reciclados en materiales compuestos de alto rendimiento - resistentes a la putrefacción, duraderos en ambiente marino y carbono negativos.",
       productsTitle: "Nuestros Productos",
       productsSubtitle: "Compuestos diseñados que superan a los materiales tradicionales",
       products: [
@@ -144,13 +144,13 @@ export default function Materials() {
           name: "Tableros Compuestos",
           description:
             "Tableros estructurales y decorativos hechos de fibra de sargazo y matriz de plástico reciclado. Ideales para paredes, techos, particiones y acabados interiores en construcción residencial y comercial.",
-          specs: ["Resistente a putrefacción y termitas", "Impermeable", "Ligero", "Maquinable — corta, perfora y atornilla como madera"],
+          specs: ["Resistente a putrefacción y termitas", "Impermeable", "Ligero", "Maquinable - corta, perfora y atornilla como madera"],
           image: "/composite-boards.jpg",
         },
         {
           name: "Tejas Compuestas",
           description:
-            "Tejas duraderas para pisos y techos diseñadas para climas tropicales. Color estable a UV en todo el material — sin pintura ni recubrimiento necesario.",
+            "Tejas duraderas para pisos y techos diseñadas para climas tropicales. Color estable a UV en todo el material - sin pintura ni recubrimiento necesario.",
           specs: ["Estable a UV", "Antideslizante", "No requiere sellado", "Disponible en múltiples perfiles"],
           image: "/composite-tiles.jpg",
         },
@@ -200,11 +200,11 @@ export default function Materials() {
         {
           title: "Cero Mantenimiento",
           description:
-            "Sin pintar, teñir, sellar ni tratamiento químico — nunca. El color penetra todo el material.",
+            "Sin pintar, teñir, sellar ni tratamiento químico - nunca. El color penetra todo el material.",
         },
       ],
       applicationsTitle: "Aplicaciones",
-      applicationsSubtitle: "De hogares a puertos — construido para durar en el Caribe",
+      applicationsSubtitle: "De hogares a puertos - construido para durar en el Caribe",
       applications: [
         {
           sector: "Construcción Residencial",
@@ -238,7 +238,7 @@ export default function Materials() {
         {
           stat: "100%",
           label: "Manufactura con Energía Renovable",
-          detail: "Nuestras instalaciones funcionan con gas de síntesis generado del sargazo — la misma materia prima que nuestros productos.",
+          detail: "Nuestras instalaciones funcionan con gas de síntesis generado del sargazo - la misma materia prima que nuestros productos.",
         },
         {
           stat: "Neto Negativo",
@@ -248,11 +248,11 @@ export default function Materials() {
       ],
       visionTitle: "Construyendo un Caribe Circular",
       visionText:
-        "Imagina cada nuevo hogar, escuela, muelle y resort en el Caribe construido con los mismos residuos que llegan a sus costas. Eso no es un sueño lejano — es lo que estamos construyendo ahora mismo. El sargazo y el plástico de vertedero se convierten en paredes, techos e infraestructura.",
+        "Imagina cada nuevo hogar, escuela, muelle y resort en el Caribe construido con los mismos residuos que llegan a sus costas. Eso no es un sueño lejano - es lo que estamos construyendo ahora mismo. El sargazo y el plástico de vertedero se convierten en paredes, techos e infraestructura.",
       visionCta: "Asóciate con Nosotros",
       ctaTitle: "¿Listo para Construir con Blue Carbon Materials?",
       ctaSubtitle:
-        "Ya seas desarrollador, contratista, agencia gubernamental o distribuidor — queremos saber de ti.",
+        "Ya seas desarrollador, contratista, agencia gubernamental o distribuidor - queremos saber de ti.",
       ctaButton: "Contáctanos",
       ctaSamples: "Solicitar Muestras",
     },
@@ -290,7 +290,7 @@ export default function Materials() {
                   key={product.name}
                   className="p-8 rounded-sm bg-[#F7F3EA] border border-[#D8CFBB] hover:border-[#0E4A5A]/30 transition-all duration-300"
                 >
-                  {/* Product visual — real photo when available, otherwise conceptual placeholder */}
+                  {/* Product visual - real photo when available, otherwise conceptual placeholder */}
                   {product.image ? (
                     <div className="relative h-48 rounded-sm mb-6 overflow-hidden border border-[#D8CFBB]">
                       <Image src={product.image} alt={product.name} fill className="object-cover" />

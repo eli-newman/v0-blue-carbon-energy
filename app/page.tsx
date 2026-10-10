@@ -122,16 +122,16 @@ export default function Home() {
           <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/50 to-transparent" />
           <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/50 to-transparent" />
 
-          <div className="relative z-10 w-full max-w-[84rem] mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24">
+          <div className="relative z-10 w-full max-w-[84rem] mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 pb-12 sm:pb-20">
             <div className="max-w-2xl text-left">
               <p className="flex items-center gap-3 text-[11px] sm:text-sm uppercase tracking-[0.16em] sm:tracking-[0.2em] text-white/85 mb-6">
                 <span className="h-px w-8 shrink-0 bg-white/70" />
                 {t("home.hero.tagline")}
               </p>
-              <h1 className="text-4xl sm:text-5xl lg:text-7xl text-white mb-6 text-balance leading-[1.05] drop-shadow-md">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl [@media(max-height:760px)]:lg:text-5xl [@media(max-height:760px)]:xl:text-5xl text-white mb-6 text-balance leading-[1.05] drop-shadow-md">
                 {t("home.hero.headline").replace(/-/g, "\u2011")}
               </h1>
-              <p className="text-lg sm:text-xl text-white/90 mb-10 max-w-xl text-pretty leading-relaxed drop-shadow">
+              <p className="text-lg sm:text-xl text-white/90 mb-8 sm:mb-10 max-w-xl text-pretty leading-relaxed drop-shadow">
                 {t("home.hero.subheadline")}
               </p>
               <Link

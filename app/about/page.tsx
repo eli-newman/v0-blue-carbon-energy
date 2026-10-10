@@ -24,7 +24,7 @@ export default function About() {
         "To create sustainable solutions that transform environmental challenges into economic opportunities for coastal communities, while generating clean energy and restoring ecosystems.",
       visionTitle: "Our Vision",
       visionText:
-        "A world where coastal waste becomes a valued resource, driving renewable energy, regenerative agriculture, and thriving ecosystems—all while empowering local communities to lead their own transformation.",
+        "A world where coastal waste becomes a valued resource, driving renewable energy, regenerative agriculture, and thriving ecosystems - all while empowering local communities to lead their own transformation.",
       valuesTitle: "Our Values",
       values: [
         {
@@ -71,7 +71,7 @@ export default function About() {
         "Crear soluciones sostenibles que transformen los desafíos ambientales en oportunidades económicas para las comunidades costeras, mientras generamos energía limpia y restauramos ecosistemas.",
       visionTitle: "Nuestra Visión",
       visionText:
-        "Un mundo donde los desechos costeros se conviertan en un recurso valioso, impulsando energía renovable, agricultura regenerativa y ecosistemas prósperos—todo mientras empoderamos a las comunidades locales para liderar su propia transformación.",
+        "Un mundo donde los desechos costeros se conviertan en un recurso valioso, impulsando energía renovable, agricultura regenerativa y ecosistemas prósperos - todo mientras empoderamos a las comunidades locales para liderar su propia transformación.",
       valuesTitle: "Nuestros Valores",
       values: [
         {
@@ -140,7 +140,7 @@ export default function About() {
     {
       name: 'John "Cade" Johnson',
       role: "Chemist",
-      bio: 'John "Cade" Johnson holds a Bachelor of Chemical Engineering from Georgia Tech (1983) with a certificate in biochemistry. He worked in the field of environmental engineering consulting until retirement — which was official some years ago, but seems to be a difficult profession to quit. During his years of gainful employment, he focused on industrial environmental issues — wastewater treatment, air emission controls and permitting, hazardous and toxic waste management, and contaminated site remediation. He managed projects with expenditures in the millions of dollars and directed engineering teams of dozens. He served as a corporate vice president and managed a consulting office of 40 employees. In recent years, he has shifted focus to climate change mitigation efforts. His interests are in carbon dioxide removal, climate justice, and sustainability improvements. He has gained extensive experience training youth in STEM (Science, Technology, Engineering and Mathematics).',
+      bio: 'John "Cade" Johnson holds a Bachelor of Chemical Engineering from Georgia Tech (1983) with a certificate in biochemistry. He worked in the field of environmental engineering consulting until retirement - which was official some years ago, but seems to be a difficult profession to quit. During his years of gainful employment, he focused on industrial environmental issues - wastewater treatment, air emission controls and permitting, hazardous and toxic waste management, and contaminated site remediation. He managed projects with expenditures in the millions of dollars and directed engineering teams of dozens. He served as a corporate vice president and managed a consulting office of 40 employees. In recent years, he has shifted focus to climate change mitigation efforts. His interests are in carbon dioxide removal, climate justice, and sustainability improvements. He has gained extensive experience training youth in STEM (Science, Technology, Engineering and Mathematics).',
       image: "/placeholder-user.jpg",
     },
   ]

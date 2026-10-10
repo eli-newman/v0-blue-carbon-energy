@@ -31,8 +31,8 @@ const translations: Record<string, { en: string; es: string }> = {
     es: "Convirtiendo Residuos Oceánicos en Materiales de Construcción de Alto Rendimiento",
   },
   "home.hero.subheadline": {
-    en: "We convert sargassum seaweed and recycled plastics into composite building materials, agricultural inputs, and clean energy — all through carbon-negative manufacturing.",
-    es: "Convertimos sargazo y plásticos reciclados en materiales de construcción compuestos, insumos agrícolas y energía limpia — todo mediante manufactura carbono-negativa.",
+    en: "We convert sargassum seaweed and recycled plastics into composite building materials, agricultural inputs, and clean energy - all through carbon-negative manufacturing.",
+    es: "Convertimos sargazo y plásticos reciclados en materiales de construcción compuestos, insumos agrícolas y energía limpia - todo mediante manufactura carbono-negativa.",
   },
   "home.hero.tagline": {
     en: "Building the Caribbean from ocean waste.",
@@ -43,16 +43,16 @@ const translations: Record<string, { en: string; es: string }> = {
   // Why It Matters Section
   "home.why.title": { en: "Three Problems. One Integrated Solution.", es: "Tres Problemas. Una Solución Integrada." },
   "home.why.bullet1": {
-    en: "Sargassum is overwhelming Caribbean coastlines — we turn it into rot-resistant, marine-durable composite boards and tiles.",
-    es: "El sargazo está abrumando las costas del Caribe — lo convertimos en tableros y tejas compuestas resistentes a la putrefacción y al ambiente marino.",
+    en: "Sargassum is overwhelming Caribbean coastlines - we turn it into rot-resistant, marine-durable composite boards and tiles.",
+    es: "El sargazo está abrumando las costas del Caribe - lo convertimos en tableros y tejas compuestas resistentes a la putrefacción y al ambiente marino.",
   },
   "home.why.bullet2": {
-    en: "Plastic waste clogs landfills and oceans — we compound it with sargassum fiber into high-performance building products.",
-    es: "Los residuos plásticos saturan vertederos y océanos — los combinamos con fibra de sargazo en productos de construcción de alto rendimiento.",
+    en: "Plastic waste clogs landfills and oceans - we compound it with sargassum fiber into high-performance building products.",
+    es: "Los residuos plásticos saturan vertederos y océanos - los combinamos con fibra de sargazo en productos de construcción de alto rendimiento.",
   },
   "home.why.bullet3": {
-    en: "Importing construction materials is expensive and carbon-heavy — we manufacture locally from local waste streams.",
-    es: "Importar materiales de construcción es caro y genera mucho carbono — fabricamos localmente con flujos de residuos locales.",
+    en: "Importing construction materials is expensive and carbon-heavy - we manufacture locally from local waste streams.",
+    es: "Importar materiales de construcción es caro y genera mucho carbono - fabricamos localmente con flujos de residuos locales.",
   },
 
   // Sargassum Challenge Section
@@ -62,8 +62,8 @@ const translations: Record<string, { en: string; es: string }> = {
     es: "Enormes floraciones de sargazo están abrumando las costas del Caribe y el Atlántico, dañando el turismo, amenazando la vida marina y costando a las comunidades millones en esfuerzos de limpieza.",
   },
   "home.challenge.p2": {
-    en: "These blooms are accelerating due to climate change and nutrient runoff. Instead of disposal, we see a raw material — feedstock for composites, biochar, and energy.",
-    es: "Estas floraciones se aceleran debido al cambio climático y la escorrentía de nutrientes. En lugar de desecharlo, vemos una materia prima — insumo para compuestos, biocarbón y energía.",
+    en: "These blooms are accelerating due to climate change and nutrient runoff. Instead of disposal, we see a raw material - feedstock for composites, biochar, and energy.",
+    es: "Estas floraciones se aceleran debido al cambio climático y la escorrentía de nutrientes. En lugar de desecharlo, vemos una materia prima - insumo para compuestos, biocarbón y energía.",
   },
 
   // Process Section
@@ -89,8 +89,8 @@ const translations: Record<string, { en: string; es: string }> = {
   },
   "home.process.step4.title": { en: "Grow", es: "Cultivar" },
   "home.process.step4.desc": {
-    en: "Biochar and biostimulants improve crop yields and soil health — carbon-negative agriculture from the same process.",
-    es: "Biocarbón y bioestimulantes mejoran rendimientos y salud del suelo — agricultura carbono-negativa del mismo proceso.",
+    en: "Biochar and biostimulants improve crop yields and soil health - carbon-negative agriculture from the same process.",
+    es: "Biocarbón y bioestimulantes mejoran rendimientos y salud del suelo - agricultura carbono-negativa del mismo proceso.",
   },
 
   // Impact Section
@@ -106,8 +106,8 @@ const translations: Record<string, { en: string; es: string }> = {
   // CTA Section
   "home.cta.title": { en: "Build With Us", es: "Construye Con Nosotros" },
   "home.cta.subtitle": {
-    en: "Whether you need sustainable building materials, agricultural inputs, or want to invest in carbon-negative manufacturing — let's talk.",
-    es: "Ya sea que necesites materiales de construcción sostenibles, insumos agrícolas o quieras invertir en manufactura carbono-negativa — hablemos.",
+    en: "Whether you need sustainable building materials, agricultural inputs, or want to invest in carbon-negative manufacturing - let's talk.",
+    es: "Ya sea que necesites materiales de construcción sostenibles, insumos agrícolas o quieras invertir en manufactura carbono-negativa - hablemos.",
   },
   "home.cta.learn": { en: "View Our Materials", es: "Ver Nuestros Materiales" },
   "home.cta.contact": { en: "Contact & Investors", es: "Contacto e Inversores" },

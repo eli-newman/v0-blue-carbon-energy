@@ -50,7 +50,7 @@ export default function Agriculture() {
           description:
             "A carbon-negative, high-surface-area biochar impregnated under vacuum with concentrated sargassum-derived biostimulants and soluble organic compounds, designed to serve as a carrier and controlled-release delivery system for plant nutrients, polysaccharides, and bioactive molecules while improving soil structure, water retention, and microbial activity.",
           benefits: [
-            "Ready-to-apply — no charging period",
+            "Ready-to-apply - no charging period",
             "Balanced nutrient profile",
             "Improves both sandy and clay soils",
             "Reduces irrigation frequency",
@@ -105,7 +105,7 @@ export default function Agriculture() {
       sciencePoints: [
         {
           title: "Carbon Sequestration",
-          text: "Biochar locks carbon in soil for centuries. Each ton of biochar sequesters ~3 tons of CO₂ equivalent — creating a verified, permanent carbon sink.",
+          text: "Biochar locks carbon in soil for centuries. Each ton of biochar sequesters ~3 tons of CO₂ equivalent - creating a verified, permanent carbon sink.",
         },
         {
           title: "Soil Microbiome",
@@ -118,7 +118,7 @@ export default function Agriculture() {
       ],
       ctaTitle: "Start Growing With Blue Carbon Materials",
       ctaText:
-        "Whether you're a smallholder farmer, agricultural cooperative, or commercial operation — our team provides tailored solutions and ongoing support.",
+        "Whether you're a smallholder farmer, agricultural cooperative, or commercial operation - our team provides tailored solutions and ongoing support.",
       ctaButton: "Contact Our Agronomy Team",
       ctaTrials: "Request Trial Quantities",
     },
@@ -160,7 +160,7 @@ export default function Agriculture() {
           description:
             "Un biocarbón carbono-negativo de alta superficie específica, impregnado al vacío con bioestimulantes concentrados derivados de sargazo y compuestos orgánicos solubles, diseñado para servir como portador y sistema de liberación controlada de nutrientes vegetales, polisacáridos y moléculas bioactivas, mientras mejora la estructura del suelo, la retención de agua y la actividad microbiana.",
           benefits: [
-            "Listo para aplicar — sin período de carga",
+            "Listo para aplicar - sin período de carga",
             "Perfil de nutrientes balanceado",
             "Mejora suelos arenosos y arcillosos",
             "Reduce frecuencia de riego",
@@ -215,7 +215,7 @@ export default function Agriculture() {
       sciencePoints: [
         {
           title: "Secuestro de Carbono",
-          text: "El biocarbón fija carbono en el suelo por siglos. Cada tonelada secuestra ~3 toneladas de CO₂ equivalente — creando un sumidero de carbono permanente verificado.",
+          text: "El biocarbón fija carbono en el suelo por siglos. Cada tonelada secuestra ~3 toneladas de CO₂ equivalente - creando un sumidero de carbono permanente verificado.",
         },
         {
           title: "Microbioma del Suelo",
@@ -228,7 +228,7 @@ export default function Agriculture() {
       ],
       ctaTitle: "Empieza a Cultivar con Blue Carbon Materials",
       ctaText:
-        "Ya seas un pequeño agricultor, cooperativa agrícola u operación comercial — nuestro equipo ofrece soluciones personalizadas y soporte continuo.",
+        "Ya seas un pequeño agricultor, cooperativa agrícola u operación comercial - nuestro equipo ofrece soluciones personalizadas y soporte continuo.",
       ctaButton: "Contactar Nuestro Equipo de Agronomía",
       ctaTrials: "Solicitar Cantidades de Prueba",
     },
