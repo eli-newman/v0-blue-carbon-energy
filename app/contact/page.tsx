@@ -1,29 +1,11 @@
 "use client"
 
-import type React from "react"
-import { useState } from "react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { useLanguage } from "@/lib/language-context"
-import { Button } from "@/components/ui/button"
-import { submitInquiry } from "@/lib/submit-inquiry"
 
 export default function Contact() {
   const { language } = useLanguage()
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    organization: "",
-    type: "inquiry",
-    message: "",
-  })
-  const [submitted, setSubmitted] = useState(false)
-  const [sending, setSending] = useState(false)
-  const [sendFailed, setSendFailed] = useState(false)
-  const [honeypot, setHoneypot] = useState("")
-  const [errors, setErrors] = useState<Record<string, string>>({})
-
   const content = {
     en: {
       title: "Get in Touch",
@@ -39,28 +21,6 @@ export default function Contact() {
       office: "Office",
       officeValue: "Fajardo–Humacao Corridor, Puerto Rico",
       officeNote: "Correspondence via email",
-      formTitle: "Send us a Message",
-      formSubtitle: "We're here to help and discuss how we can work together",
-      successTitle: "Thank you! Your message has been sent.",
-      successText: "We'll get back to you as soon as possible.",
-      errorTitle: "Sorry, we couldn't send your message.",
-      errorText: "Please try again, or email us directly at",
-      sending: "Sending...",
-      nameLabel: "Full Name",
-      emailLabel: "Email Address",
-      phoneLabel: "Phone Number",
-      orgLabel: "Organization",
-      typeLabel: "Inquiry Type",
-      typeOptions: [
-        "General Inquiry",
-        "Partnership Interest",
-        "Research Collaboration",
-        "Investment Opportunity",
-        "Other",
-      ],
-      messageLabel: "Message",
-      submit: "Send Message",
-      privacy: "We respect your privacy. We'll only use your information to respond to your inquiry.",
       faqTitle: "Frequently Asked Questions",
       faqs: [
         {
@@ -91,28 +51,6 @@ export default function Contact() {
       office: "Oficina",
       officeValue: "Corredor Fajardo–Humacao, Puerto Rico",
       officeNote: "Correspondencia por correo electrónico",
-      formTitle: "Envíanos un Mensaje",
-      formSubtitle: "Estamos aquí para ayudar y discutir cómo podemos trabajar juntos",
-      successTitle: "¡Gracias! Tu mensaje ha sido enviado.",
-      successText: "Te responderemos lo antes posible.",
-      errorTitle: "Lo sentimos, no pudimos enviar tu mensaje.",
-      errorText: "Inténtalo de nuevo o escríbenos directamente a",
-      sending: "Enviando...",
-      nameLabel: "Nombre Completo",
-      emailLabel: "Correo Electrónico",
-      phoneLabel: "Número de Teléfono",
-      orgLabel: "Organización",
-      typeLabel: "Tipo de Consulta",
-      typeOptions: [
-        "Consulta General",
-        "Interés en Asociación",
-        "Colaboración de Investigación",
-        "Oportunidad de Inversión",
-        "Otro",
-      ],
-      messageLabel: "Mensaje",
-      submit: "Enviar Mensaje",
-      privacy: "Respetamos tu privacidad. Solo usaremos tu información para responder a tu consulta.",
       faqTitle: "Preguntas Frecuentes",
       faqs: [
         {
@@ -133,246 +71,98 @@ export default function Contact() {
 
   const c = content[language]
 
-  const validateForm = () => {
-    const newErrors: Record<string, string> = {}
-    if (!formData.name.trim()) newErrors.name = language === "en" ? "Name is required" : "El nombre es requerido"
-    if (!formData.email.trim()) newErrors.email = language === "en" ? "Email is required" : "El correo es requerido"
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email))
-      newErrors.email = language === "en" ? "Invalid email address" : "Correo electrónico inválido"
-    if (!formData.message.trim())
-      newErrors.message = language === "en" ? "Message is required" : "El mensaje es requerido"
-    return newErrors
-  }
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-    if (errors[name]) setErrors((prev) => ({ ...prev, [name]: "" }))
-  }
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (sending) return
-    const newErrors = validateForm()
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors)
-      return
-    }
-    setSending(true)
-    setSendFailed(false)
-    const ok = await submitInquiry({ source: "contact", ...formData, website: honeypot })
-    setSending(false)
-    if (!ok) {
-      setSendFailed(true)
-      return
-    }
-    setSubmitted(true)
-    setFormData({ name: "", email: "", phone: "", organization: "", type: "inquiry", message: "" })
-    setTimeout(() => setSubmitted(false), 8000)
-  }
+  const linkCls =
+    "group inline-flex items-baseline gap-3 font-[family-name:var(--font-display)] text-2xl sm:text-4xl text-[#0E4A5A] break-all sm:break-normal hover:text-[#4A7A55] transition-colors"
 
   return (
     <>
       <Header />
       <main>
-        {/* Contact Info - starts directly */}
-        <section className="pt-28 pb-24 sm:pt-36 sm:pb-32 px-4 sm:px-6 lg:px-8 bg-white">
-          <div className="max-w-7xl mx-auto">
-            <div className="mb-14 max-w-3xl">
-              <h1 className="text-4xl sm:text-5xl font-medium text-foreground mb-4">{c.title}</h1>
-              <p className="text-lg text-muted-foreground max-w-2xl">{c.subtitle}</p>
+        {/* Hero */}
+        <section className="relative overflow-hidden pt-32 pb-20 sm:pt-44 sm:pb-28 px-4 sm:px-6 lg:px-8 bg-[#0A3541]">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -right-24 -top-24 h-[28rem] w-[28rem] rounded-full border border-white/10"
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -right-8 top-10 h-[20rem] w-[20rem] rounded-full border border-white/10"
+          />
+          <div className="relative max-w-7xl mx-auto">
+            <h1 className="text-5xl sm:text-7xl lg:text-8xl text-white leading-[1.02] mb-10 sm:mb-14">{c.title}</h1>
+            <div className="grid md:grid-cols-12">
+              <p className="md:col-start-5 md:col-span-8 font-[family-name:var(--font-display)] text-2xl sm:text-3xl text-white/90 leading-snug text-pretty border-t border-white/30 pt-8">
+                {c.subtitle}
+              </p>
             </div>
+          </div>
+        </section>
 
-            <div className="grid md:grid-cols-3 gap-6 mb-20">
-              <div className="p-6 sm:p-8 min-w-0 break-words rounded-sm bg-[#F7F3EA] border border-[#D8CFBB] text-center">
-                <h3 className="text-lg font-medium mb-3">{c.email}</h3>
-                <a href={`mailto:${c.emailMark}`} className="block text-[#0E4A5A] hover:underline text-sm mb-1">
-                  {c.emailMark}
-                </a>
-                <a href={`mailto:${c.emailLuke}`} className="block text-[#0E4A5A] hover:underline text-sm">
-                  {c.emailLuke}
-                </a>
-                <p className="text-sm text-muted-foreground mt-2">{c.emailNote}</p>
-              </div>
-
-              <div className="p-6 sm:p-8 min-w-0 break-words rounded-sm bg-[#F7F3EA] border border-[#D8CFBB] text-center">
-                <h3 className="text-lg font-medium mb-3">{c.phone}</h3>
-                <a href="tel:+19703892220" className="text-[#4A7A55] hover:underline">
-                  {c.phoneValue}
-                </a>
-                <p className="text-sm text-muted-foreground mt-2">{c.phoneNote}</p>
-              </div>
-
-              <div className="p-6 sm:p-8 min-w-0 break-words rounded-sm bg-[#F7F3EA] border border-[#D8CFBB] text-center">
-                <h3 className="text-lg font-medium mb-3">{c.office}</h3>
-                <p className="text-[#0E4A5A]">{c.officeValue}</p>
-                <p className="text-sm text-muted-foreground mt-2">{c.officeNote}</p>
-              </div>
-            </div>
-
-            {/* Form */}
-            <div className="max-w-2xl mx-auto">
-              <div className="mb-12">
-                <h2 className="text-2xl font-medium mb-2">{c.formTitle}</h2>
-                <p className="text-muted-foreground">{c.formSubtitle}</p>
-              </div>
-
-              {submitted && (
-                <div
-                  className="mb-6 p-4 rounded-sm bg-[#4A7A55]/10 border border-[#4A7A55] text-[#4A7A55]"
-                  role="alert"
-                >
-                  <p className="font-semibold">{c.successTitle}</p>
-                  <p className="text-sm">{c.successText}</p>
-                </div>
-              )}
-
-              {sendFailed && (
-                <div className="mb-6 p-4 rounded-sm bg-red-50 border border-red-300 text-red-800" role="alert">
-                  <p className="font-semibold">{c.errorTitle}</p>
-                  <p className="text-sm">
-                    {c.errorText}{" "}
-                    <a href={`mailto:${c.emailMark}`} className="underline font-medium">
-                      {c.emailMark}
+        {/* Ways to reach us */}
+        <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-[#F7F3EA]">
+          <div className="max-w-7xl mx-auto border-t border-foreground/80">
+            <div className="grid md:grid-cols-12 gap-3 md:gap-10 py-10 border-b border-[#D8CFBB]">
+              <h2 className="md:col-span-4 text-sm uppercase tracking-[0.2em] text-[#4A7A55] font-[family-name:var(--font-sans)] font-normal pt-3">
+                {c.email}
+              </h2>
+              <div className="md:col-span-8 min-w-0 space-y-3">
+                {[c.emailMark, c.emailLuke].map((addr) => (
+                  <div key={addr}>
+                    <a href={`mailto:${addr}`} className={linkCls}>
+                      {addr}
+                      <span aria-hidden className="text-xl transition-transform group-hover:translate-x-1">&rarr;</span>
                     </a>
-                  </p>
-                </div>
-              )}
-
-              <form onSubmit={handleSubmit} className="space-y-6" noValidate>
-                <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
-                  <label htmlFor="website">Website</label>
-                  <input
-                    type="text"
-                    id="website"
-                    name="website"
-                    tabIndex={-1}
-                    autoComplete="off"
-                    value={honeypot}
-                    onChange={(e) => setHoneypot(e.target.value)}
-                  />
-                </div>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-semibold mb-2">
-                      {c.nameLabel} <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className={`w-full px-4 py-3 rounded-sm border ${errors.name ? "border-red-500" : "border-[#D8CFBB]"} bg-white focus:outline-none focus:ring-2 focus:ring-[#0E4A5A]/50 transition-all`}
-                    />
-                    {errors.name && <p className="text-sm text-red-500 mt-1">{errors.name}</p>}
                   </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-semibold mb-2">
-                      {c.emailLabel} <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className={`w-full px-4 py-3 rounded-sm border ${errors.email ? "border-red-500" : "border-[#D8CFBB]"} bg-white focus:outline-none focus:ring-2 focus:ring-[#0E4A5A]/50 transition-all`}
-                    />
-                    {errors.email && <p className="text-sm text-red-500 mt-1">{errors.email}</p>}
-                  </div>
-                </div>
+                ))}
+                <p className="text-muted-foreground pt-2">{c.emailNote}</p>
+              </div>
+            </div>
 
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-semibold mb-2">
-                      {c.phoneLabel}
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-sm border border-[#D8CFBB] bg-white focus:outline-none focus:ring-2 focus:ring-[#0E4A5A]/50 transition-all"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="organization" className="block text-sm font-semibold mb-2">
-                      {c.orgLabel}
-                    </label>
-                    <input
-                      type="text"
-                      id="organization"
-                      name="organization"
-                      value={formData.organization}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-sm border border-[#D8CFBB] bg-white focus:outline-none focus:ring-2 focus:ring-[#0E4A5A]/50 transition-all"
-                    />
-                  </div>
-                </div>
+            <div className="grid md:grid-cols-12 gap-3 md:gap-10 py-10 border-b border-[#D8CFBB]">
+              <h2 className="md:col-span-4 text-sm uppercase tracking-[0.2em] text-[#4A7A55] font-[family-name:var(--font-sans)] font-normal pt-3">
+                {c.phone}
+              </h2>
+              <div className="md:col-span-8 min-w-0 space-y-3">
+                <a href="tel:+19703892220" className={linkCls}>
+                  {c.phoneValue}
+                  <span aria-hidden className="text-xl transition-transform group-hover:translate-x-1">&rarr;</span>
+                </a>
+                <p className="text-muted-foreground">{c.phoneNote}</p>
+              </div>
+            </div>
 
-                <div>
-                  <label htmlFor="type" className="block text-sm font-semibold mb-2">
-                    {c.typeLabel}
-                  </label>
-                  <select
-                    id="type"
-                    name="type"
-                    value={formData.type}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-sm border border-[#D8CFBB] bg-white focus:outline-none focus:ring-2 focus:ring-[#0E4A5A]/50 transition-all"
-                  >
-                    <option value="inquiry">{c.typeOptions[0]}</option>
-                    <option value="partnership">{c.typeOptions[1]}</option>
-                    <option value="research">{c.typeOptions[2]}</option>
-                    <option value="investment">{c.typeOptions[3]}</option>
-                    <option value="other">{c.typeOptions[4]}</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-semibold mb-2">
-                    {c.messageLabel} <span className="text-red-500">*</span>
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={5}
-                    className={`w-full px-4 py-3 rounded-sm border ${errors.message ? "border-red-500" : "border-[#D8CFBB]"} bg-white focus:outline-none focus:ring-2 focus:ring-[#0E4A5A]/50 transition-all resize-vertical`}
-                  />
-                  {errors.message && <p className="text-sm text-red-500 mt-1">{errors.message}</p>}
-                </div>
-
-                <Button
-                  type="submit"
-                  disabled={sending}
-                  className="w-full bg-[#0E4A5A] hover:bg-[#0A3541] text-white py-6 rounded-sm text-lg disabled:opacity-70"
-                >
-                  {sending ? c.sending : c.submit}
-                </Button>
-
-                <p className="text-xs text-muted-foreground text-center">{c.privacy}</p>
-              </form>
+            <div className="grid md:grid-cols-12 gap-3 md:gap-10 py-10 border-b border-[#D8CFBB]">
+              <h2 className="md:col-span-4 text-sm uppercase tracking-[0.2em] text-[#4A7A55] font-[family-name:var(--font-sans)] font-normal pt-1">
+                {c.office}
+              </h2>
+              <div className="md:col-span-8 min-w-0 space-y-3">
+                <p className="font-[family-name:var(--font-display)] text-2xl sm:text-4xl text-foreground">
+                  {c.officeValue}
+                </p>
+                <p className="text-muted-foreground">{c.officeNote}</p>
+              </div>
             </div>
           </div>
         </section>
 
         {/* FAQ */}
-        <section className="py-24 sm:py-32 px-4 sm:px-6 lg:px-8 bg-[#F7F3EA]">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-medium mb-12">{c.faqTitle}</h2>
-            <div className="space-y-4">
+        <section className="py-20 sm:py-28 px-4 sm:px-6 lg:px-8 bg-white">
+          <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-10">
+            <h2 className="md:col-span-4 text-4xl sm:text-5xl leading-[1.1]">{c.faqTitle}</h2>
+            <div className="md:col-span-8 border-t border-foreground/80">
               {c.faqs.map((faq, index) => (
-                <div key={index} className="p-6 rounded-sm bg-white border border-[#D8CFBB]">
-                  <h3 className="font-medium mb-3">{faq.q}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{faq.a}</p>
-                </div>
+                <details key={index} className="group border-b border-[#D8CFBB]" open={index === 0}>
+                  <summary className="flex cursor-pointer list-none items-start justify-between gap-6 py-6 [&::-webkit-details-marker]:hidden">
+                    <h3 className="text-xl sm:text-2xl">{faq.q}</h3>
+                    <span
+                      aria-hidden
+                      className="mt-1 shrink-0 text-2xl leading-none text-[#4A7A55] transition-transform group-open:rotate-45"
+                    >
+                      +
+                    </span>
+                  </summary>
+                  <p className="pb-6 pr-10 text-muted-foreground leading-relaxed">{faq.a}</p>
+                </details>
               ))}
             </div>
           </div>
